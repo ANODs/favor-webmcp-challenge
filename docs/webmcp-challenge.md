@@ -16,7 +16,7 @@ The agent can:
 
 1. Call `favor_search_contracts` with the requested role, USD budget, and escrow filter.
 2. Call `favor_get_contract` for the strongest candidates and compare terms, completed deals, rating, and reviews.
-3. Call `favor_read_telegram_post` to import the person's existing brief and suggested bilingual copy.
+3. Call `favor_read_telegram_post` to import the person's existing brief and its media metadata.
 4. Call `favor_prepare_contract_draft` to create an expiring Telegram handoff.
 5. Ask the person to open the returned link, review every field, and publish manually if it is correct.
 
@@ -64,7 +64,7 @@ The following non-destructive checks were completed against [favor.deals](https:
 - The deployed application registered all four `favor_*` tools in the ChatGPT in-app browser.
 - `favor_search_contracts`, `favor_get_contract`, and `favor_read_telegram_post` executed successfully against live production data. Returned user-authored content is intentionally not copied into this repository.
 - The Telegram Mini App launched from [@FavorDealsBot](https://t.me/FavorDealsBot?startapp=feed) and rendered the live product.
-- No listing was published, no deal was started, and no escrow or payment action was performed during verification. `favor_prepare_contract_draft` was discovered but not invoked in the read-only production smoke test; its draft handoff is covered by the implementation and automated tests.
+- No listing was published, no deal was started, and no escrow or payment action was performed during verification. `favor_prepare_contract_draft` was discovered but not invoked in the read-only production smoke test. The private draft handoff is implemented, while the WebMCP runtime's registration, execution, cancellation, and cleanup are covered by automated tests.
 
 ## Security and control
 
@@ -83,7 +83,7 @@ The following non-destructive checks were completed against [favor.deals](https:
 2. Show the four registered `favor_*` tools.
 3. Search the live marketplace and inspect one result.
 4. Import a public Telegram post.
-5. Prepare a draft and open its Telegram review link.
+5. Explain the private draft handoff; invoke it only in a test account if you want to inspect the Telegram review link.
 6. Stop before publication and explain the human approval boundary.
 
 The submission video should show this working flow with audio and remain under three minutes.

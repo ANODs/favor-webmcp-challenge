@@ -13,7 +13,7 @@ Favor now exposes its real marketplace and Telegram contract workflow to browser
 | --- | --- |
 | `favor_search_contracts` | Find public service offers or client requests by text, category, budget, deadline, rating, and escrow support. |
 | `favor_get_contract` | Inspect the selected listing, its terms, author reputation, reviews, and Favor URL. |
-| `favor_read_telegram_post` | Read a public Telegram work post through Favor's existing import and translation pipeline. |
+| `favor_read_telegram_post` | Read a public Telegram work post through Favor's existing import pipeline and return its text and media metadata. |
 | `favor_prepare_contract_draft` | Turn the result into a 24-hour reviewable Telegram draft without publishing it or moving funds. |
 
 The WebMCP layer reuses Favor's production APIs rather than duplicating product logic. Public marketplace reads are marked read-only, rate-limited, and bounded. Marketplace, review, and Telegram text is marked as untrusted content. Network requests accept the tool's cancellation signal, and the only state-changing tool stops at a visible human review step in Telegram.
@@ -46,3 +46,7 @@ pnpm build
 ```
 
 The production image starts the Next.js server with `pnpm start`; `bot:start` runs the Telegram bot service.
+
+## Licensing
+
+Favor's challenge snapshot is released under the [MIT License](LICENSE). The vendored Mediabunny browser bundle keeps its original MPL-2.0 notice; see [Third-party notices](THIRD_PARTY_NOTICES.md).
