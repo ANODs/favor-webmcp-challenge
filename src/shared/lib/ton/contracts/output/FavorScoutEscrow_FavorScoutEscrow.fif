@@ -1,4 +1,4 @@
-// automatically generated from `@stdlib/std/stdlib.fc` `C:/Users/User/Documents/GitHub/favor-fullstack/src/shared/lib/ton/contracts/output/FavorScoutEscrow_FavorScoutEscrow.fc` 
+// automatically generated from `@stdlib/std/stdlib.fc` `FavorScoutEscrow_FavorScoutEscrow.fc`
 PROGRAM{
   DECLPROC __tact_context_get
   DECLPROC __tact_context_get_sender
