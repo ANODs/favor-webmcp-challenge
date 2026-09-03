@@ -34,6 +34,38 @@ The integration uses the imperative `document.modelContext.registerTool()` API.
 
 The integration is a progressive enhancement. Browsers without WebMCP keep the existing Favor experience unchanged.
 
+## Challenge-period scope and traceability
+
+Favor was already a production marketplace before the challenge. This repository is a sanitized source snapshot of that product, not a newly created challenge-only application. The work claimed for the WebMCP Challenge is limited to the WebMCP integration and the production adapters needed to run it safely.
+
+The exact source footprint is:
+
+- Registration and tool definitions: `src/app/providers/app-provider.tsx`, `src/app/providers/webmcp-tools.tsx`.
+- WebMCP runtime: `src/shared/lib/webmcp/index.ts`, `src/shared/lib/webmcp/runtime.ts`, `src/shared/lib/webmcp/types.ts`, `src/shared/lib/webmcp/use-webmcp-tools.ts`.
+- Production API and client adapters: `src/app/api/contracts/route.ts`, `src/app/api/contracts/[slug]/route.ts`, `src/app/api/contracts/telegram-post-preview/route.ts`, `src/entities/contract/api/contracts-client.ts`, `src/features/create-contract/api/publication-drafts-client.ts`, `src/features/create-contract/index.ts`.
+- Cancellation, input, and Telegram URL hardening: `src/features/create-contract/server/telegram-post-translation.ts`, `src/shared/api/base-client.ts`, `src/shared/config/client.ts`, `src/shared/config/contract.ts`, `src/shared/config/index.ts`, `src/entities/contract/model/schema.ts`, `src/shared/lib/telegram/client.ts`, `src/shared/lib/telegram/post.server.ts`, `src/shared/lib/telegram/post.ts`.
+- Tests and documentation: `tests/contracts/webmcp-runtime.test.ts`, `tests/contracts/api-session-refresh.test.ts`, `tests/contracts/contract-price.test.ts`, `tests/contracts/telegram-post-url.test.ts`, `README.md`, and this file.
+
+The production-source commit also contained an adjacent search-history feature. That feature, the pre-existing marketplace, Telegram Mini App, reputation system, deals, and escrow implementation are not claimed as challenge-period WebMCP work.
+
+| History | Commit date (UTC+03:00) | Commit | Relevant change |
+| --- | --- | --- | --- |
+| Production source | 2026-09-03 04:47:31 | `be51ee47a7a447695131c112cb498f739b4e11d2` | Added the WebMCP runtime, four tools, production adapters, tests, and documentation. |
+| Production source | 2026-09-03 05:09:28 | `b6fe799e5c736fa9c310d0801356c78c5dbcee9a` | Supported WebMCP clients that omit per-call execution options while retaining the registration cancellation signal. |
+| Public snapshot | 2026-09-03 05:04:24 | [`07f426d655d8ac113882d939eed697f2e23a9390`](https://github.com/ANODs/favor-webmcp-challenge/commit/07f426d655d8ac113882d939eed697f2e23a9390) | Published the sanitized application snapshot, MIT license, WebMCP source, tests, and documentation. |
+| Public snapshot | 2026-09-03 05:10:19 | [`94b3cd95986bdac87e5ba68e94a23b9945482347`](https://github.com/ANODs/favor-webmcp-challenge/commit/94b3cd95986bdac87e5ba68e94a23b9945482347) | Mirrored the execution-options compatibility fix. |
+| Public snapshot | 2026-09-03 05:19:04 | [`59c4dc1b99074e0c644b104d863fc480f3ce7178`](https://github.com/ANODs/favor-webmcp-challenge/commit/59c4dc1b99074e0c644b104d863fc480f3ce7178) | Removed local build paths from generated contract artifacts. |
+
+## Production verification
+
+The following non-destructive checks were completed against [favor.deals](https://favor.deals/en) on 2026-09-03:
+
+- The English site, time endpoint, category endpoint, and bounded public marketplace search returned HTTP 200.
+- The deployed application registered all four `favor_*` tools in the ChatGPT in-app browser.
+- `favor_search_contracts`, `favor_get_contract`, and `favor_read_telegram_post` executed successfully against live production data. Returned user-authored content is intentionally not copied into this repository.
+- The Telegram Mini App launched from [@FavorDealsBot](https://t.me/FavorDealsBot?startapp=feed) and rendered the live product.
+- No listing was published, no deal was started, and no escrow or payment action was performed during verification. `favor_prepare_contract_draft` was discovered but not invoked in the read-only production smoke test; its draft handoff is covered by the implementation and automated tests.
+
 ## Security and control
 
 - Read-only tools declare `readOnlyHint: true`.
