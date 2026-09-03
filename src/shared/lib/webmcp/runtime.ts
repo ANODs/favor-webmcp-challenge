@@ -9,7 +9,7 @@ import type {
 type NativeWebMcpTool = Omit<WebMcpToolDefinition, "execute"> & {
   execute: (
     input: WebMcpToolInput,
-    options: WebMcpToolExecuteOptions,
+    options?: Partial<WebMcpToolExecuteOptions>,
   ) => Promise<unknown>;
 };
 
@@ -80,7 +80,9 @@ export const registerWebMcpTools = (
         {
           ...definition,
           execute: async (input, executeOptions) =>
-            execute(input, executeOptions),
+            execute(input, {
+              signal: executeOptions?.signal ?? controller.signal,
+            }),
         },
         registrationOptions,
       );

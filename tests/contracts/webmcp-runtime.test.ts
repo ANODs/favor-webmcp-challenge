@@ -12,7 +12,7 @@ import {
 type RegisteredTool = Omit<WebMcpToolDefinition, "execute"> & {
   execute: (
     input: WebMcpToolInput,
-    options: WebMcpToolExecuteOptions,
+    options?: Partial<WebMcpToolExecuteOptions>,
   ) => Promise<unknown>;
 };
 
@@ -46,6 +46,14 @@ test("WebMCP support detection is a safe progressive enhancement", async () => {
 });
 
 test("WebMCP tools register through document.modelContext and abort together", async () => {
+  const executionSignals: AbortSignal[] = [];
+  const signalAwareTool: WebMcpToolDefinition = {
+    ...tool,
+    execute: ({ query }, { signal }) => {
+      executionSignals.push(signal);
+      return { query };
+    },
+  };
   const registrations: Array<{
     tool: RegisteredTool;
     options: { signal: AbortSignal; exposedTo?: string[] };
@@ -61,7 +69,7 @@ test("WebMCP tools register through document.modelContext and abort together", a
     },
   } as unknown as Document;
 
-  const registration = registerWebMcpTools([tool], {
+  const registration = registerWebMcpTools([signalAwareTool], {
     document: targetDocument,
     exposedTo: ["https://agent.example"],
   });
@@ -81,6 +89,12 @@ test("WebMCP tools register through document.modelContext and abort together", a
     ),
     { query: "designer" },
   );
+  assert.equal(executionSignals[0]?.aborted, false);
+  assert.deepEqual(
+    await registrations[0]?.tool.execute({ query: "tutor" }),
+    { query: "tutor" },
+  );
+  assert.equal(executionSignals[1], registration.signal);
 
   registration.unregister();
   assert.equal(registration.signal.aborted, true);
