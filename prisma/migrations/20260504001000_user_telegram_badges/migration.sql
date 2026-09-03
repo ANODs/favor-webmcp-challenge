@@ -1,0 +1,3 @@
+ALTER TABLE "User"
+ADD COLUMN "telegramPremium" BOOLEAN NOT NULL DEFAULT false,
+ADD COLUMN "telegramLevel" INTEGER;

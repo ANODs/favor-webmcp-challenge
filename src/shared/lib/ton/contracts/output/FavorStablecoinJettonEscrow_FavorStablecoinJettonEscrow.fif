@@ -1,0 +1,1045 @@
+// automatically generated from `@stdlib/std/stdlib.fc` `C:/Users/User/Documents/GitHub/favor-fullstack/src/shared/lib/ton/contracts/output/FavorStablecoinJettonEscrow_FavorStablecoinJettonEscrow.fc` 
+PROGRAM{
+  DECLPROC __tact_context_get
+  DECLPROC __tact_context_get_sender
+  DECLPROC $DeployOk$_store
+  DECLPROC $DeployOk$_store_cell
+  DECLPROC $FavorStablecoinJettonEscrow$_store
+  DECLPROC $FavorStablecoinJettonEscrow$_load
+  DECLPROC $Context$_get_value
+  DECLPROC $FavorStablecoinJettonEscrow$init$_load
+  DECLPROC $FavorStablecoinJettonEscrow$_contract_init
+  DECLPROC $FavorStablecoinJettonEscrow$_contract_load
+  DECLPROC $FavorStablecoinJettonEscrow$_contract_store
+  DECLPROC $SendParameters$_constructor_to_value_bounce_mode_body
+  DECLPROC $FavorStablecoinJettonEscrow$_fun_sendJettons
+  DECLPROC $FavorStablecoinJettonEscrow$_fun_distributeFreelancerShare
+  DECLPROC $FavorStablecoinJettonEscrow$_fun_closeGas
+  DECLPROC $FavorStablecoinJettonEscrow$_fun_status
+  DECLPROC $FavorStablecoinJettonEscrow$_fun_deadlineAt
+  DECLPROC $FavorStablecoinJettonEscrow$_fun_details
+  DECLPROC $FavorStablecoinJettonEscrow$_fun_jettonWallet
+  DECLPROC $FavorStablecoinJettonEscrow$_fun_jettonMasterAddress
+  DECLPROC $MessageParameters$_constructor_bounce_to_value_mode_body
+  DECLPROC $FavorStablecoinJettonEscrow$_fun_reply
+  DECLPROC $FavorStablecoinJettonEscrow$_fun_notify
+  DECLPROC $DeployOk$_constructor_queryId
+  101642 DECLMETHOD %status
+  114650 DECLMETHOD %deadlineAt
+  118890 DECLMETHOD %details
+  90133 DECLMETHOD %jettonWallet
+  105785 DECLMETHOD %jettonMasterAddress
+  DECLPROC recv_internal
+  65535 DECLMETHOD __tact_selector_hack
+  DECLGLOBVAR __tact_context
+  DECLGLOBVAR __tact_context_sender
+  DECLGLOBVAR __tact_child_contract_codes
+  DECLGLOBVAR __tact_randomized
+  __tact_context_get PROCINLINE:<{
+    __tact_context GETGLOB
+    4 UNTUPLE
+  }>
+  __tact_context_get_sender PROCINLINE:<{
+    __tact_context_sender GETGLOB
+  }>
+  $DeployOk$_store PROCINLINE:<{
+    2952335191 PUSHINT
+    ROT
+    32 STU
+    64 STU
+  }>
+  $DeployOk$_store_cell PROCINLINE:<{
+    SWAP
+    $DeployOk$_store INLINECALLDICT
+    ENDC
+  }>
+  $FavorStablecoinJettonEscrow$_store PROCINLINE:<{
+    s13 s14 XCHG2
+    STSLICE
+    s1 s11 XCHG
+    STSLICE
+    s1 s9 XCHG
+    STSLICE
+    s0 s7 XCHG
+    NEWC
+    STSLICE
+    s1 s6 XCHG
+    STSLICE
+    s1 s4 XCHG
+    STSLICE
+    s1 s2 XCHG
+    1 STI
+    64 STU
+    SWAP
+    STVARUINT16
+    8 STU
+    s0 s2 XCHG
+    NEWC
+    32 STU
+    s0 s3 XCHG2
+    STVARUINT16
+    s1 s3 XCHG
+    8 STU
+    s1 s3 XCHG
+    64 STU
+    STBREFR
+    STBREFR
+  }>
+  $FavorStablecoinJettonEscrow$_load PROCINLINE:<{
+    LDMSGADDR
+    LDMSGADDR
+    LDMSGADDR
+    LDREF
+    SWAP
+    CTOS
+    LDMSGADDR
+    LDMSGADDR
+    LDMSGADDR
+    1 LDI
+    64 LDU
+    LDVARUINT16
+    8 LDU
+    LDREF
+    DROP
+    CTOS
+    32 LDU
+    LDVARUINT16
+    8 LDU
+    64 LDU
+    DROP
+    s11 s14 XCHG
+    s11 s13 XCHG
+    s11 s12 XCHG
+  }>
+  $Context$_get_value PROCINLINE:<{
+    s1 s3 XCHG
+    3 BLKDROP
+  }>
+  $FavorStablecoinJettonEscrow$init$_load PROCINLINE:<{
+    LDMSGADDR
+    LDMSGADDR
+    LDMSGADDR
+    LDREF
+    SWAP
+    CTOS
+    LDMSGADDR
+    LDMSGADDR
+    257 PUSHINT
+    LDIX
+    LDREF
+    DROP
+    CTOS
+    257 PUSHINT
+    LDIX
+    257 PUSHINT
+    LDIX
+    257 PUSHINT
+    LDIX
+    DROP
+    s6 s9 XCHG
+    s6 s8 XCHG
+    s6 s7 XCHG
+  }>
+  $FavorStablecoinJettonEscrow$_contract_init PROCINLINE:<{
+    s8 PUSH
+    FALSE
+    59014 PUSHINT
+    s3 PUSH
+    0 GTINT
+    THROWANYIFNOT
+    0 PUSHINT
+    s0 s0 PUSH2
+    s4 s13 XCHG
+    s4 s8 XCHG
+    5 3 REVERSE
+    s3 s5 XCHG
+  }>
+  $FavorStablecoinJettonEscrow$_contract_load PROCINLINE:<{
+    c4 PUSH
+    CTOS
+    1 LDI
+    SWAP
+    IF:<{
+      $FavorStablecoinJettonEscrow$_load INLINECALLDICT
+      1 14 BLKDROP2
+    }>ELSE<{
+      $FavorStablecoinJettonEscrow$init$_load INLINECALLDICT
+      s0 s9 XCHG
+      ENDS
+      8 ROLL
+      $FavorStablecoinJettonEscrow$_contract_init INLINECALLDICT
+    }>
+  }>
+  $FavorStablecoinJettonEscrow$_contract_store PROCINLINE:<{
+    NEWC
+    TRUE
+    SWAP
+    1 STI
+    14 -ROLL
+    $FavorStablecoinJettonEscrow$_store INLINECALLDICT
+    ENDC
+    c4 POP
+  }>
+  $SendParameters$_constructor_to_value_bounce_mode_body PROCINLINE:<{
+    s1 s4 XCHG
+    PUSHNULL
+    s4 s3 XCHG2
+    PUSHNULL
+    s3 s3 XCHG2
+  }>
+  $FavorStablecoinJettonEscrow$_fun_sendJettons PROCREF:<{
+    FALSE
+    FALSE
+        NEWC
+    260734629 PUSHINT
+    SWAP
+    32 STU
+    0 PUSHINT
+    SWAP
+    64 STU
+    s0 s3 XCHG2
+        STVARUINT16
+    s0 s3 XCHG2
+        STSLICER
+    s15 PUSH
+        STSLICER
+        1 STI
+    0 PUSHINT
+        STVARUINT16
+        1 STI
+        ENDC
+    60000000 PUSHINT
+    TRUE
+    1 PUSHINT
+    s12 PUSH
+    s0 s4 XCHG
+    $SendParameters$_constructor_to_value_bounce_mode_body INLINECALLDICT
+        NEWC
+        b{01} STSLICECONST  // store tag = $0 and ihr_disabled = true
+        1 STI               // store `bounce`
+        b{000} STSLICECONST // store bounced = false and src = addr_none
+        STSLICE             // store `to`
+        SWAP
+        STGRAMS             // store `value`
+        105 PUSHINT         // 1 + 4 + 4 + 64 + 32
+        STZEROES            // store currency_collection, ihr_fee, fwd_fee, created_lt and created_at
+        // → Stack state
+        // s0: Builder
+        // s1: `data`
+        // s2: `code`
+        // s3: `body`
+        // s4: `mode`
+        // Group 2: Placing the Builder after code and data, then checking those for nullability
+        s2 XCHG0
+        DUP2
+        ISNULL
+        SWAP
+        ISNULL
+        AND
+        // → Stack state
+        // s0: -1 (true) if `data` and `code` are both null, 0 (false) otherwise
+        // s1: `code`
+        // s2: `data`
+        // s3: Builder
+        // s4: `body`
+        // s5: `mode`
+        // Group 3: Left branch of the IFELSE, executed if s0 is -1 (true)
+        <{
+            DROP2 // drop `data` and `code`, since either of those is null
+            b{0} STSLICECONST
+        }> PUSHCONT
+        // Group 3: Right branch of the IFELSE, executed if s0 is 0 (false)
+        <{
+            // _ split_depth:(Maybe (## 5))
+            //   special:(Maybe TickTock)
+            //   code:(Maybe ^Cell)
+            //   data:(Maybe ^Cell)
+            //   library:(Maybe ^Cell)
+            // = StateInit;
+            ROT                // place message Builder on top
+            b{10} STSLICECONST // store Maybe = true, Either = false
+            // Start composing inlined StateInit
+            b{00} STSLICECONST // store split_depth and special first
+            STDICT             // store code
+            STDICT             // store data
+            b{0} STSLICECONST  // store library
+        }> PUSHCONT
+        // Group 3: IFELSE that does the branching shown above
+        IFELSE
+        // → Stack state
+        // s0: Builder
+        // s1: null or StateInit
+        // s2: `body`
+        // s3: `mode`
+        // Group 4: Finalizing the message
+        STDICT // store `body` as ref with an extra Maybe bit, since `body` might be null
+        ENDC
+        // → Stack state
+        // s0: Cell
+        // s1: `mode`
+        // Group 5: Sending the message, with `mode` on top
+        SWAP
+        SENDRAWMSG // https://github.com/tact-lang/tact/issues/1558
+  }>
+  $FavorStablecoinJettonEscrow$_fun_distributeFreelancerShare PROCREF:<{
+    DUP
+    5 MULCONST
+    100 PUSHINT
+    DIV
+    s0 s6 PUSH2
+    MUL
+    100 PUSHINT
+    DIV
+    2DUP
+    SUB
+    2SWAP
+    SUB
+    DUP
+    0 GTINT
+    IF:<{
+      s14 16 s() XCHG
+      s13 s15 XCHG
+      16 s() PUSH
+      s0 s13 XCHG
+      s12 16 s() XCHG
+      s0 s11 XCHG
+      s10 16 s() XCHG
+      s0 s9 XCHG
+      s8 16 s() XCHG
+      s0 s7 XCHG
+      s6 16 s() XCHG
+      s0 s5 XCHG
+      s4 16 s() XCHG
+      s0 s3 XCHG
+      s2 16 s() XCHG
+      s0 17 s() XCHG
+      SWAP
+      $FavorStablecoinJettonEscrow$_fun_sendJettons INLINECALLDICT
+      2 14 BLKSWAP
+    }>ELSE<{
+      DROP
+    }>
+    OVER
+    0 GTINT
+    IF:<{
+      s14 s15 XCHG
+      s13 s15 XCHG
+      s12 s15 XCHG
+      s15 PUSH
+      s0 s12 XCHG
+      s0 s11 XCHG
+      s0 s10 XCHG
+      s0 s9 XCHG
+      s0 s8 XCHG
+      s0 s7 XCHG
+      s0 s6 XCHG
+      s0 s5 XCHG
+      s0 s4 XCHG
+      s3 s1 s3 XCHG3
+      s1 16 s() XCHG
+      $FavorStablecoinJettonEscrow$_fun_sendJettons INLINECALLDICT
+      14 ROLL
+    }>ELSE<{
+      NIP
+    }>
+    DUP
+    0 GTINT
+    IF:<{
+      s14 s(-1) PUXC
+      $FavorStablecoinJettonEscrow$_fun_sendJettons INLINECALLDICT
+    }>ELSE<{
+      DROP
+    }>
+  }>
+  $FavorStablecoinJettonEscrow$_fun_closeGas PROCREF:<{
+    0 PUSHINT
+    FALSE
+    160 PUSHINT
+        B{b5ee9c7241010101002900004e000000004661766f7220537461626c65636f696e20457363726f773a2047617320726566756e64e9ba7679} B>boc PUSHREF
+    16 s() PUSH
+    4 -ROLL
+    $SendParameters$_constructor_to_value_bounce_mode_body INLINECALLDICT
+        NEWC
+        b{01} STSLICECONST  // store tag = $0 and ihr_disabled = true
+        1 STI               // store `bounce`
+        b{000} STSLICECONST // store bounced = false and src = addr_none
+        STSLICE             // store `to`
+        SWAP
+        STGRAMS             // store `value`
+        105 PUSHINT         // 1 + 4 + 4 + 64 + 32
+        STZEROES            // store currency_collection, ihr_fee, fwd_fee, created_lt and created_at
+        // → Stack state
+        // s0: Builder
+        // s1: `data`
+        // s2: `code`
+        // s3: `body`
+        // s4: `mode`
+        // Group 2: Placing the Builder after code and data, then checking those for nullability
+        s2 XCHG0
+        DUP2
+        ISNULL
+        SWAP
+        ISNULL
+        AND
+        // → Stack state
+        // s0: -1 (true) if `data` and `code` are both null, 0 (false) otherwise
+        // s1: `code`
+        // s2: `data`
+        // s3: Builder
+        // s4: `body`
+        // s5: `mode`
+        // Group 3: Left branch of the IFELSE, executed if s0 is -1 (true)
+        <{
+            DROP2 // drop `data` and `code`, since either of those is null
+            b{0} STSLICECONST
+        }> PUSHCONT
+        // Group 3: Right branch of the IFELSE, executed if s0 is 0 (false)
+        <{
+            // _ split_depth:(Maybe (## 5))
+            //   special:(Maybe TickTock)
+            //   code:(Maybe ^Cell)
+            //   data:(Maybe ^Cell)
+            //   library:(Maybe ^Cell)
+            // = StateInit;
+            ROT                // place message Builder on top
+            b{10} STSLICECONST // store Maybe = true, Either = false
+            // Start composing inlined StateInit
+            b{00} STSLICECONST // store split_depth and special first
+            STDICT             // store code
+            STDICT             // store data
+            b{0} STSLICECONST  // store library
+        }> PUSHCONT
+        // Group 3: IFELSE that does the branching shown above
+        IFELSE
+        // → Stack state
+        // s0: Builder
+        // s1: null or StateInit
+        // s2: `body`
+        // s3: `mode`
+        // Group 4: Finalizing the message
+        STDICT // store `body` as ref with an extra Maybe bit, since `body` might be null
+        ENDC
+        // → Stack state
+        // s0: Cell
+        // s1: `mode`
+        // Group 5: Sending the message, with `mode` on top
+        SWAP
+        SENDRAWMSG // https://github.com/tact-lang/tact/issues/1558
+  }>
+  $FavorStablecoinJettonEscrow$_fun_status PROCREF:<{
+    OVER
+  }>
+  $FavorStablecoinJettonEscrow$_fun_deadlineAt PROCREF:<{
+    DUP
+  }>
+  $FavorStablecoinJettonEscrow$_fun_details PROCREF:<{
+        MYADDR
+  }>
+  $FavorStablecoinJettonEscrow$_fun_jettonWallet PROCREF:<{
+    s8 PUSH
+  }>
+  $FavorStablecoinJettonEscrow$_fun_jettonMasterAddress PROCREF:<{
+    s9 PUSH
+  }>
+  $MessageParameters$_constructor_bounce_to_value_mode_body PROCINLINE:<{
+    s3 s3 XCHG2
+    s0 s4 XCHG
+  }>
+  $FavorStablecoinJettonEscrow$_fun_reply PROCINLINE:<{
+    __tact_context_get_sender INLINECALLDICT
+    TRUE
+    0 PUSHINT
+    s0 s3 XCHG2
+    66 PUSHINT
+    SWAP
+    $MessageParameters$_constructor_bounce_to_value_mode_body INLINECALLDICT
+        NEWC
+        b{01} STSLICECONST  // store tag = $0 and ihr_disabled = true
+        1 STI               // store `bounce`
+        b{000} STSLICECONST // store bounced = false and src = addr_none
+        STSLICE             // store `to`
+        SWAP
+        STGRAMS             // store `value`
+        106 PUSHINT         // 1 + 4 + 4 + 64 + 32 + 1
+        STZEROES
+        // → Stack state
+        // s0: Builder
+        // s1: `body`
+        // s2: `mode`
+        STDICT
+        ENDC
+        SWAP
+        SENDRAWMSG
+  }>
+  $FavorStablecoinJettonEscrow$_fun_notify PROCINLINE:<{
+    __tact_context_get_sender INLINECALLDICT
+    FALSE
+    0 PUSHINT
+    s0 s3 XCHG2
+    66 PUSHINT
+    SWAP
+    $MessageParameters$_constructor_bounce_to_value_mode_body INLINECALLDICT
+        NEWC
+        b{01} STSLICECONST  // store tag = $0 and ihr_disabled = true
+        1 STI               // store `bounce`
+        b{000} STSLICECONST // store bounced = false and src = addr_none
+        STSLICE             // store `to`
+        SWAP
+        STGRAMS             // store `value`
+        106 PUSHINT         // 1 + 4 + 4 + 64 + 32 + 1
+        STZEROES
+        // → Stack state
+        // s0: Builder
+        // s1: `body`
+        // s2: `mode`
+        STDICT
+        ENDC
+        SWAP
+        SENDRAWMSG
+  }>
+  $DeployOk$_constructor_queryId PROCINLINE:<{
+  }>
+  %status PROC:<{
+    $FavorStablecoinJettonEscrow$_contract_load INLINECALLDICT
+    $FavorStablecoinJettonEscrow$_fun_status INLINECALLDICT
+    14 1 BLKDROP2
+  }>
+  %deadlineAt PROC:<{
+    $FavorStablecoinJettonEscrow$_contract_load INLINECALLDICT
+    $FavorStablecoinJettonEscrow$_fun_deadlineAt INLINECALLDICT
+    14 1 BLKDROP2
+  }>
+  %details PROC:<{
+    $FavorStablecoinJettonEscrow$_contract_load INLINECALLDICT
+    $FavorStablecoinJettonEscrow$_fun_details INLINECALLDICT
+    14 1 BLKDROP2
+  }>
+  %jettonWallet PROC:<{
+    $FavorStablecoinJettonEscrow$_contract_load INLINECALLDICT
+    $FavorStablecoinJettonEscrow$_fun_jettonWallet INLINECALLDICT
+    14 1 BLKDROP2
+  }>
+  %jettonMasterAddress PROC:<{
+    $FavorStablecoinJettonEscrow$_contract_load INLINECALLDICT
+    $FavorStablecoinJettonEscrow$_fun_jettonMasterAddress INLINECALLDICT
+    14 1 BLKDROP2
+  }>
+  recv_internal PROC:<{
+    c2 SAVE
+    SAMEALTSAVE
+    SWAP
+    CTOS
+    2 PUSHINT
+    SDSKIPFIRST
+    1 LDI
+    1 LDI
+    LDMSGADDR
+    OVER
+    s3 s4 XCHG
+    s6 s6 XCHG2
+    4 TUPLE
+    __tact_context SETGLOB
+    s0 s2 XCHG
+    __tact_context_sender SETGLOB
+    $FavorStablecoinJettonEscrow$_contract_load INLINECALLDICT
+    s0 s15 XCHG
+    IFJMP:<{
+      15 BLKDROP
+    }>
+    0 PUSHINT
+    s14 PUSH
+    SBITS
+    DUP
+    31 GTINT
+    IF:<{
+      NIP
+      s0 s14 XCHG
+      32 LDU
+      OVER
+      308508065 PUSHINT
+      EQUAL
+      IFJMP:<{
+        NIP
+        s8 POP
+        s13 POP
+        s0 s6 XCHG
+        LDMSGADDR
+        DROP
+        __tact_context_get INLINECALLDICT
+        s2 s3 XCHG
+        3 BLKDROP
+        42435 PUSHINT
+        s1 s12 PUSH2
+        SDEQ
+        IF:<{
+          NIP
+          TRUE
+        }>ELSE<{
+          s1 s13 XCPU
+          SDEQ
+        }>
+        THROWANYIFNOT
+        17035 PUSHINT
+        s0 s6 XCHG
+        NOT
+        s1 s6 XCHG
+        THROWANYIFNOT
+        s10 s12 XCHG
+        s9 s11 XCHG
+        s8 s10 XCHG
+        s7 s9 XCHG
+        s6 s8 XCHG
+        s4 s7 XCHG
+        TRUE
+        s0 s7 XCHG
+        s4 s6 XCHG
+        s3 s5 XCHG
+        s4 s3 s0 XCHG3
+        $FavorStablecoinJettonEscrow$_contract_store INLINECALLDICT
+        RETALT
+      }>
+      OVER
+      1935855772 PUSHINT
+      EQUAL
+      IFJMP:<{
+        NIP
+        s2 POP
+        s13 POP
+        s13 POP
+        s0 s12 XCHG
+        64 LDU
+        NIP
+        LDVARUINT16
+        LDMSGADDR
+        DROP
+        __tact_context_get INLINECALLDICT
+        s2 s3 XCHG
+        3 BLKDROP
+        35739 PUSHINT
+        s0 s14 XCHG
+        0 EQINT
+        s1 s14 XCHG
+        THROWANYIFNOT
+        62980 PUSHINT
+        s6 PUSH
+        THROWANYIFNOT
+        11446 PUSHINT
+        s13 s7 XCPU
+        SDEQ
+        s1 s13 XCHG
+        THROWANYIFNOT
+        21835 PUSHINT
+        s12 s10 XCPU
+        SDEQ
+        s1 s12 XCHG
+        THROWANYIFNOT
+        51698 PUSHINT
+        s11 s2 PUSH2
+        EQUAL
+        THROWANYIFNOT
+        1 PUSHINT
+            NOW
+        s13 PUSH
+        ADD
+        s11 s13 XCHG
+        s10 s12 XCHG
+        s9 s11 XCHG
+        s8 s10 XCHG
+        s7 s9 XCHG
+        s6 s8 XCHG
+        s5 s7 XCHG
+        s4 s6 XCHG
+        s3 s5 XCHG
+        s2 s4 XCHG
+        $FavorStablecoinJettonEscrow$_contract_store INLINECALLDICT
+        RETALT
+      }>
+      OVER
+      4214219585 PUSHINT
+      EQUAL
+      IFJMP:<{
+        NIP
+        s14 POP
+        s0 s13 XCHG
+        8 LDU
+        DROP
+        __tact_context_get INLINECALLDICT
+        2DROP
+        57229 PUSHINT
+        s2 POP
+        s14 PUSH
+        SDEQ
+        THROWANYIFNOT
+        45284 PUSHINT
+        s0 s14 XCHG
+        3 EQINT
+        s1 s14 XCHG
+        THROWANYIFNOT
+        6722 PUSHINT
+        s13 PUSH
+        101 LESSINT
+        THROWANYIFNOT
+        DUP
+        2 PUSHINT
+        s0 s14 XCHG
+        MUL
+        100 PUSHINT
+        DIV
+        2DUP
+        SUB
+        DUP
+        0 GTINT
+        IF:<{
+          s12 PUSH
+          s0 s14 XCHG
+          s0 s15 XCHG
+          s12 s13 XCHG
+          s11 s12 XCHG
+          s10 s11 XCHG
+          s9 s10 XCHG
+          s8 s9 XCHG
+          s7 s8 XCHG
+          s6 s7 XCHG
+          s5 s6 XCHG
+          s4 s5 XCHG
+          s0 s3 XCHG
+          s0 s4 XCHG
+          s2 16 s() XCHG
+          SWAP
+          $FavorStablecoinJettonEscrow$_fun_sendJettons INLINECALLDICT
+          s13 s14 XCHG2
+          s1 s12 XCHG
+          s1 s11 XCHG
+          s1 s10 XCHG
+          s1 s9 XCHG
+          s1 s8 XCHG
+          s1 s7 XCHG
+          s1 s6 XCHG
+          s1 s5 XCHG
+          s1 s4 XCHG
+          s3 s3 s0 XCHG3
+        }>ELSE<{
+          DROP
+        }>
+        DUP
+        0 GTINT
+        IF:<{
+          s12 s14 XCHG
+          s11 s13 XCHG
+          s10 s12 XCHG
+          s9 s11 XCHG
+          s8 s10 XCHG
+          s7 s9 XCHG
+          s6 s8 XCHG
+          s5 s7 XCHG
+          s4 s6 XCHG
+          s3 s5 XCHG
+          s4 s3 s0 XCHG3
+          s1 s2 XCHG
+          $FavorStablecoinJettonEscrow$_fun_distributeFreelancerShare INLINECALLDICT
+          s0 s13 XCHG
+          11 2 BLKSWAP
+        }>ELSE<{
+          DROP
+        }>
+        s11 s13 XCHG
+        2 11 BLKSWAP
+        $FavorStablecoinJettonEscrow$_fun_closeGas INLINECALLDICT
+        $FavorStablecoinJettonEscrow$_contract_store INLINECALLDICT
+        RETALT
+      }>
+      OVER
+      2490013878 PUSHINT
+      EQUAL
+      IFJMP:<{
+        NIP
+        s14 POP
+        s0 s13 XCHG
+        64 LDU
+        DROP
+        $DeployOk$_constructor_queryId INLINECALLDICT
+        NEWC
+        $DeployOk$_store_cell INLINECALLDICT
+        s12 s14 XCHG
+        s11 s13 XCHG
+        s10 s12 XCHG
+        s9 s11 XCHG
+        s8 s10 XCHG
+        s7 s9 XCHG
+        s6 s8 XCHG
+        s5 s7 XCHG
+        s4 s6 XCHG
+        s3 s5 XCHG
+        s4 s3 s0 XCHG3
+        s1 s2 XCHG
+        $FavorStablecoinJettonEscrow$_fun_notify INLINECALLDICT
+        $FavorStablecoinJettonEscrow$_contract_store INLINECALLDICT
+        RETALT
+      }>
+      s0 s15 XCHG
+    }>
+    SWAP
+    0 EQINT
+    SWAP
+    33 LESSINT
+    AND
+    IFJMP:<{
+      s13 POP
+      __tact_context_get INLINECALLDICT
+      DROP
+      s2 POP
+      42435 PUSHINT
+      s1 s13 PUSH2
+      SDEQ
+      IF:<{
+        NIP
+        TRUE
+      }>ELSE<{
+        s1 s14 XCPU
+        SDEQ
+      }>
+      THROWANYIFNOT
+      33522 PUSHINT
+      SWAP
+      50000000 PUSHINT
+      GREATER
+      THROWANYIFNOT
+      s11 s13 XCHG
+      2 11 BLKSWAP
+      $FavorStablecoinJettonEscrow$_contract_store INLINECALLDICT
+    }>
+    s0 s13 XCHG
+    HASHSU
+    DUP
+    109741796743720599635051230743765115932060319690082395211085562427676626239825 PUSHINT
+    EQUAL
+    IFJMP:<{
+      DROP
+      __tact_context_get INLINECALLDICT
+      s2 s3 XCHG
+      3 BLKDROP
+      42435 PUSHINT
+      s1 s12 PUSH2
+      SDEQ
+      IF:<{
+        NIP
+        TRUE
+      }>ELSE<{
+        s1 s13 XCPU
+        SDEQ
+      }>
+      THROWANYIFNOT
+      33459 PUSHINT
+      s13 PUSH
+      1 EQINT
+      IF:<{
+        s13 POP
+        TRUE
+      }>ELSE<{
+        s0 s13 XCHG
+        3 EQINT
+      }>
+      s1 s13 XCHG
+      THROWANYIFNOT
+      s10 s12 XCHG
+      2 10 BLKSWAP
+      2 PUSHINT
+      s1 s2 XCPU
+      $FavorStablecoinJettonEscrow$_fun_distributeFreelancerShare INLINECALLDICT
+      $FavorStablecoinJettonEscrow$_fun_closeGas INLINECALLDICT
+      $FavorStablecoinJettonEscrow$_contract_store INLINECALLDICT
+    }>
+    DUP
+    15609513859103239763880756741091842988872148806200087619369837261746687133389 PUSHINT
+    EQUAL
+    IFJMP:<{
+      DROP
+      __tact_context_get INLINECALLDICT
+      s2 s3 XCHG
+      3 BLKDROP
+      33459 PUSHINT
+      s14 PUSH
+      1 EQINT
+      IF:<{
+        TRUE
+      }>ELSE<{
+        s14 PUSH
+        3 EQINT
+      }>
+      THROWANYIFNOT
+      s0 s11 PUSH2
+      SDEQ
+      IF:<{
+        DROP
+        45995 PUSHINT
+        s0 s13 XCHG
+        1 EQINT
+        s1 s13 XCHG
+        THROWANYIFNOT
+        48201 PUSHINT
+        s13 PUSH
+        0 GTINT
+        IF:<{
+              NOW
+          s14 PUSH
+          GEQ
+        }>ELSE<{
+          FALSE
+        }>
+        THROWANYIFNOT
+      }>ELSE<{
+        s13 POP
+        42435 PUSHINT
+        s13 s10 PUSH2
+        SDEQ
+        IF:<{
+          s13 POP
+          TRUE
+        }>ELSE<{
+          s13 s12 XCPU
+          SDEQ
+        }>
+        s1 s13 XCHG
+        THROWANYIFNOT
+      }>
+      s10 s12 XCHG
+      4 PUSHINT
+      s10 PUSH
+      s0 s13 XCHG
+      s10 s12 XCHG
+      s9 s11 XCHG
+      s8 s10 XCHG
+      s7 s9 XCHG
+      s6 s8 XCHG
+      DUP
+      s6 s8 XCHG
+      s5 s7 XCHG
+      s4 s6 XCHG
+      s3 s5 XCHG
+      s3 s4 s4 XCHG3
+      $FavorStablecoinJettonEscrow$_fun_sendJettons INLINECALLDICT
+      $FavorStablecoinJettonEscrow$_fun_closeGas INLINECALLDICT
+      $FavorStablecoinJettonEscrow$_contract_store INLINECALLDICT
+    }>
+    2399450932882729004489604923805607431340460790765229186082441920567507433223 PUSHINT
+    EQUAL
+    IFJMP:<{
+      __tact_context_get INLINECALLDICT
+      s2 s3 XCHG
+      3 BLKDROP
+      57669 PUSHINT
+      s1 s12 PUSH2
+      SDEQ
+      IF:<{
+        NIP
+        TRUE
+      }>ELSE<{
+        s1 s11 XCPU
+        SDEQ
+      }>
+      THROWANYIFNOT
+      32780 PUSHINT
+      s0 s13 XCHG
+      1 EQINT
+      s1 s13 XCHG
+      THROWANYIFNOT
+      14598 PUSHINT
+      s13 PUSH
+      0 GTINT
+      IF:<{
+            NOW
+        s14 PUSH
+        LESS
+      }>ELSE<{
+        FALSE
+      }>
+      THROWANYIFNOT
+      3 PUSHINT
+          B{b5ee9c7241010101003800006c000000004469737075746520726567697374657265642e204177616974696e6720706c6174666f726d206172626974726174696f6e2e1ce7a556} B>boc PUSHREF
+      s12 s14 XCHG
+      s11 s13 XCHG
+      s10 s12 XCHG
+      s9 s11 XCHG
+      s8 s10 XCHG
+      s7 s9 XCHG
+      s6 s8 XCHG
+      s5 s7 XCHG
+      s4 s6 XCHG
+      s3 s5 XCHG
+      s1 s4 s0 XCHG3
+      $FavorStablecoinJettonEscrow$_fun_reply INLINECALLDICT
+      $FavorStablecoinJettonEscrow$_contract_store INLINECALLDICT
+    }>
+    14 BLKDROP
+    130 THROW
+  }>
+  __tact_selector_hack PROC:<{
+    @atend @ 1 {
+            execute current@ context@ current!
+            {
+                // The core idea of this function is to save gas by avoiding unnecessary dict jump, when recv_internal/recv_external is called
+                // We want to extract recv_internal/recv_external from the dict and select needed function
+                // not by jumping to the needed function by it's index, but by using usual IF statements.
+                }END> b> // Close previous builder, now we have a cell of previous code on top of the stack
+                <{ // Start of the new code builder
+                    SETCP0
+                    // Swap the new code builder with the previous code, now we have previous code on top of the stack
+                    swap
+                    // Transform cell to slice and load first ref from the previous code, now we have the dict on top of the stack
+                    <s ref@
+                    // Extract the recv_internal from the dict
+                    dup 0 swap @procdictkeylen idict@ { "internal shortcut error" abort } ifnot
+                    swap
+                    // Delete the recv_internal from the dict
+                    0 swap @procdictkeylen idict- drop
+                    // Delete the recv_external from the dict (it's okay if it's not there)
+                    -1 swap @procdictkeylen idict- drop
+                    // Delete the __tact_selector_hack from the dict
+                    65535 swap @procdictkeylen idict- drop
+                    // Bring the code builder from the bottom of the stack
+                    // because if recv_external extraction is optional, and the number of elements on the stack is not fixed
+                    depth 1- roll
+                    // Swap with the dict from which we extracted recv_internal and (maybe) recv_external
+                    swap
+                    // Check if the dict is empty
+                    dup null?
+                    // Store a copy of this flag in the bottom of the stack
+                    dup depth 1- -roll
+                    {
+                        // If the dict is empty, just drop it (it will be null if it's empty)
+                        drop
+                    }
+                    {
+                        // If the dict is not empty, prepare continuation to be stored in c3
+                        <{
+                            // Save this dict as first ref in this continuation, it will be pushed in runtime by DICTPUSHCONST
+                            swap @procdictkeylen DICTPUSHCONST
+                            // Jump to the needed function by it's index
+                            DICTIGETJMPZ
+                            // If such key is not found, throw 11 along with the key as an argument
+                            11 THROWARG
+                        }> PUSHCONT
+                        // Store the continuation in c3
+                        c3 POP
+                    } cond
+                    // Function id is on top of the (runtime) stack
+                    DUP IFNOTJMP:<{
+                        // place recv_internal here
+                        DROP swap @addop
+                    }>
+                    // Bring back the flag, indicating if the dict is empty or not from the bottom of the stack
+                    depth 1- roll
+                    {
+                        // If the dict is empty, throw 11
+                        11 THROWARG
+                    }
+                    {
+                        // If the dict is not empty, jump to continuation from c3
+                        c3 PUSH JMPX
+                    } cond
+                }> b>
+            } : }END>c
+            current@ context! current!
+        } does @atend !
+  }>
+}END>c

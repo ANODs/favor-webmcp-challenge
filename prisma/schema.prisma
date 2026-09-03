@@ -1,0 +1,934 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum Role {
+  customer
+  freelancer
+  moderator
+}
+
+enum AuthProvider {
+  telegram
+  email
+  google
+  apple
+}
+
+enum ContractType {
+  offer
+  order
+}
+
+enum ContractStatus {
+  pending_moderation
+  active
+  limit_reached
+  rejected
+  archived
+  unclaimed
+  pending_verification
+}
+
+enum DealStatus {
+  pending_approval
+  rejected
+  in_progress
+  work_completed_by_freelancer
+  paid_by_customer
+  payment_received_by_freelancer
+  result_sent_by_freelancer
+  result_received_by_customer
+  revision_requested
+  awaiting_review
+  in_dispute
+  cancellation_requested
+  cancelled
+  completed
+}
+
+enum BotStatus {
+  pending
+  active
+  paused
+  failed
+}
+
+enum MessageDirection {
+  app_to_bot
+  bot_to_app
+  telegram_in
+  telegram_out
+}
+
+enum DeliveryStatus {
+  pending
+  sent
+  delivered
+  failed
+}
+
+enum ContractQuestionStatus {
+  pending_answer
+  answered_hidden
+  published
+  dismissed
+}
+
+enum ContractReferralStatus {
+  active
+  paused
+  cancelled
+}
+
+enum ContractReferralSource {
+  scout
+  user_referral
+}
+
+enum ContractReferralRewardStatus {
+  accrued
+  cancelled
+}
+
+enum EscrowCurrency {
+  TON
+  USDT
+  USDC
+}
+
+enum AccountRestrictionScope {
+  all_writes
+  contract_publish
+  deal_create
+  communication
+  support
+  login_lock
+}
+
+enum AccountRestrictionSource {
+  manual
+  automatic
+}
+
+enum SupportTicketStatus {
+  queued
+  delivered
+  needs_review
+  suppressed
+  failed
+  closed
+}
+
+enum PaymentProvider {
+  ton_chain
+  telegram_stars
+}
+
+enum PaymentAsset {
+  FAVOR
+  GRAM
+  XTR
+}
+
+enum PaymentProduct {
+  subscription
+  category_auction_bid
+}
+
+enum PaymentIntentStatus {
+  created
+  submitted
+  confirmed
+  failed
+  expired
+}
+
+enum CategoryAuctionStatus {
+  open
+  awaiting_payment
+  settled
+  cancelled
+}
+
+enum CategoryAuctionBidStatus {
+  active
+  awaiting_payment
+  payment_failed
+  winner
+}
+
+enum CategoryPromotionSource {
+  paid_auction
+  premium_free
+}
+
+enum ContractPublicationDraftStatus {
+  prepared
+  claimed
+  publishing
+  published
+}
+
+enum SearchScope {
+  contracts
+  deals
+}
+
+enum SearchEventTrigger {
+  search_commit
+  filter_change
+  reset
+}
+
+model User {
+  id                               Int                           @id @default(autoincrement())
+  email                            String?                       @unique
+  password                         String?
+  role                             Role                          @default(customer)
+  primaryAuthProvider              AuthProvider                  @default(telegram)
+  referredById                     Int?
+  telegramId                       BigInt                        @unique
+  telegramUsername                 String?
+  telegramFirstName                String?
+  telegramLastName                 String?
+  telegramIsVerified               Boolean                       @default(true)
+  telegramPremium                  Boolean                       @default(false)
+  telegramLevel                    Int?
+  isPremium                        Boolean                       @default(false)
+  premiumExpiresAt                 DateTime?
+  isTelegramUsernameHidden         Boolean                       @default(false)
+  onboardingVersion                Int                           @default(0)
+  languageCode                     String?
+  adBalance                        Int                           @default(0)
+  name                             String?
+  rating                           Int                           @default(0)
+  walletAddress                    String?
+  createdAt                        DateTime                      @default(now())
+  updatedAt                        DateTime                      @updatedAt
+  contracts                        Contract[]
+  customerDeals                    Deal[]                        @relation("CustomerDeals")
+  freelancerDeals                  Deal[]                        @relation("FreelancerDeals")
+  customerCommunications           Communication[]               @relation("CustomerCommunications")
+  freelancerCommunications         Communication[]               @relation("FreelancerCommunications")
+  sentMessages                     Message[]
+  writtenReviews                   Review[]                      @relation("ReviewerReviews")
+  receivedReviews                  Review[]                      @relation("ReviewedUserReviews")
+  contractViews                    ContractView[]
+  scoutedContracts                 Contract[]                    @relation("ScoutedContracts")
+  contractReveals                  ContractReveal[]
+  contractReferrals                ContractReferral[]            @relation("ContractReferralReferrer")
+  authoredContractReferrals        ContractReferral[]            @relation("ContractReferralAuthor")
+  contractReferralRewards          ContractReferralReward[]      @relation("ContractReferralRewardReferrer")
+  favoriteContracts                ContractFavorite[]
+  portfolioCases                   PortfolioCase[]               @relation("UserPortfolio")
+  referredBy                       User?                         @relation("UserReferrals", fields: [referredById], references: [id], onDelete: SetNull)
+  referrals                        User[]                        @relation("UserReferrals")
+  accountRestrictions              AccountRestriction[]          @relation("RestrictedAccount")
+  restrictionsCreated              AccountRestriction[]          @relation("RestrictionCreatedBy")
+  restrictionsRevoked              AccountRestriction[]          @relation("RestrictionRevokedBy")
+  moderationEventsReceived         AccountModerationEvent[]      @relation("ModerationEventTarget")
+  moderationEventsCreated          AccountModerationEvent[]      @relation("ModerationEventActor")
+  badgeDefinitionsCreated          UserBadgeDefinition[]         @relation("UserBadgeDefinitionCreator")
+  badgeAssignments                 UserBadgeAssignment[]         @relation("UserBadgeRecipient")
+  badgeAssignmentsGranted          UserBadgeAssignment[]         @relation("UserBadgeAssigner")
+  supportTickets                   SupportTicket[]
+  clientDiagnosticReports          ClientDiagnosticReport[]
+  contractQuestionsAsked           ContractQuestion[]            @relation("ContractQuestionsAsked")
+  contractQuestionsAnswered        ContractQuestion[]            @relation("ContractQuestionsAnswered")
+  contractQuestionReplySession     ContractQuestionReplySession? @relation("ContractQuestionReplyAuthor")
+  paymentIntents                   PaymentIntent[]               @relation("PaymentIntentPayer")
+  beneficiaryPaymentIntents        PaymentIntent[]               @relation("PaymentIntentBeneficiary")
+  subscriptionPurchases            SubscriptionPurchase[]
+  startedCategoryAuctions          CategoryAuction[]             @relation("CategoryAuctionStarter")
+  categoryAuctionBids              CategoryAuctionBid[]
+  categoryPromotions               CategoryPromotion[]
+  ownedContractPublicationDrafts   ContractPublicationDraft[]    @relation("ContractPublicationDraftOwner")
+  claimedContractPublicationDrafts ContractPublicationDraft[]    @relation("ContractPublicationDraftClaimant")
+  authSessions                     AuthSession[]
+  searchEvents                     SearchEvent[]
+  searchHistoryDeletions           SearchHistoryDeletion[]
+
+  @@index([referredById])
+  @@index([createdAt, id])
+}
+
+model AuthSession {
+  id                         String    @id @default(uuid()) @db.Uuid
+  userId                     Int
+  refreshTokenHash           String    @unique
+  rotationCounter            Int       @default(0)
+  consumedRefreshTokenHashes String[]  @default([])
+  graceRefreshTokenHashes    String[]  @default([])
+  graceTokensValidUntil      DateTime?
+  startedAt                  DateTime  @default(now())
+  expiresAt                  DateTime
+  revokedAt                  DateTime?
+  createdAt                  DateTime  @default(now())
+  updatedAt                  DateTime  @updatedAt
+  user                       User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId, revokedAt, expiresAt])
+  @@index([expiresAt])
+  @@index([revokedAt])
+}
+
+model UserBadgeDefinition {
+  id                   Int                   @id @default(autoincrement())
+  code                 String                @unique
+  labelRu              String
+  labelEn              String
+  descriptionRu        String
+  descriptionEn        String
+  iconKey              String
+  tone                 String
+  sortOrder            Int                   @default(100)
+  createdByModeratorId Int?
+  createdAt            DateTime              @default(now())
+  updatedAt            DateTime              @updatedAt
+  createdByModerator   User?                 @relation("UserBadgeDefinitionCreator", fields: [createdByModeratorId], references: [id], onDelete: SetNull)
+  assignments          UserBadgeAssignment[]
+
+  @@index([sortOrder, id])
+  @@index([createdByModeratorId, createdAt])
+}
+
+model UserBadgeAssignment {
+  userId                Int
+  badgeId               Int
+  assignedByModeratorId Int?
+  assignedAt            DateTime            @default(now())
+  user                  User                @relation("UserBadgeRecipient", fields: [userId], references: [id], onDelete: Cascade)
+  badge                 UserBadgeDefinition @relation(fields: [badgeId], references: [id], onDelete: Restrict)
+  assignedByModerator   User?               @relation("UserBadgeAssigner", fields: [assignedByModeratorId], references: [id], onDelete: SetNull)
+
+  @@id([userId, badgeId])
+  @@index([badgeId])
+  @@index([assignedByModeratorId, assignedAt])
+}
+
+model SearchEvent {
+  eventId                   String             @id @db.Uuid
+  userId                    Int
+  scope                     SearchScope
+  query                     String             @db.VarChar(200)
+  queryKey                  String             @db.Text
+  filters                   Json
+  trigger                   SearchEventTrigger
+  locale                    String?            @db.VarChar(2)
+  clientSearchedAt          DateTime
+  effectiveClientSearchedAt DateTime
+  historyDeletedAt          DateTime?
+  createdAt                 DateTime           @default(now())
+  user                      User               @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId, scope, trigger, historyDeletedAt, queryKey, createdAt(sort: Desc)], map: "SearchEvent_history_lookup_idx")
+  @@index([scope, createdAt])
+}
+
+model SearchHistoryDeletion {
+  operationId              String      @id @db.Uuid
+  userId                   Int
+  scope                    SearchScope
+  queryKey                 String      @db.Text
+  clientDeletedAt          DateTime
+  effectiveClientDeletedAt DateTime
+  serverDeletedAt          DateTime    @default(now())
+  user                     User        @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId, scope, queryKey, effectiveClientDeletedAt(sort: Desc)], map: "SearchHistoryDeletion_cutoff_lookup_idx")
+  @@index([scope, serverDeletedAt])
+}
+
+model AccountRestriction {
+  id                   Int                      @id @default(autoincrement())
+  userId               Int
+  scope                AccountRestrictionScope
+  reasonCode           String
+  publicMessage        String
+  internalComment      String?
+  source               AccountRestrictionSource @default(manual)
+  createdByModeratorId Int?
+  expiresAt            DateTime?
+  revokedAt            DateTime?
+  revokedByModeratorId Int?
+  revokeComment        String?
+  evidence             Json?
+  createdAt            DateTime                 @default(now())
+  updatedAt            DateTime                 @updatedAt
+  user                 User                     @relation("RestrictedAccount", fields: [userId], references: [id], onDelete: Cascade)
+  createdByModerator   User?                    @relation("RestrictionCreatedBy", fields: [createdByModeratorId], references: [id], onDelete: SetNull)
+  revokedByModerator   User?                    @relation("RestrictionRevokedBy", fields: [revokedByModeratorId], references: [id], onDelete: SetNull)
+  moderationEvents     AccountModerationEvent[]
+
+  @@index([userId, revokedAt, expiresAt])
+  @@index([createdByModeratorId, createdAt])
+}
+
+model AccountModerationEvent {
+  id            Int                 @id @default(autoincrement())
+  targetUserId  Int
+  actorUserId   Int
+  restrictionId Int?
+  action        String
+  metadata      Json?
+  createdAt     DateTime            @default(now())
+  targetUser    User                @relation("ModerationEventTarget", fields: [targetUserId], references: [id], onDelete: Cascade)
+  actorUser     User                @relation("ModerationEventActor", fields: [actorUserId], references: [id], onDelete: Restrict)
+  restriction   AccountRestriction? @relation(fields: [restrictionId], references: [id], onDelete: SetNull)
+
+  @@index([targetUserId, createdAt])
+  @@index([actorUserId, createdAt])
+}
+
+model AbuseCounter {
+  key             String   @id
+  count           Int      @default(0)
+  windowStartedAt DateTime
+  expiresAt       DateTime
+  updatedAt       DateTime @updatedAt
+
+  @@index([expiresAt])
+}
+
+model ProcessedTelegramUpdate {
+  updateId  BigInt   @id
+  createdAt DateTime @default(now())
+
+  @@index([createdAt])
+}
+
+model TelegramRichMediaCache {
+  cacheKey            String   @id
+  botTokenFingerprint String
+  fileId              String
+  createdAt           DateTime @default(now())
+  updatedAt           DateTime @updatedAt
+}
+
+model AdRewardEvent {
+  eventId    String   @id
+  telegramId BigInt
+  createdAt  DateTime @default(now())
+
+  @@index([telegramId, createdAt])
+}
+
+model ClientDiagnosticReport {
+  id                 Int            @id @default(autoincrement())
+  publicId           String         @unique
+  userId             Int?
+  reporterTelegramId BigInt
+  code               String
+  source             String
+  fingerprint        String
+  payload            Json
+  createdAt          DateTime       @default(now())
+  expiresAt          DateTime
+  user               User?          @relation(fields: [userId], references: [id], onDelete: SetNull)
+  supportTicket      SupportTicket?
+
+  @@index([reporterTelegramId, createdAt])
+  @@index([expiresAt])
+}
+
+model SupportTicket {
+  id                       Int                     @id @default(autoincrement())
+  sessionId                String                  @unique
+  userId                   Int?
+  diagnosticReportId       Int?                    @unique
+  reporterTelegramId       BigInt
+  source                   String
+  description              String                  @db.Text
+  descriptionHash          String
+  contact                  Json?
+  photoFileIds             Json?
+  riskScore                Int                     @default(0)
+  status                   SupportTicketStatus     @default(queued)
+  telegramSupportMessageId BigInt?
+  deliveryError            String?
+  createdAt                DateTime                @default(now())
+  updatedAt                DateTime                @updatedAt
+  user                     User?                   @relation(fields: [userId], references: [id], onDelete: SetNull)
+  diagnosticReport         ClientDiagnosticReport? @relation(fields: [diagnosticReportId], references: [id], onDelete: SetNull)
+
+  @@index([reporterTelegramId, createdAt])
+  @@index([descriptionHash, createdAt])
+  @@index([status, createdAt])
+}
+
+model Contract {
+  id                      Int                       @id @default(autoincrement())
+  authorId                Int
+  titleRu                 String?
+  titleEn                 String?
+  slug                    String                    @unique
+  descriptionRu           String?
+  descriptionEn           String?
+  type                    ContractType
+  category                String?
+  tags                    String[]
+  basePrice               Decimal?                  @db.Decimal(10, 2)
+  deadlineDays            Int?
+  paymentWindowHours      Int?                      @default(24)
+  maxOpenDeals            Int?
+  status                  ContractStatus            @default(pending_moderation)
+  isEscrow                Boolean                   @default(true)
+  escrowCurrency          EscrowCurrency            @default(TON)
+  moderationComment       String?
+  aiModerationSummary     String?
+  aiRiskFactor            Int?
+  telegramPostUrl         String?
+  telegramChannelUrl      String?
+  cachedTelegramText      String?
+  verificationCode        String?
+  scoutedTelegramUsername String?
+  mediaRefs               Json?
+  contentFingerprint      String?
+  ogImageBase64           String?                   @db.Text
+  scoutId                 Int?
+  createdAt               DateTime                  @default(now())
+  updatedAt               DateTime                  @updatedAt
+  author                  User                      @relation(fields: [authorId], references: [id], onDelete: Cascade)
+  scout                   User?                     @relation("ScoutedContracts", fields: [scoutId], references: [id], onDelete: SetNull)
+  deals                   Deal[]
+  views                   ContractView[]
+  reveals                 ContractReveal[]
+  referral                ContractReferral?
+  referralRewards         ContractReferralReward[]
+  favoritedBy             ContractFavorite[]
+  portfolioCases          PortfolioCase[]
+  questions               ContractQuestion[]
+  assignedPromotions      CategoryPromotion[]
+  auctionBids             CategoryAuctionBid[]
+  publicationDraft        ContractPublicationDraft?
+
+  @@index([status, type])
+  @@index([status, createdAt, id])
+  @@index([createdAt, id])
+  @@index([authorId, status])
+  @@index([authorId, contentFingerprint, createdAt])
+}
+
+model ContractPublicationDraft {
+  id              String                         @id @default(cuid())
+  tokenHash       String                         @unique
+  data            Json
+  locale          String
+  status          ContractPublicationDraftStatus @default(prepared)
+  ownerUserId     Int?
+  claimedByUserId Int?
+  contractId      Int?                           @unique
+  expiresAt       DateTime
+  claimedAt       DateTime?
+  publishedAt     DateTime?
+  createdAt       DateTime                       @default(now())
+  updatedAt       DateTime                       @updatedAt
+  owner           User?                          @relation("ContractPublicationDraftOwner", fields: [ownerUserId], references: [id], onDelete: SetNull)
+  claimedBy       User?                          @relation("ContractPublicationDraftClaimant", fields: [claimedByUserId], references: [id], onDelete: SetNull)
+  contract        Contract?                      @relation(fields: [contractId], references: [id], onDelete: SetNull)
+
+  @@index([expiresAt])
+  @@index([claimedByUserId, status])
+}
+
+model ContractQuestion {
+  id                      Int                           @id @default(autoincrement())
+  contractId              Int
+  askerId                 Int?
+  answeredById            Int?
+  question                String                        @db.Text
+  answer                  String?                       @db.Text
+  contentFingerprint      String
+  status                  ContractQuestionStatus        @default(pending_answer)
+  deliveryStatus          DeliveryStatus                @default(pending)
+  deliveryError           String?
+  authorTelegramMessageId BigInt?
+  answeredAt              DateTime?
+  publishedAt             DateTime?
+  createdAt               DateTime                      @default(now())
+  updatedAt               DateTime                      @updatedAt
+  contract                Contract                      @relation(fields: [contractId], references: [id], onDelete: Cascade)
+  asker                   User?                         @relation("ContractQuestionsAsked", fields: [askerId], references: [id], onDelete: SetNull)
+  answeredBy              User?                         @relation("ContractQuestionsAnswered", fields: [answeredById], references: [id], onDelete: SetNull)
+  replySession            ContractQuestionReplySession?
+
+  @@index([contractId, status, publishedAt])
+  @@index([askerId, createdAt])
+  @@index([deliveryStatus, createdAt])
+  @@index([contractId, contentFingerprint, createdAt])
+}
+
+model ContractQuestionReplySession {
+  authorId   Int              @id
+  questionId Int              @unique
+  expiresAt  DateTime
+  createdAt  DateTime         @default(now())
+  updatedAt  DateTime         @updatedAt
+  author     User             @relation("ContractQuestionReplyAuthor", fields: [authorId], references: [id], onDelete: Cascade)
+  question   ContractQuestion @relation(fields: [questionId], references: [id], onDelete: Cascade)
+
+  @@index([expiresAt])
+}
+
+model ContractFavorite {
+  userId     Int
+  contractId Int
+  createdAt  DateTime @default(now())
+  user       User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  contract   Contract @relation(fields: [contractId], references: [id], onDelete: Cascade)
+
+  @@id([userId, contractId])
+  @@index([contractId, createdAt])
+}
+
+model Deal {
+  id                           Int                     @id @default(autoincrement())
+  contractId                   Int?
+  contractSnapshot             Json?
+  customerId                   Int
+  freelancerId                 Int
+  details                      String
+  price                        Decimal                 @db.Decimal(10, 2)
+  deadlineDays                 Int?
+  paymentWindowHours           Int?                    @default(24)
+  paymentExpiresAt             DateTime?
+  plannedStartedAt             DateTime?
+  plannedDeadlineAt            DateTime?
+  completedAt                  DateTime?
+  actualDurationMinutes        Int?
+  status                       DealStatus              @default(pending_approval)
+  isEscrow                     Boolean                 @default(false)
+  paidByCustomer               Boolean                 @default(false)
+  paymentReceivedByFreelancer  Boolean                 @default(false)
+  resultSentByFreelancer       Boolean                 @default(false)
+  resultReceivedByCustomer     Boolean                 @default(false)
+  reviewLeftByCustomer         Boolean                 @default(false)
+  briefResources               Json?
+  resultData                   String?
+  resultFileId                 String?
+  escrowAddress                String?
+  escrowCustomerWalletAddress  String?
+  escrowState                  String?
+  escrowVersion                Int                     @default(1)
+  escrowCurrency               EscrowCurrency          @default(TON)
+  escrowLockedAmountTon        Decimal?                @db.Decimal(20, 9)
+  escrowTonUsdtRate            Decimal?                @db.Decimal(10, 4)
+  escrowJettonMasterAddress    String?
+  escrowJettonWalletAddress    String?
+  escrowJettonAmount           Decimal?                @db.Decimal(30, 0)
+  escrowTxHash                 String?
+  escrowFundingCheckedAt       DateTime?
+  paymentReminderNotifiedAt    DateTime?
+  paymentReminderAttemptedAt   DateTime?
+  deadlineReminderNotifiedAt   DateTime?
+  deadlineReminderAttemptedAt  DateTime?
+  deadlineExpiredAt            DateTime?
+  deadlineCustomerNotifiedAt   DateTime?
+  deadlineFreelancerNotifiedAt DateTime?
+  deadlineOverdueAttemptedAt   DateTime?
+  createdAt                    DateTime                @default(now())
+  updatedAt                    DateTime                @updatedAt
+  contract                     Contract?               @relation(fields: [contractId], references: [id], onDelete: SetNull)
+  customer                     User                    @relation("CustomerDeals", fields: [customerId], references: [id], onDelete: Restrict)
+  freelancer                   User                    @relation("FreelancerDeals", fields: [freelancerId], references: [id], onDelete: Restrict)
+  communication                Communication?
+  reviews                      Review[]
+  contractReferralReward       ContractReferralReward?
+
+  @@index([contractId, status])
+  @@index([customerId, status])
+  @@index([freelancerId, status])
+  @@index([status, plannedDeadlineAt])
+  @@index([status, escrowFundingCheckedAt])
+}
+
+model ContractReferral {
+  id            Int                      @id @default(autoincrement())
+  contractId    Int                      @unique
+  referrerId    Int
+  authorId      Int
+  source        ContractReferralSource   @default(scout)
+  rewardPercent Decimal                  @default(20.00) @db.Decimal(5, 2)
+  status        ContractReferralStatus   @default(active)
+  createdAt     DateTime                 @default(now())
+  updatedAt     DateTime                 @updatedAt
+  contract      Contract                 @relation(fields: [contractId], references: [id], onDelete: Cascade)
+  referrer      User                     @relation("ContractReferralReferrer", fields: [referrerId], references: [id], onDelete: Cascade)
+  author        User                     @relation("ContractReferralAuthor", fields: [authorId], references: [id], onDelete: Cascade)
+  rewards       ContractReferralReward[]
+
+  @@index([referrerId, status])
+  @@index([authorId])
+}
+
+model ContractReferralReward {
+  id                 Int                          @id @default(autoincrement())
+  referralId         Int
+  contractId         Int
+  dealId             Int                          @unique
+  referrerId         Int
+  dealAmount         Decimal                      @db.Decimal(12, 4)
+  platformFeePercent Decimal                      @default(5.00) @db.Decimal(5, 2)
+  rewardPercent      Decimal                      @db.Decimal(5, 2)
+  platformFeeAmount  Decimal                      @db.Decimal(12, 4)
+  rewardAmount       Decimal                      @db.Decimal(12, 4)
+  currency           String                       @default("USDT")
+  status             ContractReferralRewardStatus @default(accrued)
+  createdAt          DateTime                     @default(now())
+  updatedAt          DateTime                     @updatedAt
+  referral           ContractReferral             @relation(fields: [referralId], references: [id], onDelete: Cascade)
+  contract           Contract                     @relation(fields: [contractId], references: [id], onDelete: Cascade)
+  deal               Deal                         @relation(fields: [dealId], references: [id], onDelete: Cascade)
+  referrer           User                         @relation("ContractReferralRewardReferrer", fields: [referrerId], references: [id], onDelete: Cascade)
+
+  @@index([referralId])
+  @@index([contractId, status])
+  @@index([referrerId, status])
+}
+
+model Communication {
+  id               Int       @id @default(autoincrement())
+  dealId           Int       @unique
+  customerId       Int
+  freelancerId     Int
+  telegramChatId   BigInt?
+  telegramChatType String?
+  telegramThreadId BigInt?
+  botStatus        BotStatus @default(pending)
+  createdAt        DateTime  @default(now())
+  updatedAt        DateTime  @updatedAt
+  deal             Deal      @relation(fields: [dealId], references: [id], onDelete: Cascade)
+  customer         User      @relation("CustomerCommunications", fields: [customerId], references: [id], onDelete: Restrict)
+  freelancer       User      @relation("FreelancerCommunications", fields: [freelancerId], references: [id], onDelete: Restrict)
+  messages         Message[]
+}
+
+model Message {
+  id                Int              @id @default(autoincrement())
+  communicationId   Int
+  senderId          Int
+  telegramMessageId BigInt?
+  direction         MessageDirection
+  deliveryStatus    DeliveryStatus   @default(pending)
+  content           String
+  sentAt            DateTime         @default(now())
+  communication     Communication    @relation(fields: [communicationId], references: [id], onDelete: Cascade)
+  sender            User             @relation(fields: [senderId], references: [id], onDelete: Restrict)
+
+  @@index([communicationId, sentAt])
+}
+
+model Review {
+  id             Int      @id @default(autoincrement())
+  dealId         Int
+  reviewerId     Int
+  reviewedUserId Int
+  rating         Int
+  comment        String?
+  isVerified     Boolean  @default(false)
+  createdAt      DateTime @default(now())
+  deal           Deal     @relation(fields: [dealId], references: [id], onDelete: Cascade)
+  reviewer       User     @relation("ReviewerReviews", fields: [reviewerId], references: [id], onDelete: Restrict)
+  reviewedUser   User     @relation("ReviewedUserReviews", fields: [reviewedUserId], references: [id], onDelete: Restrict)
+
+  @@unique([dealId, reviewerId])
+  @@index([reviewedUserId, createdAt])
+}
+
+model ContractView {
+  id         Int      @id @default(autoincrement())
+  contractId Int
+  userId     Int
+  createdAt  DateTime @default(now())
+  contract   Contract @relation(fields: [contractId], references: [id], onDelete: Cascade)
+  user       User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([contractId, userId])
+  @@index([contractId, createdAt])
+  @@index([userId, createdAt])
+}
+
+model ContractReveal {
+  id         Int      @id @default(autoincrement())
+  userId     Int
+  contractId Int
+  createdAt  DateTime @default(now())
+  user       User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  contract   Contract @relation(fields: [contractId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, contractId])
+  @@index([userId, createdAt])
+}
+
+model PortfolioCase {
+  id              Int      @id @default(autoincrement())
+  userId          Int
+  title           String
+  description     String?
+  telegramPostUrl String?
+  links           Json?
+  contractId      Int?
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  user     User      @relation("UserPortfolio", fields: [userId], references: [id], onDelete: Cascade)
+  contract Contract? @relation(fields: [contractId], references: [id], onDelete: SetNull)
+
+  @@index([userId, createdAt])
+}
+
+model PaymentIntent {
+  id                           String                 @id @default(cuid())
+  userId                       Int
+  beneficiaryUserId            Int?
+  idempotencyKey               String?
+  providerSubmissionId         String?                @unique
+  provider                     PaymentProvider
+  asset                        PaymentAsset
+  product                      PaymentProduct
+  status                       PaymentIntentStatus    @default(created)
+  amountNano                   Decimal                @db.Decimal(30, 0)
+  quotedPriceUsdt              Decimal?               @db.Decimal(18, 8)
+  senderAddress                String?
+  senderJettonWalletAddress    String?
+  recipientAddress             String?
+  recipientJettonWalletAddress String?
+  reference                    String                 @unique
+  boc                          String?                @db.Text
+  submittedAt                  DateTime?
+  txHash                       String?                @unique
+  txTimestamp                  DateTime?
+  expiresAt                    DateTime
+  confirmedAt                  DateTime?
+  failureReason                String?
+  reconciliationClaimedAt      DateTime?
+  reconciliationNextAttemptAt  DateTime?
+  metadata                     Json?
+  createdAt                    DateTime               @default(now())
+  updatedAt                    DateTime               @updatedAt
+  user                         User                   @relation("PaymentIntentPayer", fields: [userId], references: [id], onDelete: Cascade)
+  beneficiary                  User?                  @relation("PaymentIntentBeneficiary", fields: [beneficiaryUserId], references: [id], onDelete: Restrict)
+  subscriptionPurchase         SubscriptionPurchase?
+  auctionPaymentAttempt        AuctionPaymentAttempt?
+
+  @@unique([userId, idempotencyKey])
+  @@index([userId, product, status])
+  @@index([beneficiaryUserId, product, status])
+  @@index([status, expiresAt])
+  @@index([status, reconciliationNextAttemptAt])
+}
+
+model SubscriptionPurchase {
+  id              Int           @id @default(autoincrement())
+  paymentIntentId String        @unique
+  userId          Int
+  duration        String
+  startsAt        DateTime
+  endsAt          DateTime
+  createdAt       DateTime      @default(now())
+  paymentIntent   PaymentIntent @relation(fields: [paymentIntentId], references: [id], onDelete: Restrict)
+  user            User          @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId, endsAt])
+}
+
+model CategoryAuction {
+  id                    Int                   @id @default(autoincrement())
+  categoryKey           String
+  categoryName          String
+  starterId             Int
+  premiumFreeStart      Boolean               @default(false)
+  status                CategoryAuctionStatus @default(open)
+  startsAt              DateTime              @default(now())
+  biddingEndsAt         DateTime
+  currentCandidateBidId Int?
+  paymentDeadlineAt     DateTime?
+  winnerUserId          Int?
+  settledAt             DateTime?
+  createdAt             DateTime              @default(now())
+  updatedAt             DateTime              @updatedAt
+  starter               User                  @relation("CategoryAuctionStarter", fields: [starterId], references: [id], onDelete: Restrict)
+  bids                  CategoryAuctionBid[]
+  promotion             CategoryPromotion?
+
+  @@index([categoryKey, status, biddingEndsAt])
+  @@index([starterId, status])
+  @@index([currentCandidateBidId])
+}
+
+model CategoryAuctionBid {
+  id              Int                       @id @default(autoincrement())
+  auctionId       Int
+  userId          Int
+  contractId      Int?
+  amountNano      Decimal                   @db.Decimal(30, 0)
+  status          CategoryAuctionBidStatus  @default(active)
+  placedAt        DateTime                  @default(now())
+  updatedAt       DateTime                  @updatedAt
+  auction         CategoryAuction           @relation(fields: [auctionId], references: [id], onDelete: Cascade)
+  user            User                      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  contract        Contract?                 @relation(fields: [contractId], references: [id], onDelete: SetNull)
+  events          CategoryAuctionBidEvent[]
+  paymentAttempts AuctionPaymentAttempt[]
+
+  @@unique([auctionId, userId])
+  @@index([auctionId, amountNano, placedAt])
+  @@index([userId, status])
+}
+
+model CategoryAuctionBidEvent {
+  id                 Int                @id @default(autoincrement())
+  bidId              Int
+  amountNano         Decimal            @db.Decimal(30, 0)
+  previousAmountNano Decimal?           @db.Decimal(30, 0)
+  createdAt          DateTime           @default(now())
+  bid                CategoryAuctionBid @relation(fields: [bidId], references: [id], onDelete: Cascade)
+
+  @@index([bidId, createdAt])
+}
+
+model AuctionPaymentAttempt {
+  id              Int                @id @default(autoincrement())
+  bidId           Int
+  paymentIntentId String             @unique
+  attemptNumber   Int
+  createdAt       DateTime           @default(now())
+  bid             CategoryAuctionBid @relation(fields: [bidId], references: [id], onDelete: Cascade)
+  paymentIntent   PaymentIntent      @relation(fields: [paymentIntentId], references: [id], onDelete: Restrict)
+
+  @@unique([bidId, attemptNumber])
+}
+
+model CategoryPromotion {
+  id                 Int                     @id @default(autoincrement())
+  userId             Int
+  categoryKey        String
+  categoryName       String
+  auctionId          Int                     @unique
+  assignedContractId Int?
+  source             CategoryPromotionSource
+  startsAt           DateTime
+  endsAt             DateTime
+  createdAt          DateTime                @default(now())
+  updatedAt          DateTime                @updatedAt
+  user               User                    @relation(fields: [userId], references: [id], onDelete: Cascade)
+  auction            CategoryAuction         @relation(fields: [auctionId], references: [id], onDelete: Restrict)
+  assignedContract   Contract?               @relation(fields: [assignedContractId], references: [id], onDelete: SetNull)
+
+  @@index([categoryKey, startsAt, endsAt])
+  @@index([userId, endsAt])
+  @@index([assignedContractId, endsAt])
+}
+
+model AppRelease {
+  id        Int      @id @default(autoincrement())
+  commitSha String   @unique @db.VarChar(64)
+  patch     Int      @unique
+  createdAt DateTime @default(now())
+}

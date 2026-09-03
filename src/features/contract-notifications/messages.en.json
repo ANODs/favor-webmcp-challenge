@@ -1,0 +1,15 @@
+{
+  "statuses": {
+    "pending_moderation": "Pending moderation",
+    "active": "Active",
+    "limit_reached": "Deal limit reached",
+    "rejected": "Rejected",
+    "archived": "Archived",
+    "unclaimed": "Unclaimed",
+    "pending_verification": "Awaiting verification"
+  },
+  "contractFallback": "Contract #{id}",
+  "scoutStatusChanged": "The status of contract \"{title}\", where you are the scout, changed.\n\nPrevious: {previousStatus}\nNew: {nextStatus}",
+  "authorStatusChanged": "The status of your contract \"{title}\" changed.\n\nPrevious: {previousStatus}\nNew: {nextStatus}",
+  "openContract": "Open contract"
+}

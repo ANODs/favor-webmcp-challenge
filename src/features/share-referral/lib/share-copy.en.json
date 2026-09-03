@@ -1,0 +1,15 @@
+{
+  "title": "Favor — work and deals in Telegram",
+  "description": "Offer your services, find skilled professionals, and work with clear contracts — without marketplaces or chaotic chats.",
+  "community": "The Favor community today",
+  "metric": "Metric",
+  "value": "Now",
+  "users": "Members",
+  "activeContracts": "Active contracts",
+  "completedDeals": "Completed deals",
+  "rewardTitle": "Invite friends — earn together",
+  "reward": "Earn {percent}% of Favor's commission from successful deals made by friends you invite.",
+  "join": "Join Favor",
+  "footer": "Services, professionals, and secure deals — right in Telegram",
+  "preparedDescription": "{usersCount} members · {activeContractsCount} active contracts"
+}

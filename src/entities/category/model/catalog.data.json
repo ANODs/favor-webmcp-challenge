@@ -1,0 +1,929 @@
+{
+  "dev.web": {
+    "labels": {
+      "ru": "Веб-разработка",
+      "en": "Web Development"
+    },
+    "aliases": [
+      "разработка сайтов",
+      "создание сайтов",
+      "разработчик сайтов",
+      "разработать сайт",
+      "web developer",
+      "website developer",
+      "website development",
+      "сайты под ключ"
+    ]
+  },
+  "dev.frontend": {
+    "labels": {
+      "ru": "Фронтенд-разработка",
+      "en": "Frontend Development"
+    },
+    "aliases": [
+      "frontend",
+      "front-end",
+      "фронтенд",
+      "frontend developer",
+      "фронтенд разработчик"
+    ]
+  },
+  "dev.backend": {
+    "labels": {
+      "ru": "Бэкенд-разработка",
+      "en": "Backend Development"
+    },
+    "aliases": [
+      "backend",
+      "back-end",
+      "бэкенд",
+      "бекенд",
+      "backend developer",
+      "бэкенд разработчик",
+      "php developer",
+      "java developer",
+      "go developer",
+      ".net developer",
+      "python developer"
+    ]
+  },
+  "dev.fullstack": {
+    "labels": {
+      "ru": "Фулстек-разработка",
+      "en": "Full-stack Development"
+    },
+    "aliases": [
+      "fullstack",
+      "full stack",
+      "full-stack",
+      "фулстек",
+      "фуллстек",
+      "fullstack developer"
+    ]
+  },
+  "dev.mobile": {
+    "labels": {
+      "ru": "Мобильная разработка",
+      "en": "Mobile Development"
+    },
+    "aliases": [
+      "mobile developer",
+      "разработка мобильных приложений",
+      "android developer",
+      "ios developer",
+      "flutter developer",
+      "react native developer"
+    ]
+  },
+  "dev.software": {
+    "labels": {
+      "ru": "Разработка ПО",
+      "en": "Software Development"
+    },
+    "aliases": [
+      "software developer",
+      "software engineer",
+      "программист",
+      "разработчик по",
+      "разработка игр",
+      "game development",
+      "1с разработчик",
+      "1c developer",
+      "unity developer",
+      "embedded developer",
+      "web3 и блокчейн",
+      "web3 & blockchain",
+      "смарт-контракты",
+      "smart contracts"
+    ]
+  },
+  "quality.qa": {
+    "labels": {
+      "ru": "Тестирование ПО",
+      "en": "Software Testing & QA"
+    },
+    "aliases": [
+      "qa",
+      "qa engineer",
+      "qa & software testing",
+      "software testing",
+      "тестирование по (qa)",
+      "тестировщик",
+      "инженер по тестированию"
+    ]
+  },
+  "infra.devops": {
+    "labels": {
+      "ru": "DevOps и инфраструктура",
+      "en": "DevOps & Infrastructure"
+    },
+    "aliases": [
+      "devops",
+      "devops & cloud systems",
+      "devops и облака",
+      "системный администратор",
+      "system administrator",
+      "database administration",
+      "базы данных и субд",
+      "cloud engineer"
+    ]
+  },
+  "data.analytics": {
+    "labels": {
+      "ru": "Аналитика данных",
+      "en": "Data Analytics"
+    },
+    "aliases": [
+      "data analyst",
+      "аналитик данных",
+      "bi analyst",
+      "business intelligence",
+      "data science"
+    ]
+  },
+  "analysis.business_system": {
+    "labels": {
+      "ru": "Бизнес- и системный анализ",
+      "en": "Business & Systems Analysis"
+    },
+    "aliases": [
+      "business analyst",
+      "system analyst",
+      "бизнес аналитик",
+      "системный аналитик",
+      "market research & competitor analysis",
+      "анализ рынка и конкурентов"
+    ]
+  },
+  "ai.ml": {
+    "labels": {
+      "ru": "ИИ и машинное обучение",
+      "en": "AI & Machine Learning"
+    },
+    "aliases": [
+      "искусственный интеллект",
+      "machine learning",
+      "ml engineer",
+      "нейросети",
+      "neural network generation",
+      "генерация в нейросетях (midjourney/chatgpt)",
+      "prompt engineering",
+      "промпт-инжиниринг"
+    ]
+  },
+  "automation.bots_nocode": {
+    "labels": {
+      "ru": "Автоматизация, боты и no-code",
+      "en": "Automation, Bots & No-Code"
+    },
+    "aliases": [
+      "telegram bots & automation",
+      "telegram боты и автоматизация",
+      "telegram bot development",
+      "разработка telegram ботов",
+      "скрипты и парсинг",
+      "scripts & parsing",
+      "парсинг данных",
+      "no-code & low-code",
+      "no-code и low-code разработка",
+      "custom ai agents & bots",
+      "ии-агенты и чат-боты",
+      "бизнес автоматизация"
+    ]
+  },
+  "security.cyber": {
+    "labels": {
+      "ru": "Кибербезопасность",
+      "en": "Cybersecurity"
+    },
+    "aliases": [
+      "cyber security",
+      "information security",
+      "информационная безопасность",
+      "pentest",
+      "пентест"
+    ]
+  },
+  "design.graphic": {
+    "labels": {
+      "ru": "Графический дизайн",
+      "en": "Graphic Design"
+    },
+    "aliases": [
+      "design",
+      "дизайнер",
+      "graphic designer",
+      "графический дизайнер",
+      "дизайнер эмодзи",
+      "баннеры и рекламная графика",
+      "banners & ad visuals",
+      "презентации и инфографика",
+      "presentations & infographics"
+    ]
+  },
+  "design.uiux": {
+    "labels": {
+      "ru": "UI/UX-дизайн",
+      "en": "UI/UX Design"
+    },
+    "aliases": [
+      "ui ux",
+      "ux ui",
+      "ui/ux designer",
+      "ux designer",
+      "дизайнер интерфейсов",
+      "продуктовый дизайнер интерфейсов",
+      "product designer",
+      "продуктовый дизайнер"
+    ]
+  },
+  "design.web": {
+    "labels": {
+      "ru": "Веб-дизайн",
+      "en": "Web Design"
+    },
+    "aliases": [
+      "web designer",
+      "веб дизайнер",
+      "дизайн сайтов",
+      "landing page design"
+    ]
+  },
+  "design.brand": {
+    "labels": {
+      "ru": "Брендинг и айдентика",
+      "en": "Branding & Identity"
+    },
+    "aliases": [
+      "brand identity & logos",
+      "фирменный стиль и логотипы",
+      "brand designer",
+      "бренд дизайнер",
+      "айдентика",
+      "logo design",
+      "дизайн логотипа"
+    ]
+  },
+  "design.motion": {
+    "labels": {
+      "ru": "Моушн-дизайн и анимация",
+      "en": "Motion Design & Animation"
+    },
+    "aliases": [
+      "motion designer",
+      "моушн дизайнер",
+      "motion graphics",
+      "2d animation",
+      "аниматор",
+      "video effects & vfx",
+      "спецэффекты и vfx"
+    ]
+  },
+  "design.3d": {
+    "labels": {
+      "ru": "3D-дизайн и визуализация",
+      "en": "3D Design & Visualization"
+    },
+    "aliases": [
+      "3d modeling & rendering",
+      "3d моделирование и рендеринг",
+      "3d artist",
+      "3d designer",
+      "3d generalist",
+      "3d-дизайнер",
+      "3d визуализатор",
+      "архитектурная визуализация"
+    ]
+  },
+  "design.illustration": {
+    "labels": {
+      "ru": "Иллюстрация и концепт-арт",
+      "en": "Illustration & Concept Art"
+    },
+    "aliases": [
+      "character design & illustration",
+      "иллюстрации и арт",
+      "иллюстратор",
+      "concept artist",
+      "концепт художник",
+      "game art & assets",
+      "игровая графика (game art)",
+      "nft art & collectibles",
+      "nft арт и коллекции"
+    ]
+  },
+  "design.product": {
+    "labels": {
+      "ru": "Предметный, интерьерный и fashion-дизайн",
+      "en": "Product, Interior & Fashion Design"
+    },
+    "aliases": [
+      "product design",
+      "industrial design",
+      "предметный дизайн",
+      "interior design",
+      "дизайн интерьера",
+      "fashion design",
+      "дизайнер одежды",
+      "packaging design",
+      "дизайн упаковки",
+      "декоратор"
+    ]
+  },
+  "marketing.smm": {
+    "labels": {
+      "ru": "SMM и соцсети",
+      "en": "Social Media Management"
+    },
+    "aliases": [
+      "smm",
+      "smm & social media",
+      "smm и ведение соцсетей",
+      "social media manager",
+      "ведение социальных сетей",
+      "telegram channel promotion",
+      "продвижение telegram-каналов"
+    ]
+  },
+  "marketing.content": {
+    "labels": {
+      "ru": "Контент-маркетинг и создание контента",
+      "en": "Content Marketing & Creation"
+    },
+    "aliases": [
+      "content marketing",
+      "контент маркетинг",
+      "content creator",
+      "контент креатор",
+      "контент менеджер",
+      "content manager",
+      "контентменеджер",
+      "контент-менеджер",
+      "content moderator",
+      "модератор контента",
+      "creative producer",
+      "креативный продюсер",
+      "corporate blogger",
+      "корпоративный блогер",
+      "content production"
+    ]
+  },
+  "marketing.strategy": {
+    "labels": {
+      "ru": "Маркетинговая стратегия",
+      "en": "Marketing Strategy"
+    },
+    "aliases": [
+      "digital marketing",
+      "диджитал-маркетинг",
+      "digital marketer",
+      "маркетолог",
+      "marketing consultant",
+      "маркетинговый консалтинг",
+      "маркетинговая аналитика"
+    ]
+  },
+  "marketing.ads": {
+    "labels": {
+      "ru": "Таргет и контекстная реклама",
+      "en": "Paid Ads & Performance"
+    },
+    "aliases": [
+      "target ads & traffic",
+      "таргетированная реклама и трафик",
+      "contextual ads (google/yandex)",
+      "контекстная реклама (яндекс/google)",
+      "performance marketing",
+      "таргетолог",
+      "директолог",
+      "рекламный менеджер",
+      "media buying & traffic arbitrage",
+      "арбитраж трафика и медиабаинг",
+      "сквозная аналитика и конверсия",
+      "analytics & conversion"
+    ]
+  },
+  "marketing.seo": {
+    "labels": {
+      "ru": "SEO и поисковое продвижение",
+      "en": "SEO"
+    },
+    "aliases": [
+      "seo & site optimization",
+      "seo и поисковая оптимизация",
+      "seo specialist",
+      "seo специалист",
+      "search engine optimization",
+      "aso specialist",
+      "asa specialist"
+    ]
+  },
+  "marketing.influencer": {
+    "labels": {
+      "ru": "Инфлюенсер-маркетинг",
+      "en": "Influencer Marketing"
+    },
+    "aliases": [
+      "influencer marketing & blogger ads",
+      "реклама у блогеров и инфлюенсеров",
+      "influence manager",
+      "менеджер по работе с блогерами",
+      "blogger outreach"
+    ]
+  },
+  "marketing.tiktok_promo": {
+    "labels": {
+      "ru": "TikTok-промо",
+      "en": "TikTok Promotion"
+    },
+    "aliases": [
+      "tiktok promo",
+      "tiktok promotion",
+      "tiktok-промо",
+      "тикток-промо",
+      "промо в tiktok",
+      "промо трека в tiktok",
+      "tiktok music promotion"
+    ]
+  },
+  "marketing.pr": {
+    "labels": {
+      "ru": "PR и коммуникации",
+      "en": "PR & Communications"
+    },
+    "aliases": [
+      "public relations & pr",
+      "pr и связи с общественностью",
+      "pr manager",
+      "пиар менеджер",
+      "communications manager"
+    ]
+  },
+  "marketing.crm": {
+    "labels": {
+      "ru": "CRM и рассылки",
+      "en": "CRM & Lifecycle Marketing"
+    },
+    "aliases": [
+      "email marketing & newsletters",
+      "email-маркетинг и рассылки",
+      "crm marketing",
+      "crm маркетинг",
+      "email marketer",
+      "retention marketing"
+    ]
+  },
+  "commerce.marketplaces": {
+    "labels": {
+      "ru": "Маркетплейсы и e-commerce",
+      "en": "Marketplaces & E-commerce"
+    },
+    "aliases": [
+      "marketplace ops (wildberries/ozon/amazon)",
+      "маркетплейсы (wildberries/ozon/amazon)",
+      "менеджер маркетплейсов",
+      "marketplace manager",
+      "wildberries manager",
+      "ozon manager",
+      "ecommerce",
+      "e-commerce"
+    ]
+  },
+  "commerce.classifieds": {
+    "labels": {
+      "ru": "Avito и классифайды",
+      "en": "Classifieds & Avito"
+    },
+    "aliases": [
+      "avito",
+      "авито",
+      "avito manager",
+      "авитолог",
+      "classified ads",
+      "доски объявлений"
+    ]
+  },
+  "media.video_editing": {
+    "labels": {
+      "ru": "Видеомонтаж",
+      "en": "Video Editing"
+    },
+    "aliases": [
+      "video editor",
+      "video editing & production",
+      "видеомонтаж и продакшн",
+      "видео редактор",
+      "редактор видео",
+      "видеоредактор",
+      "видеомонтажер",
+      "видеомонтажёр",
+      "монтажер",
+      "монтажёр",
+      "монтажер видео",
+      "монтажёр видео",
+      "reels editor",
+      "shorts editor",
+      "tiktok editor",
+      "рилсмейкер",
+      "рилсиейкер",
+      "reels maker",
+      "reels, shorts & tiktok editing",
+      "монтаж reels, shorts и tiktok"
+    ]
+  },
+  "media.video_production": {
+    "labels": {
+      "ru": "Видеосъёмка и продакшн",
+      "en": "Video Production"
+    },
+    "aliases": [
+      "video production",
+      "video producer",
+      "film producer",
+      "кинопродюсер",
+      "продюсер кино",
+      "видеопродакшн",
+      "video shooting",
+      "видеосъемка",
+      "видеосъёмка",
+      "видеограф",
+      "оператор постановщик",
+      "promo & commercial videos",
+      "промо и рекламные ролики"
+    ]
+  },
+  "media.copywriting": {
+    "labels": {
+      "ru": "Копирайтинг",
+      "en": "Copywriting"
+    },
+    "aliases": [
+      "copywriter",
+      "копирайтер",
+      "copywriting & commercial texts",
+      "копирайтинг и продающие тексты",
+      "commercial writer",
+      "ux writing & microcopy",
+      "ux-райтинг"
+    ]
+  },
+  "media.scriptwriting": {
+    "labels": {
+      "ru": "Сценарии",
+      "en": "Scriptwriting"
+    },
+    "aliases": [
+      "scriptwriter",
+      "сценарист",
+      "screenwriter",
+      "сценарии для видео и игр",
+      "video scripts"
+    ]
+  },
+  "media.editorial": {
+    "labels": {
+      "ru": "Редактура и журналистика",
+      "en": "Editing & Journalism"
+    },
+    "aliases": [
+      "proofreading & editing",
+      "редактура и корректура",
+      "content writing & articles",
+      "статьи и контент-райтинг",
+      "content writer",
+      "journalist",
+      "журналист",
+      "редактор текстов",
+      "корректор",
+      "technical writing & docs",
+      "техническая документация",
+      "subtitles & transcription",
+      "транскрибация и субтитры"
+    ]
+  },
+  "media.translation": {
+    "labels": {
+      "ru": "Перевод и локализация",
+      "en": "Translation & Localization"
+    },
+    "aliases": [
+      "foreign language translation",
+      "письменный перевод",
+      "translator",
+      "переводчик",
+      "localization",
+      "локализация",
+      "устный перевод"
+    ]
+  },
+  "media.audio": {
+    "labels": {
+      "ru": "Аудио, музыка и озвучка",
+      "en": "Audio, Music & Voiceover"
+    },
+    "aliases": [
+      "commercial voiceover",
+      "озвучка и дикторские услуги",
+      "voiceover",
+      "диктор",
+      "music production & sound design",
+      "создание музыки и саунд-дизайн",
+      "audio editing & podcast processing",
+      "обработка аудио и подкастов",
+      "sound designer",
+      "звукорежиссер",
+      "музыкант",
+      "диджей",
+      "вокалист"
+    ]
+  },
+  "media.photography": {
+    "labels": {
+      "ru": "Фотосъёмка",
+      "en": "Photography"
+    },
+    "aliases": [
+      "photographer",
+      "фотограф",
+      "photo shoot",
+      "фотосессия",
+      "предметная съемка",
+      "предметная съёмка",
+      "ретушь фото"
+    ]
+  },
+  "media.performance": {
+    "labels": {
+      "ru": "Актёры, модели и ведущие",
+      "en": "Acting, Modeling & Presenting"
+    },
+    "aliases": [
+      "актёр",
+      "актер",
+      "актриса",
+      "модель",
+      "модель для съёмки",
+      "модель для съемки",
+      "ведущий блога",
+      "ведущий мероприятия",
+      "on-camera host",
+      "presenter",
+      "model",
+      "actor",
+      "actress"
+    ]
+  },
+  "management.product": {
+    "labels": {
+      "ru": "Управление продуктом",
+      "en": "Product Management"
+    },
+    "aliases": [
+      "product manager",
+      "продакт менеджер",
+      "менеджер продукта",
+      "product owner"
+    ]
+  },
+  "management.project": {
+    "labels": {
+      "ru": "Управление проектами",
+      "en": "Project Management"
+    },
+    "aliases": [
+      "project manager",
+      "проджект менеджер",
+      "руководитель проектов",
+      "менеджер проектов",
+      "scrum master"
+    ]
+  },
+  "business.sales": {
+    "labels": {
+      "ru": "Продажи",
+      "en": "Sales"
+    },
+    "aliases": [
+      "sales manager",
+      "менеджер по продажам",
+      "sales representative",
+      "sales executive",
+      "менеджер отдела продаж",
+      "оператор продаж"
+    ]
+  },
+  "business.development": {
+    "labels": {
+      "ru": "Развитие бизнеса и партнёрства",
+      "en": "Business Development & Partnerships"
+    },
+    "aliases": [
+      "business development",
+      "business development manager",
+      "bizdev",
+      "менеджер по развитию бизнеса",
+      "partnership manager",
+      "менеджер по партнерствам",
+      "менеджер по партнёрствам",
+      "business plans & pitch decks",
+      "бизнес-планы и питч-деки"
+    ]
+  },
+  "business.account": {
+    "labels": {
+      "ru": "Аккаунт-менеджмент",
+      "en": "Account Management"
+    },
+    "aliases": [
+      "account manager",
+      "аккаунт менеджер",
+      "аккаунт-менеджер",
+      "client manager",
+      "менеджер по работе с клиентами",
+      "customer success manager"
+    ]
+  },
+  "business.support": {
+    "labels": {
+      "ru": "Клиентская и техническая поддержка",
+      "en": "Customer & Technical Support"
+    },
+    "aliases": [
+      "customer support",
+      "technical support",
+      "техническая поддержка",
+      "служба поддержки",
+      "специалист поддержки",
+      "support manager",
+      "helpdesk",
+      "оператор чата",
+      "чат-менеджер",
+      "chat manager",
+      "call center operator",
+      "оператор колл центра"
+    ]
+  },
+  "business.assistant": {
+    "labels": {
+      "ru": "Ассистирование и администрирование",
+      "en": "Assistance & Administration"
+    },
+    "aliases": [
+      "virtual assistant & remote admin",
+      "виртуальный ассистент",
+      "personal assistant",
+      "личный ассистент",
+      "business assistant",
+      "бизнес ассистент",
+      "executive assistant",
+      "администратор",
+      "office manager",
+      "data entry operator",
+      "data entry",
+      "ввод данных",
+      "ввода данных",
+      "оператор ввода данных",
+      "оператор внутренней платформы"
+    ]
+  },
+  "business.hr": {
+    "labels": {
+      "ru": "HR и рекрутинг",
+      "en": "HR & Recruiting"
+    },
+    "aliases": [
+      "hr manager",
+      "hr generalist",
+      "recruiter",
+      "рекрутер",
+      "менеджер по персоналу",
+      "подбор персонала",
+      "talent acquisition"
+    ]
+  },
+  "business.operations": {
+    "labels": {
+      "ru": "Операционное управление",
+      "en": "Operations Management"
+    },
+    "aliases": [
+      "operations manager",
+      "операционный менеджер",
+      "операционный директор",
+      "бизнес процессы",
+      "business operations",
+      "storage manager",
+      "менеджер по закупкам",
+      "прием и хранение",
+      "приём и хранение"
+    ]
+  },
+  "business.events": {
+    "labels": {
+      "ru": "Организация мероприятий",
+      "en": "Event Management"
+    },
+    "aliases": [
+      "event manager",
+      "ивент менеджер",
+      "организатор мероприятий",
+      "event producer",
+      "организация конференций",
+      "специалист по свету",
+      "event lighting",
+      "организатор мероприятия"
+    ]
+  },
+  "business.hospitality": {
+    "labels": {
+      "ru": "Гостеприимство и кейтеринг",
+      "en": "Hospitality & Catering"
+    },
+    "aliases": [
+      "waiter",
+      "официант",
+      "banquet waiter",
+      "официант на мероприятие",
+      "catering",
+      "кейтеринг",
+      "catering staff",
+      "персонал кейтеринга",
+      "food truck",
+      "фудтрак",
+      "restaurant staff",
+      "ресторанный персонал",
+      "персонал ресторана",
+      "работник ресторана",
+      "сотрудник ресторана"
+    ]
+  },
+  "education.training": {
+    "labels": {
+      "ru": "Обучение и методология",
+      "en": "Teaching & Course Design"
+    },
+    "aliases": [
+      "online education & courses",
+      "онлайн-обучение и курсы",
+      "foreign languages & tutoring",
+      "иностранные языки и репетиторство",
+      "school & university tutoring",
+      "школьные предметы и репетиторы",
+      "it & programming mentoring",
+      "менторство в it и программировании",
+      "course creation & methodology",
+      "методология и создание курсов",
+      "exams & test prep",
+      "подготовка к экзаменам (егэ/ielts)",
+      "business & career coaching",
+      "бизнес и карьерный коучинг",
+      "teacher",
+      "преподаватель",
+      "репетитор",
+      "методист"
+    ]
+  },
+  "finance.accounting": {
+    "labels": {
+      "ru": "Финансы и бухгалтерия",
+      "en": "Finance & Accounting"
+    },
+    "aliases": [
+      "accounting & tax consulting",
+      "бухгалтерия и налоги",
+      "financial modeling & planning",
+      "финансовое моделирование",
+      "accountant",
+      "бухгалтер",
+      "financial analyst",
+      "финансовый аналитик",
+      "tax consultant",
+      "налоговый консультант"
+    ]
+  },
+  "legal.services": {
+    "labels": {
+      "ru": "Юридические услуги",
+      "en": "Legal Services"
+    },
+    "aliases": [
+      "legal consulting & contracts",
+      "юридические консультации и договоры",
+      "lawyer",
+      "юрист",
+      "legal counsel",
+      "адвокат",
+      "договорная работа"
+    ]
+  },
+  "other.manual": {
+    "labels": {
+      "ru": "Другое",
+      "en": "Other"
+    },
+    "aliases": [
+      "other",
+      "прочее"
+    ]
+  }
+}

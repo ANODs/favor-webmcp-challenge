@@ -1,0 +1,7 @@
+{
+  "contractFallback": "Contract",
+  "newQuestion": "New question about “{title}”\n\n{question}\n\nReply here in the bot. Your answer will only appear on the contract page after you choose to publish it.",
+  "reply": "Reply",
+  "dismiss": "Dismiss",
+  "openContract": "Open contract"
+}

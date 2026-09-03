@@ -1,0 +1,15 @@
+{
+  "statuses": {
+    "pending_moderation": "На модерации",
+    "active": "Активен",
+    "limit_reached": "Лимит сделок достигнут",
+    "rejected": "Отклонен",
+    "archived": "В архиве",
+    "unclaimed": "Свободен",
+    "pending_verification": "Ожидает подтверждения"
+  },
+  "contractFallback": "Контракт #{id}",
+  "scoutStatusChanged": "Статус контракта \"{title}\", для которого вы являетесь скаутом, изменился.\n\nБыло: {previousStatus}\nСтало: {nextStatus}",
+  "authorStatusChanged": "Статус вашего контракта \"{title}\" изменился.\n\nБыло: {previousStatus}\nСтало: {nextStatus}",
+  "openContract": "Открыть контракт"
+}

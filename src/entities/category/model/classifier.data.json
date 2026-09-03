@@ -1,0 +1,2757 @@
+{
+  "contextSignals": {
+    "dev.web": [
+      {
+        "term": "разработк сайт",
+        "weight": 5
+      },
+      {
+        "term": "создани сайт",
+        "weight": 5
+      },
+      {
+        "term": "website developer",
+        "weight": 5
+      },
+      {
+        "term": "wordpress",
+        "weight": 4
+      },
+      {
+        "term": "1с битрикс",
+        "weight": 4
+      },
+      {
+        "term": "tilda developer",
+        "weight": 4
+      },
+      {
+        "term": "webflow developer",
+        "weight": 4
+      },
+      {
+        "term": "разработать сайт",
+        "weight": 8
+      },
+      {
+        "term": "разработчик сайт",
+        "weight": 8
+      }
+    ],
+    "dev.frontend": [
+      {
+        "term": "frontend",
+        "weight": 6
+      },
+      {
+        "term": "front end",
+        "weight": 6
+      },
+      {
+        "term": "фронтенд",
+        "weight": 6
+      },
+      {
+        "term": "верстальщик",
+        "weight": 5
+      },
+      {
+        "term": "react developer",
+        "weight": 5
+      },
+      {
+        "term": "vue developer",
+        "weight": 5
+      },
+      {
+        "term": "angular developer",
+        "weight": 5
+      }
+    ],
+    "dev.backend": [
+      {
+        "term": "backend",
+        "weight": 6
+      },
+      {
+        "term": "back end",
+        "weight": 6
+      },
+      {
+        "term": "бэкенд",
+        "weight": 6
+      },
+      {
+        "term": "бекенд",
+        "weight": 6
+      },
+      {
+        "term": "django developer",
+        "weight": 5
+      },
+      {
+        "term": "laravel developer",
+        "weight": 5
+      },
+      {
+        "term": "node js developer",
+        "weight": 5
+      },
+      {
+        "term": "api developer",
+        "weight": 4
+      },
+      {
+        "term": "php разработ",
+        "weight": 6
+      },
+      {
+        "term": "php developer",
+        "weight": 6
+      },
+      {
+        "term": "java developer",
+        "weight": 6
+      },
+      {
+        "term": "go developer",
+        "weight": 6
+      },
+      {
+        "term": "net developer",
+        "weight": 6
+      },
+      {
+        "term": "python разработ",
+        "weight": 6
+      },
+      {
+        "term": "python developer",
+        "weight": 6
+      }
+    ],
+    "dev.fullstack": [
+      {
+        "term": "fullstack",
+        "weight": 7
+      },
+      {
+        "term": "full stack",
+        "weight": 7
+      },
+      {
+        "term": "фулстек",
+        "weight": 7
+      },
+      {
+        "term": "фуллстек",
+        "weight": 7
+      }
+    ],
+    "dev.mobile": [
+      {
+        "term": "mobile developer",
+        "weight": 6
+      },
+      {
+        "term": "мобильн приложен",
+        "weight": 5
+      },
+      {
+        "term": "android developer",
+        "weight": 6
+      },
+      {
+        "term": "ios developer",
+        "weight": 6
+      },
+      {
+        "term": "flutter developer",
+        "weight": 6
+      },
+      {
+        "term": "react native",
+        "weight": 5
+      },
+      {
+        "term": "android разработ",
+        "weight": 6
+      },
+      {
+        "term": "ios разработ",
+        "weight": 6
+      },
+      {
+        "term": "flutter разработ",
+        "weight": 6
+      }
+    ],
+    "dev.software": [
+      {
+        "term": "software engineer",
+        "weight": 5
+      },
+      {
+        "term": "software developer",
+        "weight": 5
+      },
+      {
+        "term": "разработчик по",
+        "weight": 5
+      },
+      {
+        "term": "программист",
+        "weight": 4
+      },
+      {
+        "term": "game developer",
+        "weight": 5
+      },
+      {
+        "term": "разработчик игр",
+        "weight": 5
+      },
+      {
+        "term": "blockchain developer",
+        "weight": 5
+      },
+      {
+        "term": "smart contract developer",
+        "weight": 5
+      },
+      {
+        "term": "разработчик",
+        "weight": 2
+      },
+      {
+        "term": "1с разработ",
+        "weight": 6
+      },
+      {
+        "term": "1c developer",
+        "weight": 6
+      },
+      {
+        "term": "unity developer",
+        "weight": 6
+      },
+      {
+        "term": "embedded инженер",
+        "weight": 5
+      },
+      {
+        "term": "embedded engineer",
+        "weight": 5
+      }
+    ],
+    "quality.qa": [
+      {
+        "term": "qa engineer",
+        "weight": 7
+      },
+      {
+        "term": "qa automation",
+        "weight": 7
+      },
+      {
+        "term": "тестировщик",
+        "weight": 7
+      },
+      {
+        "term": "инженер по тестирован",
+        "weight": 6
+      },
+      {
+        "term": "software tester",
+        "weight": 6
+      },
+      {
+        "term": "manual tester",
+        "weight": 6
+      },
+      {
+        "term": "aqa engineer",
+        "weight": 7
+      }
+    ],
+    "infra.devops": [
+      {
+        "term": "devops",
+        "weight": 7
+      },
+      {
+        "term": "site reliability",
+        "weight": 6
+      },
+      {
+        "term": "system administrator",
+        "weight": 6
+      },
+      {
+        "term": "системн администратор",
+        "weight": 6
+      },
+      {
+        "term": "kubernetes",
+        "weight": 4
+      },
+      {
+        "term": "cloud engineer",
+        "weight": 5
+      },
+      {
+        "term": "database administrator",
+        "weight": 5
+      }
+    ],
+    "data.analytics": [
+      {
+        "term": "data analyst",
+        "weight": 7
+      },
+      {
+        "term": "аналитик данных",
+        "weight": 7
+      },
+      {
+        "term": "bi analyst",
+        "weight": 6
+      },
+      {
+        "term": "power bi",
+        "weight": 5
+      },
+      {
+        "term": "tableau",
+        "weight": 4
+      },
+      {
+        "term": "data scientist",
+        "weight": 6
+      },
+      {
+        "term": "product analyst",
+        "weight": 6
+      },
+      {
+        "term": "продуктов аналитик",
+        "weight": 6
+      },
+      {
+        "term": "data engineer",
+        "weight": 5
+      },
+      {
+        "term": "инженер данных",
+        "weight": 7
+      },
+      {
+        "term": "etl",
+        "weight": 6
+      },
+      {
+        "term": "apache airflow",
+        "weight": 6
+      },
+      {
+        "term": "informatica powercenter",
+        "weight": 7
+      }
+    ],
+    "analysis.business_system": [
+      {
+        "term": "business analyst",
+        "weight": 7
+      },
+      {
+        "term": "system analyst",
+        "weight": 7
+      },
+      {
+        "term": "бизнес аналитик",
+        "weight": 7
+      },
+      {
+        "term": "системн аналитик",
+        "weight": 7
+      },
+      {
+        "term": "bpmn",
+        "weight": 4
+      },
+      {
+        "term": "сбор требований",
+        "weight": 5
+      },
+      {
+        "term": "анализ рынка",
+        "weight": 4
+      }
+    ],
+    "ai.ml": [
+      {
+        "term": "machine learning",
+        "weight": 7
+      },
+      {
+        "term": "ml engineer",
+        "weight": 7
+      },
+      {
+        "term": "artificial intelligence",
+        "weight": 6
+      },
+      {
+        "term": "искусственн интеллект",
+        "weight": 6
+      },
+      {
+        "term": "нейросет",
+        "weight": 5
+      },
+      {
+        "term": "llm",
+        "weight": 5
+      },
+      {
+        "term": "prompt engineer",
+        "weight": 5
+      },
+      {
+        "term": "промпт инженер",
+        "weight": 5
+      },
+      {
+        "term": "промт",
+        "weight": 5
+      },
+      {
+        "term": "промпт",
+        "weight": 5
+      }
+    ],
+    "automation.bots_nocode": [
+      {
+        "term": "telegram bot",
+        "weight": 7
+      },
+      {
+        "term": "telegram бот",
+        "weight": 7
+      },
+      {
+        "term": "чат бот",
+        "weight": 6
+      },
+      {
+        "term": "chatbot",
+        "weight": 6
+      },
+      {
+        "term": "автоматизац",
+        "weight": 5
+      },
+      {
+        "term": "парсер",
+        "weight": 5
+      },
+      {
+        "term": "парсинг",
+        "weight": 5
+      },
+      {
+        "term": "n8n",
+        "weight": 5
+      },
+      {
+        "term": "make com",
+        "weight": 4
+      },
+      {
+        "term": "zapier",
+        "weight": 4
+      },
+      {
+        "term": "no code",
+        "weight": 4
+      },
+      {
+        "term": "getcourse",
+        "weight": 6
+      },
+      {
+        "term": "tilda getcourse",
+        "weight": 8
+      },
+      {
+        "term": "тильда getcourse",
+        "weight": 8
+      },
+      {
+        "term": "автовыдач доступ",
+        "weight": 7
+      },
+      {
+        "term": "автоматическ выдач доступ",
+        "weight": 7
+      },
+      {
+        "term": "интеграц tilda getcourse",
+        "weight": 8
+      }
+    ],
+    "security.cyber": [
+      {
+        "term": "cybersecurity",
+        "weight": 7
+      },
+      {
+        "term": "cyber security",
+        "weight": 7
+      },
+      {
+        "term": "кибербезопас",
+        "weight": 7
+      },
+      {
+        "term": "information security",
+        "weight": 6
+      },
+      {
+        "term": "информационн безопас",
+        "weight": 6
+      },
+      {
+        "term": "pentest",
+        "weight": 6
+      },
+      {
+        "term": "пентест",
+        "weight": 6
+      },
+      {
+        "term": "специалист по иб",
+        "weight": 6
+      }
+    ],
+    "design.graphic": [
+      {
+        "term": "graphic designer",
+        "weight": 7
+      },
+      {
+        "term": "графическ дизайнер",
+        "weight": 7
+      },
+      {
+        "term": "дизайнер баннер",
+        "weight": 5
+      },
+      {
+        "term": "инфографик",
+        "weight": 4
+      },
+      {
+        "term": "дизайн презентац",
+        "weight": 4
+      },
+      {
+        "term": "дизайнер печатн",
+        "weight": 6
+      },
+      {
+        "term": "дизайнер карусел",
+        "weight": 6
+      },
+      {
+        "term": "дизайнер облож",
+        "weight": 6
+      },
+      {
+        "term": "youtube облож",
+        "weight": 5
+      },
+      {
+        "term": "рекламн креатив",
+        "weight": 5
+      },
+      {
+        "term": "дизайнер эмодзи",
+        "weight": 6
+      },
+      {
+        "term": "дизайнер",
+        "weight": 3
+      },
+      {
+        "term": "услуги дизайнер",
+        "weight": 6
+      },
+      {
+        "term": "предлагаю дизайн",
+        "weight": 6
+      },
+      {
+        "term": "готов выполнить дизайн",
+        "weight": 6
+      },
+      {
+        "term": "направлен дизайн",
+        "weight": 6
+      },
+      {
+        "term": "услуги дизайн",
+        "weight": 6
+      },
+      {
+        "term": "портфолио дизайн",
+        "weight": 6
+      }
+    ],
+    "design.uiux": [
+      {
+        "term": "ui ux",
+        "weight": 7
+      },
+      {
+        "term": "ux ui",
+        "weight": 7
+      },
+      {
+        "term": "ux designer",
+        "weight": 7
+      },
+      {
+        "term": "дизайнер интерфейс",
+        "weight": 6
+      },
+      {
+        "term": "product interface designer",
+        "weight": 5
+      },
+      {
+        "term": "product designer",
+        "weight": 7
+      },
+      {
+        "term": "продуктов дизайнер",
+        "weight": 7
+      }
+    ],
+    "design.web": [
+      {
+        "term": "web designer",
+        "weight": 7
+      },
+      {
+        "term": "веб дизайнер",
+        "weight": 7
+      },
+      {
+        "term": "дизайн сайт",
+        "weight": 6
+      },
+      {
+        "term": "landing page designer",
+        "weight": 5
+      },
+      {
+        "term": "tilda дизайнер",
+        "weight": 6
+      },
+      {
+        "term": "tilda designer",
+        "weight": 6
+      },
+      {
+        "term": "дизайнер интернет магазин",
+        "weight": 5
+      }
+    ],
+    "design.brand": [
+      {
+        "term": "brand designer",
+        "weight": 7
+      },
+      {
+        "term": "бренд дизайнер",
+        "weight": 7
+      },
+      {
+        "term": "айдентик",
+        "weight": 6
+      },
+      {
+        "term": "logo designer",
+        "weight": 6
+      },
+      {
+        "term": "дизайн логотип",
+        "weight": 6
+      },
+      {
+        "term": "фирменн стиль",
+        "weight": 5
+      },
+      {
+        "term": "дизайнер лого",
+        "weight": 6
+      },
+      {
+        "term": "дизайнер логотип",
+        "weight": 6
+      }
+    ],
+    "design.motion": [
+      {
+        "term": "motion designer",
+        "weight": 7
+      },
+      {
+        "term": "моушн дизайнер",
+        "weight": 7
+      },
+      {
+        "term": "motion graphics",
+        "weight": 6
+      },
+      {
+        "term": "2d animator",
+        "weight": 5
+      },
+      {
+        "term": "аниматор",
+        "weight": 5
+      },
+      {
+        "term": "vfx artist",
+        "weight": 5
+      },
+      {
+        "term": "2d анимац",
+        "weight": 6
+      },
+      {
+        "term": "animation studio",
+        "weight": 5
+      }
+    ],
+    "design.3d": [
+      {
+        "term": "3d designer",
+        "weight": 7
+      },
+      {
+        "term": "3d artist",
+        "weight": 7
+      },
+      {
+        "term": "3d визуализатор",
+        "weight": 7
+      },
+      {
+        "term": "3d модел",
+        "weight": 6
+      },
+      {
+        "term": "architectural visualization",
+        "weight": 5
+      },
+      {
+        "term": "архитектурн визуализац",
+        "weight": 5
+      },
+      {
+        "term": "3d generalist",
+        "weight": 7
+      },
+      {
+        "term": "3d дизайнер",
+        "weight": 7
+      }
+    ],
+    "design.illustration": [
+      {
+        "term": "illustrator",
+        "weight": 7
+      },
+      {
+        "term": "иллюстратор",
+        "weight": 7
+      },
+      {
+        "term": "concept artist",
+        "weight": 6
+      },
+      {
+        "term": "концепт художник",
+        "weight": 6
+      },
+      {
+        "term": "character artist",
+        "weight": 5
+      },
+      {
+        "term": "game artist",
+        "weight": 5
+      },
+      {
+        "term": "2d художник",
+        "weight": 6
+      },
+      {
+        "term": "художниц",
+        "weight": 5
+      }
+    ],
+    "design.product": [
+      {
+        "term": "industrial designer",
+        "weight": 6
+      },
+      {
+        "term": "предметн дизайнер",
+        "weight": 6
+      },
+      {
+        "term": "interior designer",
+        "weight": 6
+      },
+      {
+        "term": "дизайнер интерьер",
+        "weight": 6
+      },
+      {
+        "term": "fashion designer",
+        "weight": 6
+      },
+      {
+        "term": "дизайнер одежды",
+        "weight": 6
+      },
+      {
+        "term": "packaging designer",
+        "weight": 5
+      },
+      {
+        "term": "cad cam",
+        "weight": 6
+      },
+      {
+        "term": "конструктор мебели",
+        "weight": 6
+      },
+      {
+        "term": "дизайнер упаковк",
+        "weight": 6
+      },
+      {
+        "term": "декоратор",
+        "weight": 7
+      }
+    ],
+    "marketing.smm": [
+      {
+        "term": "smm manager",
+        "weight": 7
+      },
+      {
+        "term": "smm менеджер",
+        "weight": 7
+      },
+      {
+        "term": "social media manager",
+        "weight": 7
+      },
+      {
+        "term": "smm specialist",
+        "weight": 8
+      },
+      {
+        "term": "smm специалист",
+        "weight": 8
+      },
+      {
+        "term": "ведение соцсет",
+        "weight": 6
+      },
+      {
+        "term": "ведение instagram",
+        "weight": 5
+      },
+      {
+        "term": "ведение telegram канал",
+        "weight": 5
+      },
+      {
+        "term": "reply guy",
+        "weight": 8
+      },
+      {
+        "term": "replyguy",
+        "weight": 8
+      },
+      {
+        "term": "ведение x twitter",
+        "weight": 7
+      },
+      {
+        "term": "twitter replies",
+        "weight": 7
+      },
+      {
+        "term": "комментатор twitter",
+        "weight": 7
+      }
+    ],
+    "marketing.content": [
+      {
+        "term": "content manager",
+        "weight": 7
+      },
+      {
+        "term": "контент менеджер",
+        "weight": 7
+      },
+      {
+        "term": "content creator",
+        "weight": 7
+      },
+      {
+        "term": "контент креатор",
+        "weight": 7
+      },
+      {
+        "term": "content marketer",
+        "weight": 6
+      },
+      {
+        "term": "контент маркетолог",
+        "weight": 6
+      },
+      {
+        "term": "сторисмейкер",
+        "weight": 6
+      },
+      {
+        "term": "stories maker",
+        "weight": 6
+      },
+      {
+        "term": "ugc creator",
+        "weight": 6
+      },
+      {
+        "term": "ugc креатор",
+        "weight": 6
+      },
+      {
+        "term": "контентмейкер",
+        "weight": 6
+      },
+      {
+        "term": "creative producer",
+        "weight": 6
+      },
+      {
+        "term": "креативн продюсер",
+        "weight": 6
+      },
+      {
+        "term": "контентменеджер",
+        "weight": 7
+      },
+      {
+        "term": "content moderator",
+        "weight": 7
+      },
+      {
+        "term": "модератор контент",
+        "weight": 7
+      },
+      {
+        "term": "corporate blogger",
+        "weight": 7
+      },
+      {
+        "term": "корпоративн блогер",
+        "weight": 7
+      },
+      {
+        "term": "продюсер",
+        "weight": 3
+      },
+      {
+        "term": "producer",
+        "weight": 3
+      },
+      {
+        "term": "fashion контент",
+        "weight": 7
+      },
+      {
+        "term": "fashion content",
+        "weight": 7
+      },
+      {
+        "term": "контент для бренд",
+        "weight": 6
+      },
+      {
+        "term": "контент креатив",
+        "weight": 7
+      },
+      {
+        "term": "создавать контент для бренд",
+        "weight": 7
+      },
+      {
+        "term": "съемк reels монтаж",
+        "weight": 6
+      },
+      {
+        "term": "проверят материал",
+        "weight": 6
+      },
+      {
+        "term": "работат с контент",
+        "weight": 6
+      }
+    ],
+    "marketing.strategy": [
+      {
+        "term": "marketing strategist",
+        "weight": 7
+      },
+      {
+        "term": "маркетолог стратег",
+        "weight": 7
+      },
+      {
+        "term": "digital marketer",
+        "weight": 6
+      },
+      {
+        "term": "интернет маркетолог",
+        "weight": 6
+      },
+      {
+        "term": "маркетингов стратег",
+        "weight": 6
+      },
+      {
+        "term": "маркетингов консалтинг",
+        "weight": 5
+      },
+      {
+        "term": "product marketing manager",
+        "weight": 7
+      }
+    ],
+    "marketing.ads": [
+      {
+        "term": "таргетолог",
+        "weight": 7
+      },
+      {
+        "term": "директолог",
+        "weight": 7
+      },
+      {
+        "term": "paid media",
+        "weight": 6
+      },
+      {
+        "term": "performance marketer",
+        "weight": 6
+      },
+      {
+        "term": "контекстн реклам",
+        "weight": 6
+      },
+      {
+        "term": "таргетированн реклам",
+        "weight": 6
+      },
+      {
+        "term": "media buyer",
+        "weight": 6
+      },
+      {
+        "term": "медиабайер",
+        "weight": 6
+      },
+      {
+        "term": "арбитраж трафик",
+        "weight": 5
+      },
+      {
+        "term": "ppc specialist",
+        "weight": 7
+      },
+      {
+        "term": "ppc специалист",
+        "weight": 7
+      },
+      {
+        "term": "менеджер по реклам",
+        "weight": 5
+      },
+      {
+        "term": "настройк рекламн кампани",
+        "weight": 6
+      },
+      {
+        "term": "рекламн менеджер",
+        "weight": 7
+      },
+      {
+        "term": "яндекс директ",
+        "weight": 8
+      },
+      {
+        "term": "яндексдирект",
+        "weight": 8
+      },
+      {
+        "term": "yandex direct",
+        "weight": 8
+      },
+      {
+        "term": "контекстн продвижен",
+        "weight": 6
+      },
+      {
+        "term": "контекстнаяреклама",
+        "weight": 7
+      },
+      {
+        "term": "tiktok account traffic",
+        "weight": 8
+      },
+      {
+        "term": "трафик tiktok аккаунт",
+        "weight": 8
+      },
+      {
+        "term": "фармер аккаунт",
+        "weight": 8
+      },
+      {
+        "term": "фарм аккаунт",
+        "weight": 8
+      },
+      {
+        "term": "account farmer",
+        "weight": 8
+      },
+      {
+        "term": "антидетект",
+        "weight": 7
+      },
+      {
+        "term": "antidetect",
+        "weight": 7
+      },
+      {
+        "term": "прогрев аккаунт",
+        "weight": 6
+      },
+      {
+        "term": "tiktok аккаунт",
+        "weight": 7
+      },
+      {
+        "term": "залив рекламн трафик",
+        "weight": 8
+      },
+      {
+        "term": "аккаунт под залив трафик",
+        "weight": 8
+      }
+    ],
+    "marketing.seo": [
+      {
+        "term": "seo specialist",
+        "weight": 7
+      },
+      {
+        "term": "seo специалист",
+        "weight": 7
+      },
+      {
+        "term": "search engine optimization",
+        "weight": 6
+      },
+      {
+        "term": "поисков оптимизац",
+        "weight": 6
+      },
+      {
+        "term": "seo продвижен",
+        "weight": 6
+      },
+      {
+        "term": "aso specialist",
+        "weight": 7
+      },
+      {
+        "term": "aso специалист",
+        "weight": 7
+      },
+      {
+        "term": "asa specialist",
+        "weight": 7
+      },
+      {
+        "term": "asa специалист",
+        "weight": 7
+      },
+      {
+        "term": "aso",
+        "weight": 6
+      },
+      {
+        "term": "asa",
+        "weight": 6
+      }
+    ],
+    "marketing.influencer": [
+      {
+        "term": "influencer manager",
+        "weight": 7
+      },
+      {
+        "term": "influencer marketing",
+        "weight": 7
+      },
+      {
+        "term": "менеджер по работе с блогер",
+        "weight": 7
+      },
+      {
+        "term": "реклама у блогер",
+        "weight": 6
+      },
+      {
+        "term": "blogger outreach",
+        "weight": 6
+      },
+      {
+        "term": "influence manager",
+        "weight": 7
+      },
+      {
+        "term": "influence менеджер",
+        "weight": 7
+      },
+      {
+        "term": "закупк реклам",
+        "weight": 6
+      },
+      {
+        "term": "реклам в блог",
+        "weight": 5
+      },
+      {
+        "term": "outreach marketing",
+        "weight": 5
+      },
+      {
+        "term": "промо трек у блогер",
+        "weight": 8
+      },
+      {
+        "term": "продвижен трек у блогер",
+        "weight": 7
+      },
+      {
+        "term": "influence marketing manager",
+        "weight": 8
+      }
+    ],
+    "marketing.tiktok_promo": [
+      {
+        "term": "tiktok промо трек",
+        "weight": 9
+      },
+      {
+        "term": "тикток промо трек",
+        "weight": 9
+      },
+      {
+        "term": "tiktok music promotion",
+        "weight": 9
+      },
+      {
+        "term": "нативн интеграц трек в tiktok",
+        "weight": 7
+      }
+    ],
+    "marketing.pr": [
+      {
+        "term": "pr manager",
+        "weight": 7
+      },
+      {
+        "term": "пиар менеджер",
+        "weight": 7
+      },
+      {
+        "term": "public relations",
+        "weight": 6
+      },
+      {
+        "term": "communications manager",
+        "weight": 6
+      },
+      {
+        "term": "менеджер по коммуникац",
+        "weight": 6
+      },
+      {
+        "term": "pr специалист",
+        "weight": 8
+      },
+      {
+        "term": "пиар специалист",
+        "weight": 8
+      },
+      {
+        "term": "pr стратег",
+        "weight": 7
+      }
+    ],
+    "marketing.crm": [
+      {
+        "term": "crm marketer",
+        "weight": 7
+      },
+      {
+        "term": "crm маркетолог",
+        "weight": 7
+      },
+      {
+        "term": "email marketer",
+        "weight": 6
+      },
+      {
+        "term": "email маркетолог",
+        "weight": 6
+      },
+      {
+        "term": "retention manager",
+        "weight": 6
+      },
+      {
+        "term": "email рассыл",
+        "weight": 5
+      },
+      {
+        "term": "сегментированн рассыл",
+        "weight": 8
+      },
+      {
+        "term": "рассылк по сегмент",
+        "weight": 7
+      },
+      {
+        "term": "цепочк писем",
+        "weight": 6
+      },
+      {
+        "term": "продающ рассыл",
+        "weight": 7
+      },
+      {
+        "term": "контент план писем",
+        "weight": 7
+      },
+      {
+        "term": "segmented newsletter",
+        "weight": 8
+      },
+      {
+        "term": "рассылк с учет сегмент",
+        "weight": 8
+      },
+      {
+        "term": "стратеги контент план рассыл",
+        "weight": 7
+      },
+      {
+        "term": "открываемост кликабельност",
+        "weight": 6
+      }
+    ],
+    "commerce.marketplaces": [
+      {
+        "term": "marketplace manager",
+        "weight": 7
+      },
+      {
+        "term": "менеджер маркетплейс",
+        "weight": 7
+      },
+      {
+        "term": "wildberries",
+        "weight": 6
+      },
+      {
+        "term": "ozon",
+        "weight": 6
+      },
+      {
+        "term": "amazon marketplace",
+        "weight": 5
+      },
+      {
+        "term": "e commerce manager",
+        "weight": 5
+      }
+    ],
+    "commerce.classifieds": [
+      {
+        "term": "авитолог",
+        "weight": 8
+      },
+      {
+        "term": "avito manager",
+        "weight": 7
+      },
+      {
+        "term": "менеджер avito",
+        "weight": 7
+      },
+      {
+        "term": "продвижен на авито",
+        "weight": 6
+      },
+      {
+        "term": "classified ads manager",
+        "weight": 5
+      }
+    ],
+    "media.video_editing": [
+      {
+        "term": "video editor",
+        "weight": 8
+      },
+      {
+        "term": "video editing",
+        "weight": 8
+      },
+      {
+        "term": "редактор видео",
+        "weight": 8
+      },
+      {
+        "term": "видео редактор",
+        "weight": 8
+      },
+      {
+        "term": "видеоредактор",
+        "weight": 8
+      },
+      {
+        "term": "видеомонтаж",
+        "weight": 8
+      },
+      {
+        "term": "видеомонтажер",
+        "weight": 8
+      },
+      {
+        "term": "монтажер видео",
+        "weight": 8
+      },
+      {
+        "term": "монтаж видео",
+        "weight": 7
+      },
+      {
+        "term": "reels editor",
+        "weight": 8
+      },
+      {
+        "term": "shorts editor",
+        "weight": 8
+      },
+      {
+        "term": "tiktok editor",
+        "weight": 8
+      },
+      {
+        "term": "монтажер reels",
+        "weight": 8
+      },
+      {
+        "term": "монтажер youtube",
+        "weight": 8
+      },
+      {
+        "term": "монтажер shorts",
+        "weight": 8
+      },
+      {
+        "term": "монтажер вертикальн видео",
+        "weight": 8
+      },
+      {
+        "term": "монтаж reels",
+        "weight": 8
+      },
+      {
+        "term": "монтаж рилс",
+        "weight": 8
+      },
+      {
+        "term": "рилсмейкер",
+        "weight": 8
+      },
+      {
+        "term": "рилсиейкер",
+        "weight": 8
+      },
+      {
+        "term": "reels maker",
+        "weight": 8
+      },
+      {
+        "term": "ассистент монтажер",
+        "weight": 6
+      }
+    ],
+    "media.video_production": [
+      {
+        "term": "videographer",
+        "weight": 7
+      },
+      {
+        "term": "видеограф",
+        "weight": 7
+      },
+      {
+        "term": "video producer",
+        "weight": 7
+      },
+      {
+        "term": "видеопродакшн",
+        "weight": 7
+      },
+      {
+        "term": "video production",
+        "weight": 6
+      },
+      {
+        "term": "видеосъем",
+        "weight": 6
+      },
+      {
+        "term": "оператор постановщик",
+        "weight": 6
+      },
+      {
+        "term": "съемочн групп",
+        "weight": 5
+      },
+      {
+        "term": "мобилограф",
+        "weight": 7
+      },
+      {
+        "term": "оператор съемк",
+        "weight": 6
+      },
+      {
+        "term": "оператор сьемк",
+        "weight": 6
+      },
+      {
+        "term": "film producer",
+        "weight": 7
+      },
+      {
+        "term": "кинопродюсер",
+        "weight": 7
+      },
+      {
+        "term": "продюсер кино",
+        "weight": 7
+      },
+      {
+        "term": "camera operator",
+        "weight": 8
+      },
+      {
+        "term": "оператор на съемк",
+        "weight": 8
+      },
+      {
+        "term": "оператор на сьемк",
+        "weight": 8
+      },
+      {
+        "term": "оператор камер",
+        "weight": 7
+      },
+      {
+        "term": "кинооператор",
+        "weight": 7
+      }
+    ],
+    "media.copywriting": [
+      {
+        "term": "copywriter",
+        "weight": 8
+      },
+      {
+        "term": "копирайтер",
+        "weight": 8
+      },
+      {
+        "term": "copywriting",
+        "weight": 7
+      },
+      {
+        "term": "продающ текст",
+        "weight": 6
+      },
+      {
+        "term": "ux writer",
+        "weight": 6
+      },
+      {
+        "term": "ux райтер",
+        "weight": 6
+      }
+    ],
+    "media.scriptwriting": [
+      {
+        "term": "scriptwriter",
+        "weight": 8
+      },
+      {
+        "term": "сценарист",
+        "weight": 8
+      },
+      {
+        "term": "screenwriter",
+        "weight": 7
+      },
+      {
+        "term": "сценари для reels",
+        "weight": 6
+      },
+      {
+        "term": "сценари для youtube",
+        "weight": 6
+      }
+    ],
+    "media.editorial": [
+      {
+        "term": "text editor",
+        "weight": 7
+      },
+      {
+        "term": "редактор текст",
+        "weight": 7
+      },
+      {
+        "term": "journalist",
+        "weight": 7
+      },
+      {
+        "term": "журналист",
+        "weight": 7
+      },
+      {
+        "term": "proofreader",
+        "weight": 6
+      },
+      {
+        "term": "корректор",
+        "weight": 6
+      },
+      {
+        "term": "content writer",
+        "weight": 6
+      },
+      {
+        "term": "technical writer",
+        "weight": 6
+      },
+      {
+        "term": "техническ писател",
+        "weight": 6
+      },
+      {
+        "term": "transcrib",
+        "weight": 5
+      },
+      {
+        "term": "транскриб",
+        "weight": 5
+      },
+      {
+        "term": "редактор канал",
+        "weight": 6
+      },
+      {
+        "term": "редактор детск текст",
+        "weight": 6
+      },
+      {
+        "term": "редактор",
+        "weight": 4
+      }
+    ],
+    "media.translation": [
+      {
+        "term": "translator",
+        "weight": 8
+      },
+      {
+        "term": "переводчик",
+        "weight": 8
+      },
+      {
+        "term": "localization specialist",
+        "weight": 7
+      },
+      {
+        "term": "специалист по локализац",
+        "weight": 7
+      },
+      {
+        "term": "письменн перевод",
+        "weight": 6
+      },
+      {
+        "term": "устн перевод",
+        "weight": 6
+      }
+    ],
+    "media.audio": [
+      {
+        "term": "voice over",
+        "weight": 7
+      },
+      {
+        "term": "voiceover",
+        "weight": 7
+      },
+      {
+        "term": "диктор",
+        "weight": 7
+      },
+      {
+        "term": "озвучк",
+        "weight": 6
+      },
+      {
+        "term": "sound designer",
+        "weight": 7
+      },
+      {
+        "term": "саунд дизайнер",
+        "weight": 7
+      },
+      {
+        "term": "music producer",
+        "weight": 6
+      },
+      {
+        "term": "звукорежиссер",
+        "weight": 7
+      },
+      {
+        "term": "podcast editor",
+        "weight": 6
+      },
+      {
+        "term": "монтажер подкаст",
+        "weight": 6
+      },
+      {
+        "term": "музыкант",
+        "weight": 6
+      },
+      {
+        "term": "диджей",
+        "weight": 6
+      },
+      {
+        "term": "dj",
+        "weight": 6
+      },
+      {
+        "term": "вокалист",
+        "weight": 6
+      },
+      {
+        "term": "кавер групп",
+        "weight": 6
+      },
+      {
+        "term": "пианист",
+        "weight": 5
+      },
+      {
+        "term": "аранжиров",
+        "weight": 5
+      }
+    ],
+    "media.photography": [
+      {
+        "term": "photographer",
+        "weight": 8
+      },
+      {
+        "term": "фотограф",
+        "weight": 8
+      },
+      {
+        "term": "фотосъем",
+        "weight": 7
+      },
+      {
+        "term": "photo shoot",
+        "weight": 6
+      },
+      {
+        "term": "фотосесси",
+        "weight": 6
+      },
+      {
+        "term": "photo retoucher",
+        "weight": 6
+      },
+      {
+        "term": "ретушер",
+        "weight": 6
+      }
+    ],
+    "media.performance": [
+      {
+        "term": "актер",
+        "weight": 8
+      },
+      {
+        "term": "актрис",
+        "weight": 8
+      },
+      {
+        "term": "модел для съем",
+        "weight": 8
+      },
+      {
+        "term": "ищем модел",
+        "weight": 6
+      },
+      {
+        "term": "fashion model",
+        "weight": 6
+      },
+      {
+        "term": "ведущ блога",
+        "weight": 7
+      },
+      {
+        "term": "ведущ мероприят",
+        "weight": 7
+      },
+      {
+        "term": "on camera host",
+        "weight": 7
+      },
+      {
+        "term": "presenter",
+        "weight": 7
+      },
+      {
+        "term": "actor",
+        "weight": 8
+      },
+      {
+        "term": "actress",
+        "weight": 8
+      },
+      {
+        "term": "on camera",
+        "weight": 7
+      },
+      {
+        "term": "перед камер",
+        "weight": 7
+      },
+      {
+        "term": "снять коротк видео",
+        "weight": 6
+      },
+      {
+        "term": "эмоци фраз мимик",
+        "weight": 8
+      },
+      {
+        "term": "лицо для reels",
+        "weight": 7
+      },
+      {
+        "term": "лицо reels",
+        "weight": 7
+      },
+      {
+        "term": "лицом наших reels",
+        "weight": 8
+      },
+      {
+        "term": "стать лицом",
+        "weight": 7
+      },
+      {
+        "term": "уверенн в кадр",
+        "weight": 7
+      },
+      {
+        "term": "коротк разговорн видео",
+        "weight": 6
+      },
+      {
+        "term": "номер на открыт конференц",
+        "weight": 8
+      },
+      {
+        "term": "азиатск внешност",
+        "weight": 7
+      },
+      {
+        "term": "находиться на мероприят в образ",
+        "weight": 7
+      }
+    ],
+    "management.product": [
+      {
+        "term": "product manager",
+        "weight": 8
+      },
+      {
+        "term": "product owner",
+        "weight": 7
+      },
+      {
+        "term": "продакт менеджер",
+        "weight": 8
+      },
+      {
+        "term": "менеджер продукт",
+        "weight": 7
+      },
+      {
+        "term": "руководитель продукт",
+        "weight": 6
+      },
+      {
+        "term": "портфел цифров продукт",
+        "weight": 6
+      }
+    ],
+    "management.project": [
+      {
+        "term": "project manager",
+        "weight": 8
+      },
+      {
+        "term": "проджект менеджер",
+        "weight": 8
+      },
+      {
+        "term": "руководитель проект",
+        "weight": 7
+      },
+      {
+        "term": "менеджер проект",
+        "weight": 7
+      },
+      {
+        "term": "scrum master",
+        "weight": 6
+      },
+      {
+        "term": "project менеджер",
+        "weight": 8
+      },
+      {
+        "term": "project manager",
+        "weight": 8
+      },
+      {
+        "term": "launch manager",
+        "weight": 6
+      },
+      {
+        "term": "launch менеджер",
+        "weight": 6
+      },
+      {
+        "term": "project coordinator",
+        "weight": 8
+      },
+      {
+        "term": "координатор проект",
+        "weight": 8
+      },
+      {
+        "term": "координац проект",
+        "weight": 7
+      },
+      {
+        "term": "координир процесс",
+        "weight": 7
+      },
+      {
+        "term": "контрол дедлайн",
+        "weight": 7
+      }
+    ],
+    "business.sales": [
+      {
+        "term": "sales manager",
+        "weight": 8
+      },
+      {
+        "term": "менеджер по продаж",
+        "weight": 8
+      },
+      {
+        "term": "sales representative",
+        "weight": 7
+      },
+      {
+        "term": "sales executive",
+        "weight": 7
+      },
+      {
+        "term": "холодн звон",
+        "weight": 5
+      },
+      {
+        "term": "лидогенератор",
+        "weight": 5
+      },
+      {
+        "term": "онлайн продаж",
+        "weight": 7
+      },
+      {
+        "term": "входящ заявк",
+        "weight": 5
+      },
+      {
+        "term": "продавец консультант",
+        "weight": 6
+      },
+      {
+        "term": "промоутер",
+        "weight": 7
+      },
+      {
+        "term": "сбор контакт",
+        "weight": 6
+      },
+      {
+        "term": "сбор лид",
+        "weight": 6
+      },
+      {
+        "term": "lead closer",
+        "weight": 8
+      },
+      {
+        "term": "fd rd manager",
+        "weight": 8
+      },
+      {
+        "term": "fd manager",
+        "weight": 7
+      },
+      {
+        "term": "rd manager",
+        "weight": 7
+      },
+      {
+        "term": "закрыват лид",
+        "weight": 7
+      },
+      {
+        "term": "обработк лид",
+        "weight": 6
+      }
+    ],
+    "business.development": [
+      {
+        "term": "business development manager",
+        "weight": 8
+      },
+      {
+        "term": "business development",
+        "weight": 7
+      },
+      {
+        "term": "bizdev",
+        "weight": 7
+      },
+      {
+        "term": "менеджер по развитию бизнес",
+        "weight": 8
+      },
+      {
+        "term": "partnership manager",
+        "weight": 7
+      },
+      {
+        "term": "менеджер по партнерств",
+        "weight": 7
+      },
+      {
+        "term": "менеджер по партнерств",
+        "weight": 7
+      },
+      {
+        "term": "growth manager",
+        "weight": 7
+      },
+      {
+        "term": "growth менеджер",
+        "weight": 7
+      },
+      {
+        "term": "менеджер по развитию",
+        "weight": 6
+      },
+      {
+        "term": "привлечен и развити клиент",
+        "weight": 8
+      },
+      {
+        "term": "привлекат нов клиент",
+        "weight": 7
+      },
+      {
+        "term": "привлекат нов участник",
+        "weight": 7
+      },
+      {
+        "term": "коммерческ партнер",
+        "weight": 7
+      },
+      {
+        "term": "развити партнерств",
+        "weight": 7
+      }
+    ],
+    "business.account": [
+      {
+        "term": "account manager",
+        "weight": 8
+      },
+      {
+        "term": "аккаунт менеджер",
+        "weight": 8
+      },
+      {
+        "term": "client manager",
+        "weight": 7
+      },
+      {
+        "term": "менеджер по работе с клиент",
+        "weight": 7
+      },
+      {
+        "term": "customer success manager",
+        "weight": 7
+      },
+      {
+        "term": "менеджер по общению с клиент",
+        "weight": 7
+      },
+      {
+        "term": "менеджер помощи клиент",
+        "weight": 7
+      },
+      {
+        "term": "менеджер по помощи клиент",
+        "weight": 7
+      }
+    ],
+    "business.support": [
+      {
+        "term": "customer support",
+        "weight": 8
+      },
+      {
+        "term": "technical support",
+        "weight": 8
+      },
+      {
+        "term": "техническ поддержк",
+        "weight": 8
+      },
+      {
+        "term": "специалист поддержк",
+        "weight": 8
+      },
+      {
+        "term": "оператор поддержки",
+        "weight": 7
+      },
+      {
+        "term": "helpdesk",
+        "weight": 7
+      },
+      {
+        "term": "call center operator",
+        "weight": 6
+      },
+      {
+        "term": "оператор колл центр",
+        "weight": 6
+      },
+      {
+        "term": "служб поддержк",
+        "weight": 7
+      },
+      {
+        "term": "оператор чат",
+        "weight": 7
+      },
+      {
+        "term": "оператор чата",
+        "weight": 7
+      },
+      {
+        "term": "чат оператор",
+        "weight": 7
+      },
+      {
+        "term": "оператор сервисн поддержк",
+        "weight": 7
+      },
+      {
+        "term": "call центр",
+        "weight": 6
+      },
+      {
+        "term": "чат менеджер",
+        "weight": 7
+      },
+      {
+        "term": "chat manager",
+        "weight": 7
+      },
+      {
+        "term": "техническ вопрос по instagram",
+        "weight": 8
+      },
+      {
+        "term": "настройк instagram",
+        "weight": 7
+      },
+      {
+        "term": "настройк facebook",
+        "weight": 7
+      },
+      {
+        "term": "implementation engineer",
+        "weight": 8
+      },
+      {
+        "term": "support engineer",
+        "weight": 8
+      },
+      {
+        "term": "инженер по внедрен",
+        "weight": 8
+      },
+      {
+        "term": "инженер сопровожд",
+        "weight": 8
+      },
+      {
+        "term": "внедрен и сопровожд",
+        "weight": 7
+      },
+      {
+        "term": "оператор чаттер",
+        "weight": 8
+      },
+      {
+        "term": "чаттер",
+        "weight": 7
+      },
+      {
+        "term": "работа с заявк",
+        "weight": 6
+      },
+      {
+        "term": "консультац клиент",
+        "weight": 6
+      }
+    ],
+    "business.assistant": [
+      {
+        "term": "personal assistant",
+        "weight": 8
+      },
+      {
+        "term": "личн ассистент",
+        "weight": 8
+      },
+      {
+        "term": "business assistant",
+        "weight": 8
+      },
+      {
+        "term": "бизнес ассистент",
+        "weight": 8
+      },
+      {
+        "term": "executive assistant",
+        "weight": 8
+      },
+      {
+        "term": "виртуальн ассистент",
+        "weight": 7
+      },
+      {
+        "term": "office manager",
+        "weight": 6
+      },
+      {
+        "term": "ассистент",
+        "weight": 5
+      },
+      {
+        "term": "помощник",
+        "weight": 5
+      },
+      {
+        "term": "data entry",
+        "weight": 7
+      },
+      {
+        "term": "оператор ввод данных",
+        "weight": 7
+      },
+      {
+        "term": "оператор внутренн платформ",
+        "weight": 7
+      },
+      {
+        "term": "ввод данных",
+        "weight": 7
+      },
+      {
+        "term": "сбор данных",
+        "weight": 7
+      },
+      {
+        "term": "внесен данных",
+        "weight": 7
+      },
+      {
+        "term": "работа с crm",
+        "weight": 6
+      },
+      {
+        "term": "crm оператор",
+        "weight": 7
+      },
+      {
+        "term": "оператор платформ",
+        "weight": 7
+      },
+      {
+        "term": "обработк операц на платформ",
+        "weight": 6
+      },
+      {
+        "term": "сбор информац",
+        "weight": 7
+      },
+      {
+        "term": "формирован отчет",
+        "weight": 6
+      },
+      {
+        "term": "заполнен crm",
+        "weight": 7
+      },
+      {
+        "term": "работа с онлайн платформ",
+        "weight": 7
+      },
+      {
+        "term": "операц по готов алгоритм",
+        "weight": 7
+      }
+    ],
+    "business.hr": [
+      {
+        "term": "recruiter",
+        "weight": 8
+      },
+      {
+        "term": "рекрутер",
+        "weight": 8
+      },
+      {
+        "term": "hr manager",
+        "weight": 7
+      },
+      {
+        "term": "hr generalist",
+        "weight": 7
+      },
+      {
+        "term": "менеджер по персонал",
+        "weight": 7
+      },
+      {
+        "term": "talent acquisition",
+        "weight": 6
+      },
+      {
+        "term": "подбор персонал",
+        "weight": 6
+      },
+      {
+        "term": "hr business partner",
+        "weight": 7
+      },
+      {
+        "term": "кадров делопроизвод",
+        "weight": 6
+      },
+      {
+        "term": "hr менеджер",
+        "weight": 8
+      }
+    ],
+    "business.operations": [
+      {
+        "term": "operations manager",
+        "weight": 8
+      },
+      {
+        "term": "операционн менеджер",
+        "weight": 8
+      },
+      {
+        "term": "операционн директор",
+        "weight": 7
+      },
+      {
+        "term": "business operations",
+        "weight": 7
+      },
+      {
+        "term": "управлен бизнес процесс",
+        "weight": 5
+      },
+      {
+        "term": "менеджер групп",
+        "weight": 5
+      },
+      {
+        "term": "storage",
+        "weight": 5
+      },
+      {
+        "term": "закупк",
+        "weight": 6
+      },
+      {
+        "term": "прием и хранен",
+        "weight": 6
+      },
+      {
+        "term": "приемк",
+        "weight": 5
+      }
+    ],
+    "business.events": [
+      {
+        "term": "event manager",
+        "weight": 8
+      },
+      {
+        "term": "ивент менеджер",
+        "weight": 8
+      },
+      {
+        "term": "event producer",
+        "weight": 7
+      },
+      {
+        "term": "организатор мероприяти",
+        "weight": 7
+      },
+      {
+        "term": "организац конференц",
+        "weight": 6
+      },
+      {
+        "term": "организатор мероприят",
+        "weight": 7
+      },
+      {
+        "term": "организац офлайн мероприят",
+        "weight": 7
+      },
+      {
+        "term": "техническ обеспечен мероприят",
+        "weight": 5
+      },
+      {
+        "term": "организатор",
+        "weight": 4
+      },
+      {
+        "term": "специалист по свет",
+        "weight": 7
+      },
+      {
+        "term": "event lighting",
+        "weight": 7
+      },
+      {
+        "term": "световик",
+        "weight": 6
+      },
+      {
+        "term": "сценическ монтировщик",
+        "weight": 8
+      },
+      {
+        "term": "монтировщик театр",
+        "weight": 8
+      },
+      {
+        "term": "монтаж демонтаж декорац",
+        "weight": 7
+      },
+      {
+        "term": "техническ персонал театр",
+        "weight": 7
+      },
+      {
+        "term": "event equipment",
+        "weight": 7
+      },
+      {
+        "term": "оборудован для мероприят",
+        "weight": 6
+      },
+      {
+        "term": "арендн пьедестал",
+        "weight": 7
+      },
+      {
+        "term": "пьедестал для мероприят",
+        "weight": 7
+      },
+      {
+        "term": "монтировщик",
+        "weight": 7
+      }
+    ],
+    "business.hospitality": [
+      {
+        "term": "продавец сахарной ваты",
+        "weight": 8
+      },
+      {
+        "term": "обслуживан гост",
+        "weight": 7
+      },
+      {
+        "term": "банкетн обслуживан",
+        "weight": 7
+      }
+    ],
+    "education.training": [
+      {
+        "term": "teacher",
+        "weight": 7
+      },
+      {
+        "term": "преподавател",
+        "weight": 7
+      },
+      {
+        "term": "tutor",
+        "weight": 7
+      },
+      {
+        "term": "репетитор",
+        "weight": 7
+      },
+      {
+        "term": "методист",
+        "weight": 7
+      },
+      {
+        "term": "instructional designer",
+        "weight": 7
+      },
+      {
+        "term": "создани онлайн курс",
+        "weight": 6
+      },
+      {
+        "term": "course producer",
+        "weight": 5
+      },
+      {
+        "term": "career coach",
+        "weight": 5
+      },
+      {
+        "term": "педагог",
+        "weight": 7
+      },
+      {
+        "term": "методолог",
+        "weight": 7
+      },
+      {
+        "term": "ментор",
+        "weight": 6
+      },
+      {
+        "term": "автор курсов",
+        "weight": 5
+      },
+      {
+        "term": "корпоративн обучен",
+        "weight": 8
+      },
+      {
+        "term": "внешн обучен",
+        "weight": 7
+      },
+      {
+        "term": "образовательн программ",
+        "weight": 7
+      },
+      {
+        "term": "учебн центр",
+        "weight": 6
+      },
+      {
+        "term": "вожат",
+        "weight": 8
+      },
+      {
+        "term": "детск образовательн лагер",
+        "weight": 7
+      },
+      {
+        "term": "карьерн консультант",
+        "weight": 7
+      },
+      {
+        "term": "инструкц по поиск работ",
+        "weight": 6
+      }
+    ],
+    "finance.accounting": [
+      {
+        "term": "accountant",
+        "weight": 8
+      },
+      {
+        "term": "бухгалтер",
+        "weight": 8
+      },
+      {
+        "term": "financial analyst",
+        "weight": 7
+      },
+      {
+        "term": "финансов аналитик",
+        "weight": 7
+      },
+      {
+        "term": "finance manager",
+        "weight": 7
+      },
+      {
+        "term": "налогов консультант",
+        "weight": 7
+      },
+      {
+        "term": "tax consultant",
+        "weight": 7
+      },
+      {
+        "term": "торгов операц",
+        "weight": 5
+      },
+      {
+        "term": "рыночн операц",
+        "weight": 5
+      }
+    ],
+    "legal.services": [
+      {
+        "term": "lawyer",
+        "weight": 8
+      },
+      {
+        "term": "юрист",
+        "weight": 8
+      },
+      {
+        "term": "legal counsel",
+        "weight": 7
+      },
+      {
+        "term": "адвокат",
+        "weight": 7
+      },
+      {
+        "term": "юридическ услуг",
+        "weight": 6
+      },
+      {
+        "term": "договорн работ",
+        "weight": 6
+      }
+    ]
+  },
+  "nonPerformanceModelContext": [
+    "data model",
+    "product model",
+    "business model",
+    "financial model",
+    "language model",
+    "machine learning model",
+    "ai model",
+    "llm model",
+    "3d model",
+    "модель данных",
+    "модель продукта",
+    "продуктовая модель",
+    "бизнес модель",
+    "финансовая модель",
+    "языковая модель",
+    "модель машинного обучения",
+    "3d модель"
+  ],
+  "performanceModelAliases": [
+    "model",
+    "модель"
+  ]
+}

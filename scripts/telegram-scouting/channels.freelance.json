@@ -1,0 +1,304 @@
+{
+  "channels": [
+    {
+      "handle": "rueventjob",
+      "topic": "general freelance and remote creative work",
+      "category": "General Freelance",
+      "language": "ru",
+      "adminContacts": ["TheRemoter"],
+      "advertisingContacts": ["TheRemoter"]
+    },
+    {
+      "handle": "talentedpeoples",
+      "topic": "creative work, remote work and freelance",
+      "category": "General Freelance",
+      "language": "ru",
+      "adminContacts": ["TheRemoter", "talentedp"],
+      "advertisingContacts": ["TheRemoter"]
+    },
+    {
+      "handle": "digitaltender",
+      "topic": "digital freelance tenders",
+      "category": "Marketing & Digital",
+      "language": "ru",
+      "adminContacts": ["digitaltenderbot", "digitaltalks", "digitalblacklist", "seohr"],
+      "advertisingContacts": [
+        "digitaltenderbot",
+        "https://telega.in/c/digitaltender"
+      ]
+    },
+    {
+      "handle": "mirfri",
+      "topic": "freelance vacancies, projects and candidate resumes",
+      "category": "General Freelance",
+      "language": "ru",
+      "excludedContacts": [
+        "mirfri",
+        "reklamamirfri",
+        "poiskzak",
+        "prokanall",
+        "Igorkatsubo"
+      ],
+      "adminContacts": ["Igorkatsubo"],
+      "advertisingContacts": [
+        "https://t.me/reklamamirfri/3",
+        "https://t.me/reklamamirfri/4",
+        "https://t.me/reklamamirfri/5"
+      ]
+    },
+    {
+      "handle": "job_pythonz",
+      "topic": "Python jobs and internships",
+      "category": "Software Development",
+      "language": "ru",
+      "adminContacts": ["call_sauls", "NiceJobs_bot"],
+      "advertisingContacts": ["call_sauls"]
+    },
+    {
+      "handle": "dddwork",
+      "topic": "media and digital jobs",
+      "category": "Media & Marketing",
+      "language": "ru",
+      "adminContacts": ["ENBorisova", "sashasuan"],
+      "advertisingContacts": ["ENBorisova", "sashasuan"]
+    },
+    {
+      "handle": "work4writers",
+      "topic": "copywriting and editing work",
+      "category": "Writing & Editing",
+      "language": "ru",
+      "adminContacts": ["anna_w4w", "otzuvW4w"],
+      "advertisingContacts": ["anna_w4w"]
+    },
+    {
+      "handle": "uvetrovoi",
+      "topic": "broad freelance projects and services",
+      "category": "General Freelance",
+      "language": "ru",
+      "adminContacts": ["kris_vetrova", "uvetrovoi_feedback"],
+      "advertisingContacts": ["kris_vetrova"]
+    },
+    {
+      "handle": "designhunters",
+      "topic": "designer jobs and projects",
+      "category": "Design",
+      "language": "ru",
+      "adminContacts": ["design_manager_bot"],
+      "advertisingContacts": ["design_manager_bot"]
+    },
+    {
+      "handle": "designbirzha",
+      "topic": "design freelance marketplace",
+      "category": "Design",
+      "language": "ru",
+      "adminContacts": ["design_manager_bot"],
+      "advertisingContacts": ["design_manager_bot"]
+    },
+    {
+      "handle": "FreelanceBay",
+      "topic": "freelance projects and long-term remote work",
+      "category": "General Freelance",
+      "language": "ru",
+      "adminContacts": ["RD_vacbot", "RD_adsbot", "rabotodrom"],
+      "advertisingContacts": [
+        "RD_vacbot",
+        "RD_adsbot",
+        "https://telega.in/c/freelancebay"
+      ]
+    },
+    {
+      "handle": "workinart",
+      "topic": "art and culture opportunities",
+      "category": "Art & Culture",
+      "language": "ru",
+      "advertisingContacts": ["workinart@example.invalid"]
+    },
+    {
+      "handle": "mirkreatorovjob",
+      "topic": "jobs for creators, marketers and media specialists",
+      "category": "Creative & Marketing",
+      "language": "ru",
+      "adminContacts": ["moderatorMK"],
+      "advertisingContacts": [
+        "moderatorMK",
+        "mirkreatorov@example.invalid",
+        "https://clck.ru/3ByV5G"
+      ]
+    },
+    {
+      "handle": "zdemcv",
+      "topic": "digital and media vacancies",
+      "category": "Media & Marketing",
+      "language": "ru",
+      "adminContacts": ["zdemcvbot", "semenyukk", "lifehackerru"],
+      "advertisingContacts": ["semenyukk", "https://clck.ru/3j5urX"]
+    },
+    {
+      "handle": "yuniorapp",
+      "topic": "junior jobs and internships",
+      "category": "Career & Internships",
+      "language": "ru",
+      "adminContacts": ["ads_young"],
+      "advertisingContacts": ["ads_young"]
+    },
+    {
+      "handle": "evacuatejobs",
+      "topic": "relocation and remote international work",
+      "category": "Remote & Relocation",
+      "language": "ru",
+      "excludedContacts": ["remocatedevs"],
+      "adminContacts": ["remocate", "yuniorad"],
+      "advertisingContacts": [
+        "yuniorad",
+        "https://www.remocate.pro/postajob"
+      ]
+    },
+    {
+      "handle": "it_vakansii_jobs",
+      "topic": "IT and digital jobs with direct contacts",
+      "category": "Software & Digital",
+      "language": "ru",
+      "excludedContacts": [
+        "juniors_rabota_jobs",
+        "design_jobs_uxui",
+        "backend_frontend_jobs",
+        "qa_jobs_rabota",
+        "products_jobs_projects",
+        "job_analyst_datascience",
+        "marketing_rabota_jobs",
+        "hr_jobs_rabota",
+        "remote_jobs_relocate",
+        "jobs_juniors_remote",
+        "juniors_intern_developers",
+        "juniors_managers_jobs",
+        "rabota_marketing_juniors",
+        "interns_stazhirovki_remote"
+      ],
+      "adminContacts": ["vsetisupport_bot", "irademidovna"],
+      "advertisingContacts": [
+        "irademidovna",
+        "https://www.vseti.app/b2b"
+      ]
+    },
+    {
+      "handle": "products_jobs_projects",
+      "topic": "product and project management jobs",
+      "category": "Product & Project Management",
+      "language": "ru",
+      "excludedContacts": [
+        "juniors_rabota_jobs",
+        "design_jobs_uxui",
+        "backend_frontend_jobs",
+        "qa_jobs_rabota",
+        "job_analyst_datascience",
+        "marketing_rabota_jobs",
+        "hr_jobs_rabota",
+        "remote_jobs_relocate",
+        "jobs_juniors_remote"
+      ],
+      "adminContacts": ["vsetisupport_bot", "irademidovna"],
+      "advertisingContacts": [
+        "irademidovna",
+        "https://www.vseti.app/b2b"
+      ]
+    },
+    {
+      "handle": "freelancetaverna",
+      "topic": "freelance vacancies, projects and candidate resumes",
+      "category": "General Freelance",
+      "language": "ru",
+      "adminContacts": ["freelance_barmen"],
+      "advertisingContacts": ["freelance_barmen"]
+    },
+    {
+      "handle": "itjobs_nocode",
+      "topic": "no-code, AI-assisted development and automation jobs",
+      "category": "No-Code & Automation",
+      "language": "ru",
+      "adminContacts": ["hr_rus", "best_itjob", "it_rab"],
+      "advertisingContacts": [
+        "hr_rus",
+        "https://telega.in/channels/itjobs_nocode/card"
+      ]
+    },
+    {
+      "handle": "normrabota",
+      "topic": "digital, marketing and remote vacancies",
+      "category": "Marketing & Digital",
+      "language": "ru",
+      "excludedContacts": ["Normresume", "NormRemote", "Normfreelance"],
+      "adminContacts": ["normrprice"],
+      "advertisingContacts": ["normrprice"]
+    },
+    {
+      "handle": "dnative_job",
+      "topic": "SMM, marketing and digital vacancies",
+      "category": "Marketing & Digital",
+      "language": "ru",
+      "excludedContacts": ["dnative", "dnative_job100", "dnative_job_review"],
+      "advertisingContacts": ["https://vetka.dnative.ru/post-job"]
+    },
+    {
+      "handle": "vacancysmm",
+      "topic": "SMM vacancies and freelance projects",
+      "category": "SMM & Social Media",
+      "language": "ru",
+      "adminContacts": ["ViktorShipilov"],
+      "advertisingContacts": ["ViktorShipilov"]
+    },
+    {
+      "handle": "targetssmmvakansii",
+      "topic": "SMM, targeting and marketing vacancies",
+      "category": "SMM & Social Media",
+      "language": "ru",
+      "adminContacts": ["workoutSMM"],
+      "advertisingContacts": ["workoutSMM"]
+    },
+    {
+      "handle": "smmlancer",
+      "topic": "social media freelance vacancies",
+      "category": "SMM & Social Media",
+      "language": "ru",
+      "adminContacts": ["irisleo"],
+      "advertisingContacts": ["irisleo"]
+    },
+    {
+      "handle": "vakansii_smm",
+      "topic": "SMM vacancies and specialist resumes",
+      "category": "SMM & Social Media",
+      "language": "ru",
+      "excludedContacts": ["Post1_Cat_Bot", "Post1_Cat"],
+      "adminContacts": ["Sofya_Kod"],
+      "advertisingContacts": ["Sofya_Kod", "https://t.me/m/BrzyHVNuYmEy"]
+    },
+    {
+      "handle": "vakansii_copywriters",
+      "topic": "copywriting vacancies and specialist resumes",
+      "category": "Writing & Editing",
+      "language": "ru",
+      "excludedContacts": ["Post1_Cat_Bot", "Post1_Cat"],
+      "adminContacts": ["Sofya_Kod"],
+      "advertisingContacts": ["Sofya_Kod", "https://t.me/m/BrzyHVNuYmEy"]
+    },
+    {
+      "handle": "vakansii_design",
+      "topic": "design vacancies and specialist resumes",
+      "category": "Design",
+      "language": "ru",
+      "excludedContacts": ["Post1_Cat_Bot", "Post1_Cat"],
+      "adminContacts": ["Sofya_Kod"],
+      "advertisingContacts": ["Sofya_Kod", "https://t.me/m/BrzyHVNuYmEy"]
+    },
+    {
+      "handle": "vakansii_reelsmaker",
+      "topic": "video editing vacancies and specialist resumes",
+      "category": "Video & Motion",
+      "language": "ru",
+      "excludedContacts": ["Post1_Cat_Bot", "Post1_Cat"],
+      "adminContacts": ["Sofya_Kod"],
+      "advertisingContacts": ["Sofya_Kod", "https://t.me/m/BrzyHVNuYmEy"]
+    }
+  ],
+  "maxPagesPerChannel": 60,
+  "requestDelayMs": 500
+}

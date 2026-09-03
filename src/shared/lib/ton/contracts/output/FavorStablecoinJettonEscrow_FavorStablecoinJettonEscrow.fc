@@ -1,0 +1,748 @@
+#pragma version =0.4.6;
+#pragma allow-post-modification;
+#pragma compute-asm-ltr;
+
+;; FavorStablecoinJettonEscrow_FavorStablecoinJettonEscrow.headers.fc
+;;
+;; Header files for FavorStablecoinJettonEscrow
+;; NOTE: declarations are sorted for optimal order
+;;
+
+;; __tact_context_get
+(int, slice, int, slice) __tact_context_get() inline;
+
+;; __tact_context_get_sender
+slice __tact_context_get_sender() inline;
+
+;; $DeployOk$_store
+builder $DeployOk$_store(builder build_0, (int) v) inline;
+
+;; $DeployOk$_store_cell
+cell $DeployOk$_store_cell((int) v, builder b) inline;
+
+;; $FavorStablecoinJettonEscrow$_store
+builder $FavorStablecoinJettonEscrow$_store(builder build_0, (slice, slice, slice, slice, slice, slice, int, int, int, int, int, int, int, int) v) inline;
+
+;; $FavorStablecoinJettonEscrow$_load
+(slice, ((slice, slice, slice, slice, slice, slice, int, int, int, int, int, int, int, int))) $FavorStablecoinJettonEscrow$_load(slice sc_0) inline;
+
+;; $Context$_get_value
+_ $Context$_get_value((int, slice, int, slice) v) inline;
+
+;; $FavorStablecoinJettonEscrow$init$_load
+(slice, ((slice, slice, slice, slice, slice, int, int, int, int))) $FavorStablecoinJettonEscrow$init$_load(slice sc_0) inline;
+
+;; $FavorStablecoinJettonEscrow$_contract_init
+(slice, slice, slice, slice, slice, slice, int, int, int, int, int, int, int, int) $FavorStablecoinJettonEscrow$_contract_init(slice $platform, slice $customer, slice $freelancer, slice $scout, slice $jettonMaster, int $dealId, int $expectedAmount, int $scoutCommissionSharePercent, int $deadlineDurationSeconds) impure inline;
+
+;; $FavorStablecoinJettonEscrow$_contract_load
+(slice, slice, slice, slice, slice, slice, int, int, int, int, int, int, int, int) $FavorStablecoinJettonEscrow$_contract_load() impure inline;
+
+;; $FavorStablecoinJettonEscrow$_contract_store
+() $FavorStablecoinJettonEscrow$_contract_store((slice, slice, slice, slice, slice, slice, int, int, int, int, int, int, int, int) v) impure inline;
+
+;; $SendParameters$_constructor_to_value_bounce_mode_body
+((int, cell, cell, cell, int, slice, int)) $SendParameters$_constructor_to_value_bounce_mode_body(slice $to, int $value, int $bounce, int $mode, cell $body) inline;
+
+;; $FavorStablecoinJettonEscrow$_fun_sendJettons
+((slice, slice, slice, slice, slice, slice, int, int, int, int, int, int, int, int), ()) $FavorStablecoinJettonEscrow$_fun_sendJettons((slice, slice, slice, slice, slice, slice, int, int, int, int, int, int, int, int) $self, slice $to, int $jettonAmount) impure inline_ref;
+
+;; $FavorStablecoinJettonEscrow$_fun_distributeFreelancerShare
+((slice, slice, slice, slice, slice, slice, int, int, int, int, int, int, int, int), ()) $FavorStablecoinJettonEscrow$_fun_distributeFreelancerShare((slice, slice, slice, slice, slice, slice, int, int, int, int, int, int, int, int) $self, int $freelancerGrossAmount) impure inline_ref;
+
+;; $FavorStablecoinJettonEscrow$_fun_closeGas
+((slice, slice, slice, slice, slice, slice, int, int, int, int, int, int, int, int), ()) $FavorStablecoinJettonEscrow$_fun_closeGas((slice, slice, slice, slice, slice, slice, int, int, int, int, int, int, int, int) $self) impure inline_ref;
+
+;; $FavorStablecoinJettonEscrow$_fun_status
+((slice, slice, slice, slice, slice, slice, int, int, int, int, int, int, int, int), int) $FavorStablecoinJettonEscrow$_fun_status((slice, slice, slice, slice, slice, slice, int, int, int, int, int, int, int, int) $self) impure inline_ref;
+
+;; $FavorStablecoinJettonEscrow$_fun_deadlineAt
+((slice, slice, slice, slice, slice, slice, int, int, int, int, int, int, int, int), int) $FavorStablecoinJettonEscrow$_fun_deadlineAt((slice, slice, slice, slice, slice, slice, int, int, int, int, int, int, int, int) $self) impure inline_ref;
+
+;; $FavorStablecoinJettonEscrow$_fun_details
+((slice, slice, slice, slice, slice, slice, int, int, int, int, int, int, int, int), slice) $FavorStablecoinJettonEscrow$_fun_details((slice, slice, slice, slice, slice, slice, int, int, int, int, int, int, int, int) $self) impure inline_ref;
+
+;; $FavorStablecoinJettonEscrow$_fun_jettonWallet
+((slice, slice, slice, slice, slice, slice, int, int, int, int, int, int, int, int), slice) $FavorStablecoinJettonEscrow$_fun_jettonWallet((slice, slice, slice, slice, slice, slice, int, int, int, int, int, int, int, int) $self) impure inline_ref;
+
+;; $FavorStablecoinJettonEscrow$_fun_jettonMasterAddress
+((slice, slice, slice, slice, slice, slice, int, int, int, int, int, int, int, int), slice) $FavorStablecoinJettonEscrow$_fun_jettonMasterAddress((slice, slice, slice, slice, slice, slice, int, int, int, int, int, int, int, int) $self) impure inline_ref;
+
+;; $MessageParameters$_constructor_bounce_to_value_mode_body
+((int, cell, int, slice, int)) $MessageParameters$_constructor_bounce_to_value_mode_body(int $bounce, slice $to, int $value, int $mode, cell $body) inline;
+
+;; $FavorStablecoinJettonEscrow$_fun_reply
+((slice, slice, slice, slice, slice, slice, int, int, int, int, int, int, int, int), ()) $FavorStablecoinJettonEscrow$_fun_reply((slice, slice, slice, slice, slice, slice, int, int, int, int, int, int, int, int) $self, cell $body) impure inline;
+
+;; $FavorStablecoinJettonEscrow$_fun_notify
+((slice, slice, slice, slice, slice, slice, int, int, int, int, int, int, int, int), ()) $FavorStablecoinJettonEscrow$_fun_notify((slice, slice, slice, slice, slice, slice, int, int, int, int, int, int, int, int) $self, cell $body) impure inline;
+
+;; $DeployOk$_constructor_queryId
+((int)) $DeployOk$_constructor_queryId(int $queryId) inline;
+
+
+;; FavorStablecoinJettonEscrow_FavorStablecoinJettonEscrow.stdlib.fc
+global (int, slice, int, slice) __tact_context;
+global slice __tact_context_sender;
+global cell __tact_child_contract_codes;
+global int __tact_randomized;
+
+(int, slice, int, slice) __tact_context_get() inline {
+    return __tact_context;
+}
+
+slice __tact_context_get_sender() inline {
+    return __tact_context_sender;
+}
+
+builder $global_beginCell() impure asm """
+    NEWC
+""";
+
+slice $global_myAddress() impure asm """
+    MYADDR
+""";
+
+int $global_myBalance() impure asm """
+    BALANCE FIRST
+""";
+
+() $global_nativeReserve(int $amount, int $mode) impure asm """
+    RAWRESERVE
+""";
+
+() $global_message((int, cell, int, slice, int) $params) impure asm """
+    NEWC
+    b{01} STSLICECONST  // store tag = $0 and ihr_disabled = true
+    1 STI               // store `bounce`
+    b{000} STSLICECONST // store bounced = false and src = addr_none
+    STSLICE             // store `to`
+    SWAP
+    STGRAMS             // store `value`
+    106 PUSHINT         // 1 + 4 + 4 + 64 + 32 + 1
+    STZEROES
+    // → Stack state
+    // s0: Builder
+    // s1: `body`
+    // s2: `mode`
+    STDICT
+    ENDC
+    SWAP
+    SENDRAWMSG
+""";
+
+() $global_send((int, cell, cell, cell, int, slice, int) $params) impure asm """
+    NEWC
+    b{01} STSLICECONST  // store tag = $0 and ihr_disabled = true
+    1 STI               // store `bounce`
+    b{000} STSLICECONST // store bounced = false and src = addr_none
+    STSLICE             // store `to`
+    SWAP
+    STGRAMS             // store `value`
+    105 PUSHINT         // 1 + 4 + 4 + 64 + 32
+    STZEROES            // store currency_collection, ihr_fee, fwd_fee, created_lt and created_at
+    // → Stack state
+    // s0: Builder
+    // s1: `data`
+    // s2: `code`
+    // s3: `body`
+    // s4: `mode`
+
+    // Group 2: Placing the Builder after code and data, then checking those for nullability
+    s2 XCHG0
+    DUP2
+    ISNULL
+    SWAP
+    ISNULL
+    AND
+    // → Stack state
+    // s0: -1 (true) if `data` and `code` are both null, 0 (false) otherwise
+    // s1: `code`
+    // s2: `data`
+    // s3: Builder
+    // s4: `body`
+    // s5: `mode`
+
+    // Group 3: Left branch of the IFELSE, executed if s0 is -1 (true)
+    <{
+        DROP2 // drop `data` and `code`, since either of those is null
+        b{0} STSLICECONST
+    }> PUSHCONT
+
+    // Group 3: Right branch of the IFELSE, executed if s0 is 0 (false)
+    <{
+        // _ split_depth:(Maybe (## 5))
+        //   special:(Maybe TickTock)
+        //   code:(Maybe ^Cell)
+        //   data:(Maybe ^Cell)
+        //   library:(Maybe ^Cell)
+        // = StateInit;
+        ROT                // place message Builder on top
+        b{10} STSLICECONST // store Maybe = true, Either = false
+        // Start composing inlined StateInit
+        b{00} STSLICECONST // store split_depth and special first
+        STDICT             // store code
+        STDICT             // store data
+        b{0} STSLICECONST  // store library
+    }> PUSHCONT
+
+    // Group 3: IFELSE that does the branching shown above
+    IFELSE
+    // → Stack state
+    // s0: Builder
+    // s1: null or StateInit
+    // s2: `body`
+    // s3: `mode`
+
+    // Group 4: Finalizing the message
+    STDICT // store `body` as ref with an extra Maybe bit, since `body` might be null
+    ENDC
+    // → Stack state
+    // s0: Cell
+    // s1: `mode`
+
+    // Group 5: Sending the message, with `mode` on top
+    SWAP
+    SENDRAWMSG // https://github.com/tact-lang/tact/issues/1558
+""";
+
+int $global_now() impure asm """
+    NOW
+""";
+
+builder $Builder$_fun_storeBit(int $value, builder $self) impure asm """
+    1 STI
+""";
+
+builder $Builder$_fun_storeCoins(builder $self, int $value) impure asm """
+    STVARUINT16
+""";
+
+cell $Builder$_fun_endCell(builder $self) impure asm """
+    ENDC
+""";
+
+builder $Builder$_fun_storeAddress(builder $self, slice $address) impure asm """
+    STSLICER
+""";
+
+((slice, slice, slice, slice, slice, slice, int, int, int, int, int, int, int, int), ()) $FavorStablecoinJettonEscrow$_fun_reply((slice, slice, slice, slice, slice, slice, int, int, int, int, int, int, int, int) $self, cell $body) impure inline {
+    var (($self'platform, $self'customer, $self'freelancer, $self'scout, $self'jettonMaster, $self'escrowJettonWallet, $self'jettonWalletConfigured, $self'dealId, $self'expectedAmount, $self'scoutCommissionSharePercent, $self'deadlineDurationSeconds, $self'amount, $self'status, $self'deadlineAt)) = $self;
+    slice $to = __tact_context_get_sender();
+    int $bounce = true;
+    if (false) {
+        int $balance = $global_myBalance();
+        int $balanceBeforeMessage = ($balance - $Context$_get_value(__tact_context_get()));
+        if (($balanceBeforeMessage < 0)) {
+            $global_nativeReserve(0, 0);
+            $global_message($MessageParameters$_constructor_bounce_to_value_mode_body($bounce, $to, 0, 130, $body));
+            return (($self'platform, $self'customer, $self'freelancer, $self'scout, $self'jettonMaster, $self'escrowJettonWallet, $self'jettonWalletConfigured, $self'dealId, $self'expectedAmount, $self'scoutCommissionSharePercent, $self'deadlineDurationSeconds, $self'amount, $self'status, $self'deadlineAt), ());
+        }
+    }
+    $global_message($MessageParameters$_constructor_bounce_to_value_mode_body($bounce, $to, 0, 66, $body));
+    return (($self'platform, $self'customer, $self'freelancer, $self'scout, $self'jettonMaster, $self'escrowJettonWallet, $self'jettonWalletConfigured, $self'dealId, $self'expectedAmount, $self'scoutCommissionSharePercent, $self'deadlineDurationSeconds, $self'amount, $self'status, $self'deadlineAt), ());
+}
+
+((slice, slice, slice, slice, slice, slice, int, int, int, int, int, int, int, int), ()) $FavorStablecoinJettonEscrow$_fun_notify((slice, slice, slice, slice, slice, slice, int, int, int, int, int, int, int, int) $self, cell $body) impure inline {
+    var (($self'platform, $self'customer, $self'freelancer, $self'scout, $self'jettonMaster, $self'escrowJettonWallet, $self'jettonWalletConfigured, $self'dealId, $self'expectedAmount, $self'scoutCommissionSharePercent, $self'deadlineDurationSeconds, $self'amount, $self'status, $self'deadlineAt)) = $self;
+    slice $to = __tact_context_get_sender();
+    int $bounce = false;
+    if (false) {
+        int $balance = $global_myBalance();
+        int $balanceBeforeMessage = ($balance - $Context$_get_value(__tact_context_get()));
+        if (($balanceBeforeMessage < 0)) {
+            $global_nativeReserve(0, 0);
+            $global_message($MessageParameters$_constructor_bounce_to_value_mode_body($bounce, $to, 0, 130, $body));
+            return (($self'platform, $self'customer, $self'freelancer, $self'scout, $self'jettonMaster, $self'escrowJettonWallet, $self'jettonWalletConfigured, $self'dealId, $self'expectedAmount, $self'scoutCommissionSharePercent, $self'deadlineDurationSeconds, $self'amount, $self'status, $self'deadlineAt), ());
+        }
+    }
+    $global_message($MessageParameters$_constructor_bounce_to_value_mode_body($bounce, $to, 0, 66, $body));
+    return (($self'platform, $self'customer, $self'freelancer, $self'scout, $self'jettonMaster, $self'escrowJettonWallet, $self'jettonWalletConfigured, $self'dealId, $self'expectedAmount, $self'scoutCommissionSharePercent, $self'deadlineDurationSeconds, $self'amount, $self'status, $self'deadlineAt), ());
+}
+
+;; FavorStablecoinJettonEscrow_FavorStablecoinJettonEscrow.constants.fc
+;; Cell Yu5vpBW/NDs4GametjQC/RtKzIsOHuYkreDLLeGC5ek=
+cell __gen_cell_cell_62ee6fa415bf343b3819a99eb63402fd1b4acc8b0e1ee624ade0cb2de182e5e9() asm """
+    B{b5ee9c7241010101002900004e000000004661766f7220537461626c65636f696e20457363726f773a2047617320726566756e64e9ba7679} B>boc PUSHREF
+""";
+
+;; Cell tJJuvKvwzRUQJRsadwic7LGEjWmbfpcSNdyjQXZZFzg=
+cell __gen_cell_cell_b4926ebcabf0cd1510251b1a77089cecb1848d699b7e971235dca34176591738() asm """
+    B{b5ee9c7241010101003800006c000000004469737075746520726567697374657265642e204177616974696e6720706c6174666f726d206172626974726174696f6e2e1ce7a556} B>boc PUSHREF
+""";
+
+;; FavorStablecoinJettonEscrow_FavorStablecoinJettonEscrow.storage.fc
+;;
+;; Type: Context
+;; TLB: _ bounceable:bool sender:address value:int257 raw:^slice = Context
+;;
+
+_ $Context$_get_value((int, slice, int, slice) v) inline {
+    var (v'bounceable, v'sender, v'value, v'raw) = v;
+    return v'value;
+}
+
+;;
+;; Type: SendParameters
+;; TLB: _ mode:int257 body:Maybe ^cell code:Maybe ^cell data:Maybe ^cell value:int257 to:address bounce:bool = SendParameters
+;;
+
+((int, cell, cell, cell, int, slice, int)) $SendParameters$_constructor_to_value_bounce_mode_body(slice $to, int $value, int $bounce, int $mode, cell $body) inline {
+    return ($mode, $body, null(), null(), $value, $to, $bounce);
+}
+
+;;
+;; Type: MessageParameters
+;; TLB: _ mode:int257 body:Maybe ^cell value:int257 to:address bounce:bool = MessageParameters
+;;
+
+((int, cell, int, slice, int)) $MessageParameters$_constructor_bounce_to_value_mode_body(int $bounce, slice $to, int $value, int $mode, cell $body) inline {
+    return ($mode, $body, $value, $to, $bounce);
+}
+
+;;
+;; Type: DeployOk
+;; Header: 0xaff90f57
+;; TLB: deploy_ok#aff90f57 queryId:uint64 = DeployOk
+;;
+
+builder $DeployOk$_store(builder build_0, (int) v) inline {
+    var (v'queryId) = v;
+    build_0 = store_uint(build_0, 2952335191, 32);
+    build_0 = build_0.store_uint(v'queryId, 64);
+    return build_0;
+}
+
+cell $DeployOk$_store_cell((int) v, builder b) inline {
+    return $DeployOk$_store(b, v).end_cell();
+}
+
+((int)) $DeployOk$_constructor_queryId(int $queryId) inline {
+    return ($queryId);
+}
+
+;;
+;; Type: FavorStablecoinJettonEscrow
+;; TLB: _ platform:address customer:address freelancer:address scout:address jettonMaster:address escrowJettonWallet:address jettonWalletConfigured:bool dealId:uint64 expectedAmount:coins scoutCommissionSharePercent:uint8 deadlineDurationSeconds:uint32 amount:coins status:uint8 deadlineAt:uint64 = FavorStablecoinJettonEscrow
+;;
+
+builder $FavorStablecoinJettonEscrow$_store(builder build_0, (slice, slice, slice, slice, slice, slice, int, int, int, int, int, int, int, int) v) inline {
+    var (v'platform, v'customer, v'freelancer, v'scout, v'jettonMaster, v'escrowJettonWallet, v'jettonWalletConfigured, v'dealId, v'expectedAmount, v'scoutCommissionSharePercent, v'deadlineDurationSeconds, v'amount, v'status, v'deadlineAt) = v;
+    build_0 = build_0.store_slice(v'platform);
+    build_0 = build_0.store_slice(v'customer);
+    build_0 = build_0.store_slice(v'freelancer);
+    var build_1 = begin_cell();
+    build_1 = build_1.store_slice(v'scout);
+    build_1 = build_1.store_slice(v'jettonMaster);
+    build_1 = build_1.store_slice(v'escrowJettonWallet);
+    build_1 = build_1.store_int(v'jettonWalletConfigured, 1);
+    build_1 = build_1.store_uint(v'dealId, 64);
+    build_1 = build_1.store_varuint16(v'expectedAmount);
+    build_1 = build_1.store_uint(v'scoutCommissionSharePercent, 8);
+    var build_2 = begin_cell();
+    build_2 = build_2.store_uint(v'deadlineDurationSeconds, 32);
+    build_2 = build_2.store_varuint16(v'amount);
+    build_2 = build_2.store_uint(v'status, 8);
+    build_2 = build_2.store_uint(v'deadlineAt, 64);
+    build_1 = store_builder_ref(build_1, build_2);
+    build_0 = store_builder_ref(build_0, build_1);
+    return build_0;
+}
+
+(slice, ((slice, slice, slice, slice, slice, slice, int, int, int, int, int, int, int, int))) $FavorStablecoinJettonEscrow$_load(slice sc_0) inline {
+    var v'platform = sc_0~load_msg_addr();
+    var v'customer = sc_0~load_msg_addr();
+    var v'freelancer = sc_0~load_msg_addr();
+    slice sc_1 = sc_0~load_ref().begin_parse();
+    var v'scout = sc_1~load_msg_addr();
+    var v'jettonMaster = sc_1~load_msg_addr();
+    var v'escrowJettonWallet = sc_1~load_msg_addr();
+    var v'jettonWalletConfigured = sc_1~load_int(1);
+    var v'dealId = sc_1~load_uint(64);
+    var v'expectedAmount = sc_1~load_varuint16();
+    var v'scoutCommissionSharePercent = sc_1~load_uint(8);
+    slice sc_2 = sc_1~load_ref().begin_parse();
+    var v'deadlineDurationSeconds = sc_2~load_uint(32);
+    var v'amount = sc_2~load_varuint16();
+    var v'status = sc_2~load_uint(8);
+    var v'deadlineAt = sc_2~load_uint(64);
+    return (sc_0, (v'platform, v'customer, v'freelancer, v'scout, v'jettonMaster, v'escrowJettonWallet, v'jettonWalletConfigured, v'dealId, v'expectedAmount, v'scoutCommissionSharePercent, v'deadlineDurationSeconds, v'amount, v'status, v'deadlineAt));
+}
+
+(slice, ((slice, slice, slice, slice, slice, int, int, int, int))) $FavorStablecoinJettonEscrow$init$_load(slice sc_0) inline {
+    var v'platform = sc_0~load_msg_addr();
+    var v'customer = sc_0~load_msg_addr();
+    var v'freelancer = sc_0~load_msg_addr();
+    slice sc_1 = sc_0~load_ref().begin_parse();
+    var v'scout = sc_1~load_msg_addr();
+    var v'jettonMaster = sc_1~load_msg_addr();
+    var v'dealId = sc_1~load_int(257);
+    slice sc_2 = sc_1~load_ref().begin_parse();
+    var v'expectedAmount = sc_2~load_int(257);
+    var v'scoutCommissionSharePercent = sc_2~load_int(257);
+    var v'deadlineDurationSeconds = sc_2~load_int(257);
+    return (sc_0, (v'platform, v'customer, v'freelancer, v'scout, v'jettonMaster, v'dealId, v'expectedAmount, v'scoutCommissionSharePercent, v'deadlineDurationSeconds));
+}
+
+(slice, slice, slice, slice, slice, slice, int, int, int, int, int, int, int, int) $FavorStablecoinJettonEscrow$_contract_load() impure inline {
+    slice $sc = get_data().begin_parse();
+    int $loaded = $sc~load_int(1);
+    if ($loaded) {
+        return $sc~$FavorStablecoinJettonEscrow$_load();
+    }
+    else {
+        (slice $platform, slice $customer, slice $freelancer, slice $scout, slice $jettonMaster, int $dealId, int $expectedAmount, int $scoutCommissionSharePercent, int $deadlineDurationSeconds) = $sc~$FavorStablecoinJettonEscrow$init$_load();
+        $sc.end_parse();
+        return $FavorStablecoinJettonEscrow$_contract_init($platform, $customer, $freelancer, $scout, $jettonMaster, $dealId, $expectedAmount, $scoutCommissionSharePercent, $deadlineDurationSeconds);
+    }
+}
+
+() $FavorStablecoinJettonEscrow$_contract_store((slice, slice, slice, slice, slice, slice, int, int, int, int, int, int, int, int) v) impure inline {
+    builder b = begin_cell();
+    b = b.store_int(true, 1);
+    b = $FavorStablecoinJettonEscrow$_store(b, v);
+    set_data(b.end_cell());
+}
+
+;;
+;; Contract FavorStablecoinJettonEscrow functions
+;;
+
+(slice, slice, slice, slice, slice, slice, int, int, int, int, int, int, int, int) $FavorStablecoinJettonEscrow$_contract_init(slice $platform, slice $customer, slice $freelancer, slice $scout, slice $jettonMaster, int $dealId, int $expectedAmount, int $scoutCommissionSharePercent, int $deadlineDurationSeconds) impure inline {
+    var (($self'platform, $self'customer, $self'freelancer, $self'scout, $self'jettonMaster, $self'escrowJettonWallet, $self'jettonWalletConfigured, $self'dealId, $self'expectedAmount, $self'scoutCommissionSharePercent, $self'deadlineDurationSeconds, $self'amount, $self'status, $self'deadlineAt)) = (null(), null(), null(), null(), null(), null(), null(), null(), null(), null(), null(), null(), null(), null());
+    $self'platform = $platform;
+    $self'customer = $customer;
+    $self'freelancer = $freelancer;
+    $self'scout = $scout;
+    $self'jettonMaster = $jettonMaster;
+    $self'escrowJettonWallet = $platform;
+    $self'jettonWalletConfigured = false;
+    $self'dealId = $dealId;
+    $self'expectedAmount = $expectedAmount;
+    $self'scoutCommissionSharePercent = $scoutCommissionSharePercent;
+    throw_unless(59014, ($deadlineDurationSeconds > 0));
+    $self'deadlineDurationSeconds = $deadlineDurationSeconds;
+    $self'amount = 0;
+    $self'status = 0;
+    $self'deadlineAt = 0;
+    return ($self'platform, $self'customer, $self'freelancer, $self'scout, $self'jettonMaster, $self'escrowJettonWallet, $self'jettonWalletConfigured, $self'dealId, $self'expectedAmount, $self'scoutCommissionSharePercent, $self'deadlineDurationSeconds, $self'amount, $self'status, $self'deadlineAt);
+}
+
+((slice, slice, slice, slice, slice, slice, int, int, int, int, int, int, int, int), ()) $FavorStablecoinJettonEscrow$_fun_sendJettons((slice, slice, slice, slice, slice, slice, int, int, int, int, int, int, int, int) $self, slice $to, int $jettonAmount) impure inline_ref {
+    var (($self'platform, $self'customer, $self'freelancer, $self'scout, $self'jettonMaster, $self'escrowJettonWallet, $self'jettonWalletConfigured, $self'dealId, $self'expectedAmount, $self'scoutCommissionSharePercent, $self'deadlineDurationSeconds, $self'amount, $self'status, $self'deadlineAt)) = $self;
+    cell $body = $Builder$_fun_endCell($Builder$_fun_storeBit(false, $Builder$_fun_storeCoins($Builder$_fun_storeBit(false, $Builder$_fun_storeAddress($Builder$_fun_storeAddress($Builder$_fun_storeCoins(store_uint(store_uint($global_beginCell(), 260734629, 32), 0, 64), $jettonAmount), $to), $self'customer)), 0)));
+    $global_send($SendParameters$_constructor_to_value_bounce_mode_body($self'escrowJettonWallet, 60000000, true, 1, $body));
+    return (($self'platform, $self'customer, $self'freelancer, $self'scout, $self'jettonMaster, $self'escrowJettonWallet, $self'jettonWalletConfigured, $self'dealId, $self'expectedAmount, $self'scoutCommissionSharePercent, $self'deadlineDurationSeconds, $self'amount, $self'status, $self'deadlineAt), ());
+}
+
+((slice, slice, slice, slice, slice, slice, int, int, int, int, int, int, int, int), ()) $FavorStablecoinJettonEscrow$_fun_distributeFreelancerShare((slice, slice, slice, slice, slice, slice, int, int, int, int, int, int, int, int) $self, int $freelancerGrossAmount) impure inline_ref {
+    var (($self'platform, $self'customer, $self'freelancer, $self'scout, $self'jettonMaster, $self'escrowJettonWallet, $self'jettonWalletConfigured, $self'dealId, $self'expectedAmount, $self'scoutCommissionSharePercent, $self'deadlineDurationSeconds, $self'amount, $self'status, $self'deadlineAt)) = $self;
+    int $commission = (($freelancerGrossAmount * 5) / 100);
+    int $scoutShare = (($commission * $self'scoutCommissionSharePercent) / 100);
+    int $platformShare = ($commission - $scoutShare);
+    int $freelancerShare = ($freelancerGrossAmount - $commission);
+    if (($freelancerShare > 0)) {
+        ($self'platform, $self'customer, $self'freelancer, $self'scout, $self'jettonMaster, $self'escrowJettonWallet, $self'jettonWalletConfigured, $self'dealId, $self'expectedAmount, $self'scoutCommissionSharePercent, $self'deadlineDurationSeconds, $self'amount, $self'status, $self'deadlineAt)~$FavorStablecoinJettonEscrow$_fun_sendJettons($self'freelancer, $freelancerShare);
+    }
+    if (($scoutShare > 0)) {
+        ($self'platform, $self'customer, $self'freelancer, $self'scout, $self'jettonMaster, $self'escrowJettonWallet, $self'jettonWalletConfigured, $self'dealId, $self'expectedAmount, $self'scoutCommissionSharePercent, $self'deadlineDurationSeconds, $self'amount, $self'status, $self'deadlineAt)~$FavorStablecoinJettonEscrow$_fun_sendJettons($self'scout, $scoutShare);
+    }
+    if (($platformShare > 0)) {
+        ($self'platform, $self'customer, $self'freelancer, $self'scout, $self'jettonMaster, $self'escrowJettonWallet, $self'jettonWalletConfigured, $self'dealId, $self'expectedAmount, $self'scoutCommissionSharePercent, $self'deadlineDurationSeconds, $self'amount, $self'status, $self'deadlineAt)~$FavorStablecoinJettonEscrow$_fun_sendJettons($self'platform, $platformShare);
+    }
+    return (($self'platform, $self'customer, $self'freelancer, $self'scout, $self'jettonMaster, $self'escrowJettonWallet, $self'jettonWalletConfigured, $self'dealId, $self'expectedAmount, $self'scoutCommissionSharePercent, $self'deadlineDurationSeconds, $self'amount, $self'status, $self'deadlineAt), ());
+}
+
+((slice, slice, slice, slice, slice, slice, int, int, int, int, int, int, int, int), ()) $FavorStablecoinJettonEscrow$_fun_closeGas((slice, slice, slice, slice, slice, slice, int, int, int, int, int, int, int, int) $self) impure inline_ref {
+    var (($self'platform, $self'customer, $self'freelancer, $self'scout, $self'jettonMaster, $self'escrowJettonWallet, $self'jettonWalletConfigured, $self'dealId, $self'expectedAmount, $self'scoutCommissionSharePercent, $self'deadlineDurationSeconds, $self'amount, $self'status, $self'deadlineAt)) = $self;
+    $global_send($SendParameters$_constructor_to_value_bounce_mode_body($self'customer, 0, false, 160, __gen_cell_cell_62ee6fa415bf343b3819a99eb63402fd1b4acc8b0e1ee624ade0cb2de182e5e9()));
+    return (($self'platform, $self'customer, $self'freelancer, $self'scout, $self'jettonMaster, $self'escrowJettonWallet, $self'jettonWalletConfigured, $self'dealId, $self'expectedAmount, $self'scoutCommissionSharePercent, $self'deadlineDurationSeconds, $self'amount, $self'status, $self'deadlineAt), ());
+}
+
+((slice, slice, slice, slice, slice, slice, int, int, int, int, int, int, int, int), int) $FavorStablecoinJettonEscrow$_fun_status((slice, slice, slice, slice, slice, slice, int, int, int, int, int, int, int, int) $self) impure inline_ref {
+    var (($self'platform, $self'customer, $self'freelancer, $self'scout, $self'jettonMaster, $self'escrowJettonWallet, $self'jettonWalletConfigured, $self'dealId, $self'expectedAmount, $self'scoutCommissionSharePercent, $self'deadlineDurationSeconds, $self'amount, $self'status, $self'deadlineAt)) = $self;
+    var $fresh$ret_8 = $self'status;
+    return (($self'platform, $self'customer, $self'freelancer, $self'scout, $self'jettonMaster, $self'escrowJettonWallet, $self'jettonWalletConfigured, $self'dealId, $self'expectedAmount, $self'scoutCommissionSharePercent, $self'deadlineDurationSeconds, $self'amount, $self'status, $self'deadlineAt), $fresh$ret_8);
+}
+
+((slice, slice, slice, slice, slice, slice, int, int, int, int, int, int, int, int), int) $FavorStablecoinJettonEscrow$_fun_deadlineAt((slice, slice, slice, slice, slice, slice, int, int, int, int, int, int, int, int) $self) impure inline_ref {
+    var (($self'platform, $self'customer, $self'freelancer, $self'scout, $self'jettonMaster, $self'escrowJettonWallet, $self'jettonWalletConfigured, $self'dealId, $self'expectedAmount, $self'scoutCommissionSharePercent, $self'deadlineDurationSeconds, $self'amount, $self'status, $self'deadlineAt)) = $self;
+    var $fresh$ret_9 = $self'deadlineAt;
+    return (($self'platform, $self'customer, $self'freelancer, $self'scout, $self'jettonMaster, $self'escrowJettonWallet, $self'jettonWalletConfigured, $self'dealId, $self'expectedAmount, $self'scoutCommissionSharePercent, $self'deadlineDurationSeconds, $self'amount, $self'status, $self'deadlineAt), $fresh$ret_9);
+}
+
+((slice, slice, slice, slice, slice, slice, int, int, int, int, int, int, int, int), slice) $FavorStablecoinJettonEscrow$_fun_details((slice, slice, slice, slice, slice, slice, int, int, int, int, int, int, int, int) $self) impure inline_ref {
+    var (($self'platform, $self'customer, $self'freelancer, $self'scout, $self'jettonMaster, $self'escrowJettonWallet, $self'jettonWalletConfigured, $self'dealId, $self'expectedAmount, $self'scoutCommissionSharePercent, $self'deadlineDurationSeconds, $self'amount, $self'status, $self'deadlineAt)) = $self;
+    var $fresh$ret_10 = $global_myAddress();
+    return (($self'platform, $self'customer, $self'freelancer, $self'scout, $self'jettonMaster, $self'escrowJettonWallet, $self'jettonWalletConfigured, $self'dealId, $self'expectedAmount, $self'scoutCommissionSharePercent, $self'deadlineDurationSeconds, $self'amount, $self'status, $self'deadlineAt), $fresh$ret_10);
+}
+
+((slice, slice, slice, slice, slice, slice, int, int, int, int, int, int, int, int), slice) $FavorStablecoinJettonEscrow$_fun_jettonWallet((slice, slice, slice, slice, slice, slice, int, int, int, int, int, int, int, int) $self) impure inline_ref {
+    var (($self'platform, $self'customer, $self'freelancer, $self'scout, $self'jettonMaster, $self'escrowJettonWallet, $self'jettonWalletConfigured, $self'dealId, $self'expectedAmount, $self'scoutCommissionSharePercent, $self'deadlineDurationSeconds, $self'amount, $self'status, $self'deadlineAt)) = $self;
+    var $fresh$ret_11 = $self'escrowJettonWallet;
+    return (($self'platform, $self'customer, $self'freelancer, $self'scout, $self'jettonMaster, $self'escrowJettonWallet, $self'jettonWalletConfigured, $self'dealId, $self'expectedAmount, $self'scoutCommissionSharePercent, $self'deadlineDurationSeconds, $self'amount, $self'status, $self'deadlineAt), $fresh$ret_11);
+}
+
+((slice, slice, slice, slice, slice, slice, int, int, int, int, int, int, int, int), slice) $FavorStablecoinJettonEscrow$_fun_jettonMasterAddress((slice, slice, slice, slice, slice, slice, int, int, int, int, int, int, int, int) $self) impure inline_ref {
+    var (($self'platform, $self'customer, $self'freelancer, $self'scout, $self'jettonMaster, $self'escrowJettonWallet, $self'jettonWalletConfigured, $self'dealId, $self'expectedAmount, $self'scoutCommissionSharePercent, $self'deadlineDurationSeconds, $self'amount, $self'status, $self'deadlineAt)) = $self;
+    var $fresh$ret_12 = $self'jettonMaster;
+    return (($self'platform, $self'customer, $self'freelancer, $self'scout, $self'jettonMaster, $self'escrowJettonWallet, $self'jettonWalletConfigured, $self'dealId, $self'expectedAmount, $self'scoutCommissionSharePercent, $self'deadlineDurationSeconds, $self'amount, $self'status, $self'deadlineAt), $fresh$ret_12);
+}
+
+;;
+;; Get methods of a Contract FavorStablecoinJettonEscrow
+;;
+
+_ %status() method_id(101642) {
+    var self = $FavorStablecoinJettonEscrow$_contract_load();
+    var res = self~$FavorStablecoinJettonEscrow$_fun_status();
+    return res;
+}
+
+_ %deadlineAt() method_id(114650) {
+    var self = $FavorStablecoinJettonEscrow$_contract_load();
+    var res = self~$FavorStablecoinJettonEscrow$_fun_deadlineAt();
+    return res;
+}
+
+_ %details() method_id(118890) {
+    var self = $FavorStablecoinJettonEscrow$_contract_load();
+    var res = self~$FavorStablecoinJettonEscrow$_fun_details();
+    return res;
+}
+
+_ %jettonWallet() method_id(90133) {
+    var self = $FavorStablecoinJettonEscrow$_contract_load();
+    var res = self~$FavorStablecoinJettonEscrow$_fun_jettonWallet();
+    return res;
+}
+
+_ %jettonMasterAddress() method_id(105785) {
+    var self = $FavorStablecoinJettonEscrow$_contract_load();
+    var res = self~$FavorStablecoinJettonEscrow$_fun_jettonMasterAddress();
+    return res;
+}
+
+;;
+;; Routing of a Contract FavorStablecoinJettonEscrow
+;;
+
+;; message opcode reader utility: only binary receivers
+;; Returns 32 bit message opcode, otherwise throws the "Invalid incoming message" exit code
+(slice, int) ~load_opcode_internal(slice s) asm( -> 1 0) "32 LDUQ 130 THROWIFNOT";
+
+() recv_internal(int msg_value, cell in_msg_cell, slice in_msg) impure {
+    
+    ;; Context
+    var cs = in_msg_cell.begin_parse();
+    cs~skip_bits(2);
+    var msg_bounceable = cs~load_int(1);
+    var msg_bounced = cs~load_int(1);
+    slice msg_sender_addr = cs~load_msg_addr();
+    __tact_context = (msg_bounceable, msg_sender_addr, msg_value, cs);
+    __tact_context_sender = msg_sender_addr;
+    
+    ;; Load contract data
+    var ($self'platform, $self'customer, $self'freelancer, $self'scout, $self'jettonMaster, $self'escrowJettonWallet, $self'jettonWalletConfigured, $self'dealId, $self'expectedAmount, $self'scoutCommissionSharePercent, $self'deadlineDurationSeconds, $self'amount, $self'status, $self'deadlineAt) = $FavorStablecoinJettonEscrow$_contract_load();
+    
+    ;; Handle bounced messages
+    if (msg_bounced) { return (); }
+    int op = 0;
+    int in_msg_length = slice_bits(in_msg);
+    if (in_msg_length >= 32) {
+        op = in_msg~load_uint(32);
+        ;; Receive ConfigureJettonWallet message
+        if (op == 308508065) {
+            var $msg'jettonWallet = in_msg~load_msg_addr();
+            var ($ctx'bounceable, $ctx'sender, $ctx'value, $ctx'raw) = __tact_context_get();
+            throw_unless(42435, ( (( equal_slices_bits($ctx'sender, $self'customer) )) ? (true) : (( equal_slices_bits($ctx'sender, $self'platform) )) ));
+            throw_unless(17035, (~ $self'jettonWalletConfigured));
+            $self'escrowJettonWallet = $msg'jettonWallet;
+            $self'jettonWalletConfigured = true;
+            $FavorStablecoinJettonEscrow$_contract_store(($self'platform, $self'customer, $self'freelancer, $self'scout, $self'jettonMaster, $self'escrowJettonWallet, $self'jettonWalletConfigured, $self'dealId, $self'expectedAmount, $self'scoutCommissionSharePercent, $self'deadlineDurationSeconds, $self'amount, $self'status, $self'deadlineAt));
+            return ();
+        }
+
+        ;; Receive JettonTransferNotification message
+        if (op == 0x7362d09c) {
+            var $msg'queryId = in_msg~load_uint(64);
+            var $msg'amount = in_msg~load_varuint16();
+            var $msg'sender = in_msg~load_msg_addr();
+            var $msg'forwardPayload = in_msg;
+            var ($ctx'bounceable, $ctx'sender, $ctx'value, $ctx'raw) = __tact_context_get();
+            throw_unless(35739, ($self'status == 0));
+            throw_unless(62980, $self'jettonWalletConfigured);
+            throw_unless(11446, ( equal_slices_bits($ctx'sender, $self'escrowJettonWallet) ));
+            throw_unless(21835, ( equal_slices_bits($msg'sender, $self'customer) ));
+            throw_unless(51698, ($msg'amount == $self'expectedAmount));
+            $self'amount = $msg'amount;
+            $self'status = 1;
+            $self'deadlineAt = ($global_now() + $self'deadlineDurationSeconds);
+            $FavorStablecoinJettonEscrow$_contract_store(($self'platform, $self'customer, $self'freelancer, $self'scout, $self'jettonMaster, $self'escrowJettonWallet, $self'jettonWalletConfigured, $self'dealId, $self'expectedAmount, $self'scoutCommissionSharePercent, $self'deadlineDurationSeconds, $self'amount, $self'status, $self'deadlineAt));
+            return ();
+        }
+        
+        ;; Receive ResolveStablecoinDispute message
+        if (op == 4214219585) {
+            var $msg'freelancerPercent = in_msg~load_uint(8);
+            var ($ctx'bounceable, $ctx'sender, $ctx'value, $ctx'raw) = __tact_context_get();
+            throw_unless(57229, ( equal_slices_bits($ctx'sender, $self'platform) ));
+            throw_unless(45284, ($self'status == 3));
+            throw_unless(6722, ($msg'freelancerPercent <= 100));
+            $self'status = 2;
+            int $freelancerAmt = (($self'amount * $msg'freelancerPercent) / 100);
+            int $customerAmt = ($self'amount - $freelancerAmt);
+            if (($customerAmt > 0)) {
+                ($self'platform, $self'customer, $self'freelancer, $self'scout, $self'jettonMaster, $self'escrowJettonWallet, $self'jettonWalletConfigured, $self'dealId, $self'expectedAmount, $self'scoutCommissionSharePercent, $self'deadlineDurationSeconds, $self'amount, $self'status, $self'deadlineAt)~$FavorStablecoinJettonEscrow$_fun_sendJettons($self'customer, $customerAmt);
+            }
+            if (($freelancerAmt > 0)) {
+                ($self'platform, $self'customer, $self'freelancer, $self'scout, $self'jettonMaster, $self'escrowJettonWallet, $self'jettonWalletConfigured, $self'dealId, $self'expectedAmount, $self'scoutCommissionSharePercent, $self'deadlineDurationSeconds, $self'amount, $self'status, $self'deadlineAt)~$FavorStablecoinJettonEscrow$_fun_distributeFreelancerShare($freelancerAmt);
+            }
+            ($self'platform, $self'customer, $self'freelancer, $self'scout, $self'jettonMaster, $self'escrowJettonWallet, $self'jettonWalletConfigured, $self'dealId, $self'expectedAmount, $self'scoutCommissionSharePercent, $self'deadlineDurationSeconds, $self'amount, $self'status, $self'deadlineAt)~$FavorStablecoinJettonEscrow$_fun_closeGas();
+            $FavorStablecoinJettonEscrow$_contract_store(($self'platform, $self'customer, $self'freelancer, $self'scout, $self'jettonMaster, $self'escrowJettonWallet, $self'jettonWalletConfigured, $self'dealId, $self'expectedAmount, $self'scoutCommissionSharePercent, $self'deadlineDurationSeconds, $self'amount, $self'status, $self'deadlineAt));
+            return ();
+        }
+        
+        ;; Receive Deploy message
+        if (op == 0x946a98b6) {
+            var $deploy'queryId = in_msg~load_uint(64);
+            ($self'platform, $self'customer, $self'freelancer, $self'scout, $self'jettonMaster, $self'escrowJettonWallet, $self'jettonWalletConfigured, $self'dealId, $self'expectedAmount, $self'scoutCommissionSharePercent, $self'deadlineDurationSeconds, $self'amount, $self'status, $self'deadlineAt)~$FavorStablecoinJettonEscrow$_fun_notify($DeployOk$_store_cell($DeployOk$_constructor_queryId($deploy'queryId), begin_cell()));
+            $FavorStablecoinJettonEscrow$_contract_store(($self'platform, $self'customer, $self'freelancer, $self'scout, $self'jettonMaster, $self'escrowJettonWallet, $self'jettonWalletConfigured, $self'dealId, $self'expectedAmount, $self'scoutCommissionSharePercent, $self'deadlineDurationSeconds, $self'amount, $self'status, $self'deadlineAt));
+            return ();
+        }
+        
+    }
+    ;; Receive empty message
+    if ((op == 0) & (in_msg_length <= 32)) {
+        var ($ctx'bounceable, $ctx'sender, $ctx'value, $ctx'raw) = __tact_context_get();
+        throw_unless(42435, ( (( equal_slices_bits($ctx'sender, $self'customer) )) ? (true) : (( equal_slices_bits($ctx'sender, $self'platform) )) ));
+        throw_unless(33522, ($ctx'value > 50000000));
+        $FavorStablecoinJettonEscrow$_contract_store(($self'platform, $self'customer, $self'freelancer, $self'scout, $self'jettonMaster, $self'escrowJettonWallet, $self'jettonWalletConfigured, $self'dealId, $self'expectedAmount, $self'scoutCommissionSharePercent, $self'deadlineDurationSeconds, $self'amount, $self'status, $self'deadlineAt));
+        return ();
+    }
+    ;; Empty Receiver and Text Receivers
+    var text_op = slice_hash(in_msg);
+    ;; Receive "complete" message
+    if (text_op == 0xf29fa7e2b166aa5aa95ed61d3477f8d1ef25469d0a1be9360a76bf7b423bc151) {
+        var ($ctx'bounceable, $ctx'sender, $ctx'value, $ctx'raw) = __tact_context_get();
+        throw_unless(42435, ( (( equal_slices_bits($ctx'sender, $self'customer) )) ? (true) : (( equal_slices_bits($ctx'sender, $self'platform) )) ));
+        throw_unless(33459, ( (($self'status == 1)) ? (true) : (($self'status == 3)) ));
+        $self'status = 2;
+        ($self'platform, $self'customer, $self'freelancer, $self'scout, $self'jettonMaster, $self'escrowJettonWallet, $self'jettonWalletConfigured, $self'dealId, $self'expectedAmount, $self'scoutCommissionSharePercent, $self'deadlineDurationSeconds, $self'amount, $self'status, $self'deadlineAt)~$FavorStablecoinJettonEscrow$_fun_distributeFreelancerShare($self'amount);
+        ($self'platform, $self'customer, $self'freelancer, $self'scout, $self'jettonMaster, $self'escrowJettonWallet, $self'jettonWalletConfigured, $self'dealId, $self'expectedAmount, $self'scoutCommissionSharePercent, $self'deadlineDurationSeconds, $self'amount, $self'status, $self'deadlineAt)~$FavorStablecoinJettonEscrow$_fun_closeGas();
+        $FavorStablecoinJettonEscrow$_contract_store(($self'platform, $self'customer, $self'freelancer, $self'scout, $self'jettonMaster, $self'escrowJettonWallet, $self'jettonWalletConfigured, $self'dealId, $self'expectedAmount, $self'scoutCommissionSharePercent, $self'deadlineDurationSeconds, $self'amount, $self'status, $self'deadlineAt));
+        return ();
+    }
+    ;; Receive "refund" message
+    if (text_op == 0x2282abf8277dc4ff9183255e3d0fb487fa3963bcea406ca8943205a96e5346cd) {
+        var ($ctx'bounceable, $ctx'sender, $ctx'value, $ctx'raw) = __tact_context_get();
+        throw_unless(33459, ( (($self'status == 1)) ? (true) : (($self'status == 3)) ));
+        if (( equal_slices_bits($ctx'sender, $self'customer) )) {
+            throw_unless(45995, ($self'status == 1));
+            throw_unless(48201, ( (($self'deadlineAt > 0)) ? (($global_now() >= $self'deadlineAt)) : (false) ));
+        } else {
+            throw_unless(42435, ( (( equal_slices_bits($ctx'sender, $self'freelancer) )) ? (true) : (( equal_slices_bits($ctx'sender, $self'platform) )) ));
+        }
+        $self'status = 4;
+        ($self'platform, $self'customer, $self'freelancer, $self'scout, $self'jettonMaster, $self'escrowJettonWallet, $self'jettonWalletConfigured, $self'dealId, $self'expectedAmount, $self'scoutCommissionSharePercent, $self'deadlineDurationSeconds, $self'amount, $self'status, $self'deadlineAt)~$FavorStablecoinJettonEscrow$_fun_sendJettons($self'customer, $self'amount);
+        ($self'platform, $self'customer, $self'freelancer, $self'scout, $self'jettonMaster, $self'escrowJettonWallet, $self'jettonWalletConfigured, $self'dealId, $self'expectedAmount, $self'scoutCommissionSharePercent, $self'deadlineDurationSeconds, $self'amount, $self'status, $self'deadlineAt)~$FavorStablecoinJettonEscrow$_fun_closeGas();
+        $FavorStablecoinJettonEscrow$_contract_store(($self'platform, $self'customer, $self'freelancer, $self'scout, $self'jettonMaster, $self'escrowJettonWallet, $self'jettonWalletConfigured, $self'dealId, $self'expectedAmount, $self'scoutCommissionSharePercent, $self'deadlineDurationSeconds, $self'amount, $self'status, $self'deadlineAt));
+        return ();
+    }
+    ;; Receive "dispute" message
+    if (text_op == 0x054e0a8595d08326d56c73cd5dca85c1e629fe1e418a935a3b82b7e558803707) {
+        var ($ctx'bounceable, $ctx'sender, $ctx'value, $ctx'raw) = __tact_context_get();
+        throw_unless(57669, ( (( equal_slices_bits($ctx'sender, $self'customer) )) ? (true) : (( equal_slices_bits($ctx'sender, $self'freelancer) )) ));
+        throw_unless(32780, ($self'status == 1));
+        throw_unless(14598, ( (($self'deadlineAt > 0)) ? (($global_now() < $self'deadlineAt)) : (false) ));
+        $self'status = 3;
+        ($self'platform, $self'customer, $self'freelancer, $self'scout, $self'jettonMaster, $self'escrowJettonWallet, $self'jettonWalletConfigured, $self'dealId, $self'expectedAmount, $self'scoutCommissionSharePercent, $self'deadlineDurationSeconds, $self'amount, $self'status, $self'deadlineAt)~$FavorStablecoinJettonEscrow$_fun_reply(__gen_cell_cell_b4926ebcabf0cd1510251b1a77089cecb1848d699b7e971235dca34176591738());
+        $FavorStablecoinJettonEscrow$_contract_store(($self'platform, $self'customer, $self'freelancer, $self'scout, $self'jettonMaster, $self'escrowJettonWallet, $self'jettonWalletConfigured, $self'dealId, $self'expectedAmount, $self'scoutCommissionSharePercent, $self'deadlineDurationSeconds, $self'amount, $self'status, $self'deadlineAt));
+        return ();
+    }
+    ;; Throw if not handled
+    throw(130);
+}
+
+
+() __tact_selector_hack_asm() impure asm """
+@atend @ 1 {
+        execute current@ context@ current!
+        {
+            // The core idea of this function is to save gas by avoiding unnecessary dict jump, when recv_internal/recv_external is called
+            // We want to extract recv_internal/recv_external from the dict and select needed function
+            // not by jumping to the needed function by it's index, but by using usual IF statements.
+
+            }END> b> // Close previous builder, now we have a cell of previous code on top of the stack
+
+            <{ // Start of the new code builder
+                SETCP0
+                // Swap the new code builder with the previous code, now we have previous code on top of the stack
+                swap
+                // Transform cell to slice and load first ref from the previous code, now we have the dict on top of the stack
+                <s ref@
+
+                // Extract the recv_internal from the dict
+                dup 0 swap @procdictkeylen idict@ { "internal shortcut error" abort } ifnot
+                swap
+
+                // Delete the recv_internal from the dict
+                0 swap @procdictkeylen idict- drop
+                // Delete the recv_external from the dict (it's okay if it's not there)
+                -1 swap @procdictkeylen idict- drop
+                // Delete the __tact_selector_hack from the dict
+                65535 swap @procdictkeylen idict- drop
+
+                // Bring the code builder from the bottom of the stack
+                // because if recv_external extraction is optional, and the number of elements on the stack is not fixed
+                depth 1- roll
+                // Swap with the dict from which we extracted recv_internal and (maybe) recv_external
+                swap
+
+                // Check if the dict is empty
+                dup null?
+                // Store a copy of this flag in the bottom of the stack
+                dup depth 1- -roll
+                {
+                    // If the dict is empty, just drop it (it will be null if it's empty)
+                    drop
+                }
+                {
+                    // If the dict is not empty, prepare continuation to be stored in c3
+                    <{
+                        // Save this dict as first ref in this continuation, it will be pushed in runtime by DICTPUSHCONST
+                        swap @procdictkeylen DICTPUSHCONST
+                        // Jump to the needed function by it's index
+                        DICTIGETJMPZ
+                        // If such key is not found, throw 11 along with the key as an argument
+                        11 THROWARG
+                    }> PUSHCONT
+                    // Store the continuation in c3
+                    c3 POP
+                } cond
+
+                // Function id is on top of the (runtime) stack
+                DUP IFNOTJMP:<{
+                    // place recv_internal here
+                    DROP swap @addop
+                }>
+
+                // Bring back the flag, indicating if the dict is empty or not from the bottom of the stack
+                depth 1- roll
+                {
+                    // If the dict is empty, throw 11
+                    11 THROWARG
+                }
+                {
+                    // If the dict is not empty, jump to continuation from c3
+                    c3 PUSH JMPX
+                } cond
+            }> b>
+        } : }END>c
+        current@ context! current!
+    } does @atend !
+""";
+
+() __tact_selector_hack() method_id(65535) {
+    return __tact_selector_hack_asm();
+}

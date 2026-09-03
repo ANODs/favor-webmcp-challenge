@@ -1,0 +1,321 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #000000;
+  --surface: #f4f4f5;
+  --surface-muted: #f4f4f5;
+  --surface-overlay: rgba(255, 255, 255, 0.92);
+  --border-soft: rgba(9, 9, 11, 0.06);
+  --muted-foreground: #71717a;
+  --shadow-soft: 0 1px 2px rgba(9, 9, 11, 0.06);
+  --liquid-glass-surface: #ffffff;
+  --liquid-glass-border: rgba(9, 9, 11, 0.06);
+}
+
+[data-theme="dark"] {
+  --background: #000000;
+  --foreground: #ffffff;
+  --surface: #0a0a0a;
+  --surface-muted: #27272a;
+  --surface-overlay: rgba(24, 24, 27, 0.92);
+  --border-soft: rgba(244, 244, 245, 0.08);
+  --muted-foreground: #a1a1aa;
+  --shadow-soft: 0 1px 2px rgba(0, 0, 0, 0.4);
+  --liquid-glass-surface: #27272a;
+  --liquid-glass-border: rgba(244, 244, 245, 0.08);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-montserrat);
+  --font-mono: var(--font-geist-mono);
+  --color-brand-blue: #0B0FB4;
+  --color-brand-pink: #FF61A7;
+  --color-brand-accent: #75F760;
+  --color-brand-accent-ink: #0D8255;
+}
+
+.workflow-phone-theme {
+  color-scheme: dark;
+  background: var(--background);
+  color: var(--foreground);
+}
+
+.workflow-phone-theme .bg-white {
+  background-color: var(--surface) !important;
+}
+
+.workflow-phone-theme .bg-zinc-50 {
+  background-color: var(--surface-muted) !important;
+}
+
+.workflow-phone-theme .bg-zinc-100 {
+  background-color: #32323a !important;
+}
+
+.workflow-phone-theme .text-zinc-950,
+.workflow-phone-theme .text-zinc-900,
+.workflow-phone-theme .text-zinc-800,
+.workflow-phone-theme .text-zinc-700 {
+  color: #f4f4f5 !important;
+}
+
+.workflow-phone-theme .text-zinc-600,
+.workflow-phone-theme .text-zinc-500 {
+  color: #a1a1aa !important;
+}
+
+.workflow-phone-theme .border-zinc-100,
+.workflow-phone-theme .border-zinc-200 {
+  border-color: var(--border-soft) !important;
+}
+
+.workflow-phone-theme input:not(.bg-transparent),
+.workflow-phone-theme select:not(.bg-transparent),
+.workflow-phone-theme textarea:not(.bg-transparent) {
+  border-color: var(--border-soft);
+  background-color: var(--surface-muted);
+  color: var(--foreground);
+}
+
+.workflow-phone-theme input::placeholder,
+.workflow-phone-theme textarea::placeholder {
+  color: var(--muted-foreground);
+}
+
+.workflow-phone-theme select option {
+  background: var(--surface);
+  color: var(--foreground);
+}
+
+@custom-variant dark (&:is([data-theme="dark"] *));
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  min-height: 100%;
+  overflow-x: clip;
+  background: var(--background);
+  color: var(--foreground);
+}
+
+body {
+  font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.hero-phone-scene-float {
+  animation: hero-phone-scene-float 7s ease-in-out infinite;
+  transform-origin: 50% 52%;
+}
+
+@keyframes hero-phone-scene-float {
+  0%,
+  100% {
+    transform: translate3d(0, -5px, 0);
+  }
+  50% {
+    transform: translate3d(0, 8px, 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-phone-scene-float {
+    animation: none;
+  }
+}
+
+
+
+code {
+  font-family: var(--font-geist-mono), monospace;
+}
+
+.theme-shell {
+  background: var(--background);
+  color: var(--foreground);
+}
+
+.theme-surface {
+  border-color: var(--border-soft);
+  background: var(--surface);
+  box-shadow: var(--shadow-soft);
+}
+
+.theme-topbar,
+.theme-nav {
+  border-color: var(--border-soft);
+  background: var(--surface-overlay);
+}
+
+.bg-liquid-glass {
+  background: var(--liquid-glass-surface);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+@supports not (hanging-punctuation: first) {
+  .bg-liquid-glass {
+    backdrop-filter: url(#displacementFilter) blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+  }
+}
+
+html[data-theme="dark"] body .bg-white {
+  background-color: var(--surface) !important;
+}
+
+html[data-theme="dark"] body [class~="bg-white/90"],
+html[data-theme="dark"] body [class~="bg-white/95"] {
+  background-color: var(--surface-overlay) !important;
+}
+
+html[data-theme="dark"] body .bg-zinc-50 {
+  background-color: var(--surface-muted) !important;
+}
+
+html[data-theme="dark"] body .bg-zinc-100 {
+  background-color: #32323a !important;
+}
+
+html[data-theme="dark"] body .text-zinc-950 {
+  color: #f4f4f5 !important;
+}
+
+html[data-theme="dark"] body .text-zinc-900,
+html[data-theme="dark"] body .text-zinc-800,
+html[data-theme="dark"] body .text-zinc-700 {
+  color: #e4e4e7 !important;
+}
+
+html[data-theme="dark"] body .text-zinc-600,
+html[data-theme="dark"] body .text-zinc-500 {
+  color: #a1a1aa !important;
+}
+
+html[data-theme="dark"] body .border-black\/5,
+html[data-theme="dark"] body .border-zinc-100,
+html[data-theme="dark"] body .border-zinc-200 {
+  border-color: var(--border-soft) !important;
+}
+
+html[data-theme="dark"] body [class*="hover:bg-zinc-100"]:hover {
+  background-color: #32323a !important;
+}
+
+html[data-theme="dark"] input:not(.bg-transparent),
+html[data-theme="dark"] select:not(.bg-transparent),
+html[data-theme="dark"] textarea:not(.bg-transparent) {
+  border-color: var(--border-soft);
+  background-color: var(--surface-muted);
+  color: var(--foreground);
+}
+
+html[data-theme="dark"] input.bg-liquid-glass,
+html[data-theme="dark"] select.bg-liquid-glass,
+html[data-theme="dark"] textarea.bg-liquid-glass,
+html[data-theme="dark"] .bg-liquid-glass {
+  border-color: var(--liquid-glass-border) !important;
+  background: var(--liquid-glass-surface) !important;
+}
+
+html[data-theme="dark"] input::placeholder,
+html[data-theme="dark"] textarea::placeholder {
+  color: var(--muted-foreground);
+}
+
+html[data-theme="dark"] select option {
+  background: var(--surface);
+  color: var(--foreground);
+}
+
+.metal-fx-root {
+  background: #fff !important;
+  color: #000 !important;
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--foreground);
+  border-radius: 999px;
+  border: 2px solid var(--background);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--muted-foreground);
+}
+
+html {
+  scrollbar-width: thin;
+  scrollbar-color: var(--foreground) var(--background);
+}
+
+/* Hero Section Grainient Theme Adaptation */
+.hero-grainient {
+  filter: invert(1) hue-rotate(180deg) brightness(1.5) contrast(1.1);
+  opacity: 1;
+}
+
+html[data-theme="dark"] body .hero-grainient {
+  filter: none !important;
+  opacity: 1;
+}
+
+/* Additional Theme Overrides for Transparent Backgrounds */
+html[data-theme="dark"] body [class~="bg-white/80"] {
+  background-color: rgba(24, 24, 27, 0.8) !important;
+}
+
+html[data-theme="dark"] body [class~="bg-white/60"] {
+  background-color: rgba(24, 24, 27, 0.6) !important;
+}
+
+html[data-theme="dark"] body [class~="hover:bg-black/5"]:hover {
+  background-color: rgba(255, 255, 255, 0.05) !important;
+}
+
+/* Hero Title Gradient Adaptation */
+.hero-title-gradient {
+  background-image: linear-gradient(to bottom right, #18181b, #71717a);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+html[data-theme="dark"] body .hero-title-gradient {
+  background-image: linear-gradient(to bottom right, #ffffff, #a1a1aa) !important;
+}
+
+/* Bento Grid Videos Theme Adaptation */
+.theme-invert-video {
+  filter: invert(1) hue-rotate(180deg) brightness(1.5) contrast(1.1);
+}
+
+html[data-theme="dark"] body .theme-invert-video {
+  filter: none !important;
+}
+
+/* Bento Grid Video Overlay Gradient */
+.bento-video-overlay {
+  background-image: linear-gradient(to top, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.4), transparent);
+}
+
+html[data-theme="dark"] body .bento-video-overlay {
+  background-image: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.2), transparent) !important;
+}

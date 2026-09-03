@@ -1,0 +1,28 @@
+{
+  "projects": [
+    {
+      "name": "FavorEscrow",
+      "path": "./src/shared/lib/ton/contracts/FavorEscrow.tact",
+      "output": "./src/shared/lib/ton/contracts/output",
+      "options": {
+        "debug": true
+      }
+    },
+    {
+      "name": "FavorScoutEscrow",
+      "path": "./src/shared/lib/ton/contracts/FavorScoutEscrow.tact",
+      "output": "./src/shared/lib/ton/contracts/output",
+      "options": {
+        "debug": true
+      }
+    },
+    {
+      "name": "FavorStablecoinJettonEscrow",
+      "path": "./src/shared/lib/ton/contracts/FavorStablecoinJettonEscrow.tact",
+      "output": "./src/shared/lib/ton/contracts/output",
+      "options": {
+        "debug": true
+      }
+    }
+  ]
+}

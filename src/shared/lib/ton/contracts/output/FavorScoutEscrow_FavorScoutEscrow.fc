@@ -1,0 +1,784 @@
+#pragma version =0.4.6;
+#pragma allow-post-modification;
+#pragma compute-asm-ltr;
+
+;; FavorScoutEscrow_FavorScoutEscrow.headers.fc
+;;
+;; Header files for FavorScoutEscrow
+;; NOTE: declarations are sorted for optimal order
+;;
+
+;; __tact_context_get
+(int, slice, int, slice) __tact_context_get() inline;
+
+;; __tact_context_get_sender
+slice __tact_context_get_sender() inline;
+
+;; __tact_string_builder_start
+tuple __tact_string_builder_start(builder b) inline;
+
+;; __tact_string_builder_start_comment
+tuple __tact_string_builder_start_comment() inline;
+
+;; __tact_string_builder_end
+cell __tact_string_builder_end(tuple builders) inline;
+
+;; __tact_string_builder_append
+((tuple), ()) __tact_string_builder_append(tuple builders, slice sc) inline_ref;
+
+;; $DeployOk$_store
+builder $DeployOk$_store(builder build_0, (int) v) inline;
+
+;; $DeployOk$_store_cell
+cell $DeployOk$_store_cell((int) v, builder b) inline;
+
+;; $FavorScoutEscrow$_store
+builder $FavorScoutEscrow$_store(builder build_0, (slice, slice, slice, slice, int, int, int, int, int, int) v) inline;
+
+;; $FavorScoutEscrow$_load
+(slice, ((slice, slice, slice, slice, int, int, int, int, int, int))) $FavorScoutEscrow$_load(slice sc_0) inline;
+
+;; $Context$_get_value
+_ $Context$_get_value((int, slice, int, slice) v) inline;
+
+;; $FavorScoutEscrow$init$_load
+(slice, ((slice, slice, slice, slice, int, int, int, int))) $FavorScoutEscrow$init$_load(slice sc_0) inline;
+
+;; $FavorScoutEscrow$_contract_init
+(slice, slice, slice, slice, int, int, int, int, int, int) $FavorScoutEscrow$_contract_init(slice $platform, slice $customer, slice $freelancer, slice $scout, int $dealId, int $expectedAmount, int $scoutCommissionSharePercent, int $deadlineDurationSeconds) impure inline;
+
+;; $FavorScoutEscrow$_contract_load
+(slice, slice, slice, slice, int, int, int, int, int, int) $FavorScoutEscrow$_contract_load() impure inline;
+
+;; $FavorScoutEscrow$_contract_store
+() $FavorScoutEscrow$_contract_store((slice, slice, slice, slice, int, int, int, int, int, int) v) impure inline;
+
+;; $String$_fun_asComment
+cell $String$_fun_asComment(slice $self) impure inline_ref;
+
+;; $SendParameters$_constructor_to_value_bounce_mode_body
+((int, cell, cell, cell, int, slice, int)) $SendParameters$_constructor_to_value_bounce_mode_body(slice $to, int $value, int $bounce, int $mode, cell $body) inline;
+
+;; $FavorScoutEscrow$_fun_refundRemainingGas
+((slice, slice, slice, slice, int, int, int, int, int, int), ()) $FavorScoutEscrow$_fun_refundRemainingGas((slice, slice, slice, slice, int, int, int, int, int, int) $self) impure inline_ref;
+
+;; $FavorScoutEscrow$_fun_distributeFreelancerShare
+((slice, slice, slice, slice, int, int, int, int, int, int), ()) $FavorScoutEscrow$_fun_distributeFreelancerShare((slice, slice, slice, slice, int, int, int, int, int, int) $self, int $freelancerGrossAmount, slice $payoutComment) impure inline_ref;
+
+;; $FavorScoutEscrow$_fun_status
+((slice, slice, slice, slice, int, int, int, int, int, int), int) $FavorScoutEscrow$_fun_status((slice, slice, slice, slice, int, int, int, int, int, int) $self) impure inline_ref;
+
+;; $FavorScoutEscrow$_fun_deadlineAt
+((slice, slice, slice, slice, int, int, int, int, int, int), int) $FavorScoutEscrow$_fun_deadlineAt((slice, slice, slice, slice, int, int, int, int, int, int) $self) impure inline_ref;
+
+;; $FavorScoutEscrow$_fun_details
+((slice, slice, slice, slice, int, int, int, int, int, int), slice) $FavorScoutEscrow$_fun_details((slice, slice, slice, slice, int, int, int, int, int, int) $self) impure inline_ref;
+
+;; $FavorScoutEscrow$_fun_scoutAddress
+((slice, slice, slice, slice, int, int, int, int, int, int), slice) $FavorScoutEscrow$_fun_scoutAddress((slice, slice, slice, slice, int, int, int, int, int, int) $self) impure inline_ref;
+
+;; $FavorScoutEscrow$_fun_scoutSharePercent
+((slice, slice, slice, slice, int, int, int, int, int, int), int) $FavorScoutEscrow$_fun_scoutSharePercent((slice, slice, slice, slice, int, int, int, int, int, int) $self) impure inline_ref;
+
+;; $MessageParameters$_constructor_bounce_to_value_mode_body
+((int, cell, int, slice, int)) $MessageParameters$_constructor_bounce_to_value_mode_body(int $bounce, slice $to, int $value, int $mode, cell $body) inline;
+
+;; $FavorScoutEscrow$_fun_reply
+((slice, slice, slice, slice, int, int, int, int, int, int), ()) $FavorScoutEscrow$_fun_reply((slice, slice, slice, slice, int, int, int, int, int, int) $self, cell $body) impure inline;
+
+;; $FavorScoutEscrow$_fun_notify
+((slice, slice, slice, slice, int, int, int, int, int, int), ()) $FavorScoutEscrow$_fun_notify((slice, slice, slice, slice, int, int, int, int, int, int) $self, cell $body) impure inline;
+
+;; $DeployOk$_constructor_queryId
+((int)) $DeployOk$_constructor_queryId(int $queryId) inline;
+
+
+;; FavorScoutEscrow_FavorScoutEscrow.stdlib.fc
+global (int, slice, int, slice) __tact_context;
+global slice __tact_context_sender;
+global cell __tact_child_contract_codes;
+global int __tact_randomized;
+
+(int, slice, int, slice) __tact_context_get() inline {
+    return __tact_context;
+}
+
+slice __tact_context_get_sender() inline {
+    return __tact_context_sender;
+}
+
+tuple __tact_string_builder_start(builder b) inline {
+    return tpush(tpush(empty_tuple(), b), null());
+}
+
+tuple __tact_string_builder_start_comment() inline {
+    return __tact_string_builder_start(begin_cell().store_uint(0, 32));
+}
+
+cell __tact_string_builder_end(tuple builders) inline {
+    (builder b, tuple tail) = uncons(builders);
+    cell c = b.end_cell();
+    while(~ null?(tail)) {
+        (b, tail) = uncons(tail);
+        c = b.store_ref(c).end_cell();
+    }
+    return c;
+}
+
+((tuple), ()) __tact_string_builder_append(tuple builders, slice sc) inline_ref {
+    int sliceRefs = slice_refs(sc);
+    int sliceBits = slice_bits(sc);
+
+    while((sliceBits > 0) | (sliceRefs > 0)) {
+
+        ;; Load the current builder
+        (builder b, tuple tail) = uncons(builders);
+        int remBytes = 127 - (builder_bits(b) / 8);
+        int exBytes = sliceBits / 8;
+
+        ;; Append bits
+        int amount = min(remBytes, exBytes);
+        if (amount > 0) {
+            slice read = sc~load_bits(amount * 8);
+            b = b.store_slice(read);
+        }
+
+        ;; Update builders
+        builders = cons(b, tail);
+
+        ;; Check if we need to add a new cell and continue
+        if (exBytes - amount > 0) {
+            var bb = begin_cell();
+            builders = cons(bb, builders);
+            sliceBits = (exBytes - amount) * 8;
+        } elseif (sliceRefs > 0) {
+            sc = sc~load_ref().begin_parse();
+            sliceRefs = slice_refs(sc);
+            sliceBits = slice_bits(sc);
+        } else {
+            sliceBits = 0;
+            sliceRefs = 0;
+        }
+    }
+
+    return ((builders), ());
+}
+
+slice $global_myAddress() impure asm """
+    MYADDR
+""";
+
+int $global_myBalance() impure asm """
+    BALANCE FIRST
+""";
+
+() $global_nativeReserve(int $amount, int $mode) impure asm """
+    RAWRESERVE
+""";
+
+() $global_message((int, cell, int, slice, int) $params) impure asm """
+    NEWC
+    b{01} STSLICECONST  // store tag = $0 and ihr_disabled = true
+    1 STI               // store `bounce`
+    b{000} STSLICECONST // store bounced = false and src = addr_none
+    STSLICE             // store `to`
+    SWAP
+    STGRAMS             // store `value`
+    106 PUSHINT         // 1 + 4 + 4 + 64 + 32 + 1
+    STZEROES
+    // → Stack state
+    // s0: Builder
+    // s1: `body`
+    // s2: `mode`
+    STDICT
+    ENDC
+    SWAP
+    SENDRAWMSG
+""";
+
+() $global_send((int, cell, cell, cell, int, slice, int) $params) impure asm """
+    NEWC
+    b{01} STSLICECONST  // store tag = $0 and ihr_disabled = true
+    1 STI               // store `bounce`
+    b{000} STSLICECONST // store bounced = false and src = addr_none
+    STSLICE             // store `to`
+    SWAP
+    STGRAMS             // store `value`
+    105 PUSHINT         // 1 + 4 + 4 + 64 + 32
+    STZEROES            // store currency_collection, ihr_fee, fwd_fee, created_lt and created_at
+    // → Stack state
+    // s0: Builder
+    // s1: `data`
+    // s2: `code`
+    // s3: `body`
+    // s4: `mode`
+
+    // Group 2: Placing the Builder after code and data, then checking those for nullability
+    s2 XCHG0
+    DUP2
+    ISNULL
+    SWAP
+    ISNULL
+    AND
+    // → Stack state
+    // s0: -1 (true) if `data` and `code` are both null, 0 (false) otherwise
+    // s1: `code`
+    // s2: `data`
+    // s3: Builder
+    // s4: `body`
+    // s5: `mode`
+
+    // Group 3: Left branch of the IFELSE, executed if s0 is -1 (true)
+    <{
+        DROP2 // drop `data` and `code`, since either of those is null
+        b{0} STSLICECONST
+    }> PUSHCONT
+
+    // Group 3: Right branch of the IFELSE, executed if s0 is 0 (false)
+    <{
+        // _ split_depth:(Maybe (## 5))
+        //   special:(Maybe TickTock)
+        //   code:(Maybe ^Cell)
+        //   data:(Maybe ^Cell)
+        //   library:(Maybe ^Cell)
+        // = StateInit;
+        ROT                // place message Builder on top
+        b{10} STSLICECONST // store Maybe = true, Either = false
+        // Start composing inlined StateInit
+        b{00} STSLICECONST // store split_depth and special first
+        STDICT             // store code
+        STDICT             // store data
+        b{0} STSLICECONST  // store library
+    }> PUSHCONT
+
+    // Group 3: IFELSE that does the branching shown above
+    IFELSE
+    // → Stack state
+    // s0: Builder
+    // s1: null or StateInit
+    // s2: `body`
+    // s3: `mode`
+
+    // Group 4: Finalizing the message
+    STDICT // store `body` as ref with an extra Maybe bit, since `body` might be null
+    ENDC
+    // → Stack state
+    // s0: Cell
+    // s1: `mode`
+
+    // Group 5: Sending the message, with `mode` on top
+    SWAP
+    SENDRAWMSG // https://github.com/tact-lang/tact/issues/1558
+""";
+
+int $global_now() impure asm """
+    NOW
+""";
+
+cell $String$_fun_asComment(slice $self) impure inline_ref {
+    var ($self) = $self;
+    tuple $b = __tact_string_builder_start_comment();
+    $b~__tact_string_builder_append($self);
+    return __tact_string_builder_end($b);
+}
+
+((slice, slice, slice, slice, int, int, int, int, int, int), ()) $FavorScoutEscrow$_fun_reply((slice, slice, slice, slice, int, int, int, int, int, int) $self, cell $body) impure inline {
+    var (($self'platform, $self'customer, $self'freelancer, $self'scout, $self'dealId, $self'scoutCommissionSharePercent, $self'deadlineDurationSeconds, $self'amount, $self'status, $self'deadlineAt)) = $self;
+    slice $to = __tact_context_get_sender();
+    int $bounce = true;
+    if (false) {
+        int $balance = $global_myBalance();
+        int $balanceBeforeMessage = ($balance - $Context$_get_value(__tact_context_get()));
+        if (($balanceBeforeMessage < 0)) {
+            $global_nativeReserve(0, 0);
+            $global_message($MessageParameters$_constructor_bounce_to_value_mode_body($bounce, $to, 0, 130, $body));
+            return (($self'platform, $self'customer, $self'freelancer, $self'scout, $self'dealId, $self'scoutCommissionSharePercent, $self'deadlineDurationSeconds, $self'amount, $self'status, $self'deadlineAt), ());
+        }
+    }
+    $global_message($MessageParameters$_constructor_bounce_to_value_mode_body($bounce, $to, 0, 66, $body));
+    return (($self'platform, $self'customer, $self'freelancer, $self'scout, $self'dealId, $self'scoutCommissionSharePercent, $self'deadlineDurationSeconds, $self'amount, $self'status, $self'deadlineAt), ());
+}
+
+((slice, slice, slice, slice, int, int, int, int, int, int), ()) $FavorScoutEscrow$_fun_notify((slice, slice, slice, slice, int, int, int, int, int, int) $self, cell $body) impure inline {
+    var (($self'platform, $self'customer, $self'freelancer, $self'scout, $self'dealId, $self'scoutCommissionSharePercent, $self'deadlineDurationSeconds, $self'amount, $self'status, $self'deadlineAt)) = $self;
+    slice $to = __tact_context_get_sender();
+    int $bounce = false;
+    if (false) {
+        int $balance = $global_myBalance();
+        int $balanceBeforeMessage = ($balance - $Context$_get_value(__tact_context_get()));
+        if (($balanceBeforeMessage < 0)) {
+            $global_nativeReserve(0, 0);
+            $global_message($MessageParameters$_constructor_bounce_to_value_mode_body($bounce, $to, 0, 130, $body));
+            return (($self'platform, $self'customer, $self'freelancer, $self'scout, $self'dealId, $self'scoutCommissionSharePercent, $self'deadlineDurationSeconds, $self'amount, $self'status, $self'deadlineAt), ());
+        }
+    }
+    $global_message($MessageParameters$_constructor_bounce_to_value_mode_body($bounce, $to, 0, 66, $body));
+    return (($self'platform, $self'customer, $self'freelancer, $self'scout, $self'dealId, $self'scoutCommissionSharePercent, $self'deadlineDurationSeconds, $self'amount, $self'status, $self'deadlineAt), ());
+}
+
+;; FavorScoutEscrow_FavorScoutEscrow.constants.fc
+;; Cell QmQj8HeD8hoIE9KfZTOP3ZqUgpqCiWfVtBxZFVEtquI=
+cell __gen_cell_cell_426423f07783f21a0813d29f65338fdd9a94829a828967d5b41c5915512daae2() asm """
+    B{b5ee9c7241010101002a000050000000004661766f722053636f757420457363726f773a2053636f757420436f6d6d697373696f6ee1a187fb} B>boc PUSHREF
+""";
+
+;; Cell qdG1a1gV1aM+TOaIujFWcaDKeEl8S53zLvNGwCUXQ5U=
+cell __gen_cell_cell_a9d1b56b5815d5a33e4ce688ba315671a0ca78497c4b9df32ef346c025174395() asm """
+    B{b5ee9c7241010101002d000056000000004661766f722053636f757420457363726f773a20506c6174666f726d20436f6d6d697373696f6e1ad41af9} B>boc PUSHREF
+""";
+
+;; Cell Hz60Q003EYA2pCBm2CzmHs+K1n3DMiNxZSbXy2fZawU=
+cell __gen_cell_cell_1f3eb4434d37118036a42066d82ce61ecf8ad67dc33223716526d7cb67d96b05() asm """
+    B{b5ee9c72410101010024000044000000004661766f722053636f757420457363726f773a2047617320726566756e64f28b1e33} B>boc PUSHREF
+""";
+
+;; Cell YmYJTmnjTyOCNj9QqRoJeIZvSFnwAvOgSsI04izCey0=
+cell __gen_cell_cell_6266094e69e34f2382363f50a91a0978866f4859f002f3a04ac234e22cc27b2d() asm """
+    B{b5ee9c7241010101002e000058000000004661766f722053636f757420457363726f773a204469737075746520726566756e642073706c697417481cd5} B>boc PUSHREF
+""";
+
+;; String "Favor Scout Escrow: Dispute payout split"
+slice __gen_slice_string_aba0d25370bc8bacc5db22a1aafb3ce1d0c05e3f9652839ef5d70d73dfcd5d2a() asm """
+    B{b5ee9c7241010101002a0000504661766f722053636f757420457363726f773a2044697370757465207061796f75742073706c69740b41661b} B>boc <s PUSHSLICE
+""";
+
+;; String "Favor Scout Escrow: Payout"
+slice __gen_slice_string_f71e50bb8dc269fe465e915ca2cb926782b644ae425931cedeaa64f0d50887aa() asm """
+    B{b5ee9c7241010101001c0000344661766f722053636f757420457363726f773a205061796f757420ba41b2} B>boc <s PUSHSLICE
+""";
+
+;; Cell pqRZJMYpq4bxqLS8Kr1ilIzleS0SXxC+W4CqwOP0O2Y=
+cell __gen_cell_cell_a6a45924c629ab86f1a8b4bc2abd62948ce5792d125f10be5b80aac0e3f43b66() asm """
+    B{b5ee9c7241010101002c000054000000004661766f722053636f757420457363726f773a20526566756e6420746f20437573746f6d6572d8535824} B>boc PUSHREF
+""";
+
+;; Cell tJJuvKvwzRUQJRsadwic7LGEjWmbfpcSNdyjQXZZFzg=
+cell __gen_cell_cell_b4926ebcabf0cd1510251b1a77089cecb1848d699b7e971235dca34176591738() asm """
+    B{b5ee9c7241010101003800006c000000004469737075746520726567697374657265642e204177616974696e6720706c6174666f726d206172626974726174696f6e2e1ce7a556} B>boc PUSHREF
+""";
+
+;; FavorScoutEscrow_FavorScoutEscrow.storage.fc
+;;
+;; Type: Context
+;; TLB: _ bounceable:bool sender:address value:int257 raw:^slice = Context
+;;
+
+_ $Context$_get_value((int, slice, int, slice) v) inline {
+    var (v'bounceable, v'sender, v'value, v'raw) = v;
+    return v'value;
+}
+
+;;
+;; Type: SendParameters
+;; TLB: _ mode:int257 body:Maybe ^cell code:Maybe ^cell data:Maybe ^cell value:int257 to:address bounce:bool = SendParameters
+;;
+
+((int, cell, cell, cell, int, slice, int)) $SendParameters$_constructor_to_value_bounce_mode_body(slice $to, int $value, int $bounce, int $mode, cell $body) inline {
+    return ($mode, $body, null(), null(), $value, $to, $bounce);
+}
+
+;;
+;; Type: MessageParameters
+;; TLB: _ mode:int257 body:Maybe ^cell value:int257 to:address bounce:bool = MessageParameters
+;;
+
+((int, cell, int, slice, int)) $MessageParameters$_constructor_bounce_to_value_mode_body(int $bounce, slice $to, int $value, int $mode, cell $body) inline {
+    return ($mode, $body, $value, $to, $bounce);
+}
+
+;;
+;; Type: DeployOk
+;; Header: 0xaff90f57
+;; TLB: deploy_ok#aff90f57 queryId:uint64 = DeployOk
+;;
+
+builder $DeployOk$_store(builder build_0, (int) v) inline {
+    var (v'queryId) = v;
+    build_0 = store_uint(build_0, 2952335191, 32);
+    build_0 = build_0.store_uint(v'queryId, 64);
+    return build_0;
+}
+
+cell $DeployOk$_store_cell((int) v, builder b) inline {
+    return $DeployOk$_store(b, v).end_cell();
+}
+
+((int)) $DeployOk$_constructor_queryId(int $queryId) inline {
+    return ($queryId);
+}
+
+;;
+;; Type: FavorScoutEscrow
+;; TLB: _ platform:address customer:address freelancer:address scout:address dealId:uint64 scoutCommissionSharePercent:uint8 deadlineDurationSeconds:uint32 amount:coins status:uint8 deadlineAt:uint64 = FavorScoutEscrow
+;;
+
+builder $FavorScoutEscrow$_store(builder build_0, (slice, slice, slice, slice, int, int, int, int, int, int) v) inline {
+    var (v'platform, v'customer, v'freelancer, v'scout, v'dealId, v'scoutCommissionSharePercent, v'deadlineDurationSeconds, v'amount, v'status, v'deadlineAt) = v;
+    build_0 = build_0.store_slice(v'platform);
+    build_0 = build_0.store_slice(v'customer);
+    build_0 = build_0.store_slice(v'freelancer);
+    var build_1 = begin_cell();
+    build_1 = build_1.store_slice(v'scout);
+    build_1 = build_1.store_uint(v'dealId, 64);
+    build_1 = build_1.store_uint(v'scoutCommissionSharePercent, 8);
+    build_1 = build_1.store_uint(v'deadlineDurationSeconds, 32);
+    build_1 = build_1.store_varuint16(v'amount);
+    build_1 = build_1.store_uint(v'status, 8);
+    build_1 = build_1.store_uint(v'deadlineAt, 64);
+    build_0 = store_builder_ref(build_0, build_1);
+    return build_0;
+}
+
+(slice, ((slice, slice, slice, slice, int, int, int, int, int, int))) $FavorScoutEscrow$_load(slice sc_0) inline {
+    var v'platform = sc_0~load_msg_addr();
+    var v'customer = sc_0~load_msg_addr();
+    var v'freelancer = sc_0~load_msg_addr();
+    slice sc_1 = sc_0~load_ref().begin_parse();
+    var v'scout = sc_1~load_msg_addr();
+    var v'dealId = sc_1~load_uint(64);
+    var v'scoutCommissionSharePercent = sc_1~load_uint(8);
+    var v'deadlineDurationSeconds = sc_1~load_uint(32);
+    var v'amount = sc_1~load_varuint16();
+    var v'status = sc_1~load_uint(8);
+    var v'deadlineAt = sc_1~load_uint(64);
+    return (sc_0, (v'platform, v'customer, v'freelancer, v'scout, v'dealId, v'scoutCommissionSharePercent, v'deadlineDurationSeconds, v'amount, v'status, v'deadlineAt));
+}
+
+(slice, ((slice, slice, slice, slice, int, int, int, int))) $FavorScoutEscrow$init$_load(slice sc_0) inline {
+    var v'platform = sc_0~load_msg_addr();
+    var v'customer = sc_0~load_msg_addr();
+    var v'freelancer = sc_0~load_msg_addr();
+    slice sc_1 = sc_0~load_ref().begin_parse();
+    var v'scout = sc_1~load_msg_addr();
+    var v'dealId = sc_1~load_int(257);
+    var v'expectedAmount = sc_1~load_int(257);
+    slice sc_2 = sc_1~load_ref().begin_parse();
+    var v'scoutCommissionSharePercent = sc_2~load_int(257);
+    var v'deadlineDurationSeconds = sc_2~load_int(257);
+    return (sc_0, (v'platform, v'customer, v'freelancer, v'scout, v'dealId, v'expectedAmount, v'scoutCommissionSharePercent, v'deadlineDurationSeconds));
+}
+
+(slice, slice, slice, slice, int, int, int, int, int, int) $FavorScoutEscrow$_contract_load() impure inline {
+    slice $sc = get_data().begin_parse();
+    int $loaded = $sc~load_int(1);
+    if ($loaded) {
+        return $sc~$FavorScoutEscrow$_load();
+    }
+    else {
+        (slice $platform, slice $customer, slice $freelancer, slice $scout, int $dealId, int $expectedAmount, int $scoutCommissionSharePercent, int $deadlineDurationSeconds) = $sc~$FavorScoutEscrow$init$_load();
+        $sc.end_parse();
+        return $FavorScoutEscrow$_contract_init($platform, $customer, $freelancer, $scout, $dealId, $expectedAmount, $scoutCommissionSharePercent, $deadlineDurationSeconds);
+    }
+}
+
+() $FavorScoutEscrow$_contract_store((slice, slice, slice, slice, int, int, int, int, int, int) v) impure inline {
+    builder b = begin_cell();
+    b = b.store_int(true, 1);
+    b = $FavorScoutEscrow$_store(b, v);
+    set_data(b.end_cell());
+}
+
+;;
+;; Contract FavorScoutEscrow functions
+;;
+
+(slice, slice, slice, slice, int, int, int, int, int, int) $FavorScoutEscrow$_contract_init(slice $platform, slice $customer, slice $freelancer, slice $scout, int $dealId, int $expectedAmount, int $scoutCommissionSharePercent, int $deadlineDurationSeconds) impure inline {
+    var (($self'platform, $self'customer, $self'freelancer, $self'scout, $self'dealId, $self'scoutCommissionSharePercent, $self'deadlineDurationSeconds, $self'amount, $self'status, $self'deadlineAt)) = (null(), null(), null(), null(), null(), null(), null(), null(), null(), null());
+    $self'platform = $platform;
+    $self'customer = $customer;
+    $self'freelancer = $freelancer;
+    $self'scout = $scout;
+    $self'dealId = $dealId;
+    throw_unless(23964, ($expectedAmount > 0));
+    throw_unless(59014, ($deadlineDurationSeconds > 0));
+    $self'amount = $expectedAmount;
+    $self'scoutCommissionSharePercent = $scoutCommissionSharePercent;
+    $self'deadlineDurationSeconds = $deadlineDurationSeconds;
+    $self'status = 0;
+    $self'deadlineAt = 0;
+    return ($self'platform, $self'customer, $self'freelancer, $self'scout, $self'dealId, $self'scoutCommissionSharePercent, $self'deadlineDurationSeconds, $self'amount, $self'status, $self'deadlineAt);
+}
+
+((slice, slice, slice, slice, int, int, int, int, int, int), ()) $FavorScoutEscrow$_fun_refundRemainingGas((slice, slice, slice, slice, int, int, int, int, int, int) $self) impure inline_ref {
+    var (($self'platform, $self'customer, $self'freelancer, $self'scout, $self'dealId, $self'scoutCommissionSharePercent, $self'deadlineDurationSeconds, $self'amount, $self'status, $self'deadlineAt)) = $self;
+    $global_send($SendParameters$_constructor_to_value_bounce_mode_body($self'customer, 0, false, 160, __gen_cell_cell_1f3eb4434d37118036a42066d82ce61ecf8ad67dc33223716526d7cb67d96b05()));
+    return (($self'platform, $self'customer, $self'freelancer, $self'scout, $self'dealId, $self'scoutCommissionSharePercent, $self'deadlineDurationSeconds, $self'amount, $self'status, $self'deadlineAt), ());
+}
+
+((slice, slice, slice, slice, int, int, int, int, int, int), ()) $FavorScoutEscrow$_fun_distributeFreelancerShare((slice, slice, slice, slice, int, int, int, int, int, int) $self, int $freelancerGrossAmount, slice $payoutComment) impure inline_ref {
+    var (($self'platform, $self'customer, $self'freelancer, $self'scout, $self'dealId, $self'scoutCommissionSharePercent, $self'deadlineDurationSeconds, $self'amount, $self'status, $self'deadlineAt)) = $self;
+    int $commission = (($freelancerGrossAmount * 5) / 100);
+    int $scoutShare = (($commission * $self'scoutCommissionSharePercent) / 100);
+    int $platformShare = ($commission - $scoutShare);
+    int $freelancerShare = ($freelancerGrossAmount - $commission);
+    if (($freelancerShare > 0)) {
+        $global_send($SendParameters$_constructor_to_value_bounce_mode_body($self'freelancer, $freelancerShare, false, 1, $String$_fun_asComment($payoutComment)));
+    }
+    if (($scoutShare > 0)) {
+        $global_send($SendParameters$_constructor_to_value_bounce_mode_body($self'scout, $scoutShare, false, 1, __gen_cell_cell_426423f07783f21a0813d29f65338fdd9a94829a828967d5b41c5915512daae2()));
+    }
+    if (($platformShare > 0)) {
+        $global_send($SendParameters$_constructor_to_value_bounce_mode_body($self'platform, $platformShare, false, 1, __gen_cell_cell_a9d1b56b5815d5a33e4ce688ba315671a0ca78497c4b9df32ef346c025174395()));
+    }
+    ($self'platform, $self'customer, $self'freelancer, $self'scout, $self'dealId, $self'scoutCommissionSharePercent, $self'deadlineDurationSeconds, $self'amount, $self'status, $self'deadlineAt)~$FavorScoutEscrow$_fun_refundRemainingGas();
+    return (($self'platform, $self'customer, $self'freelancer, $self'scout, $self'dealId, $self'scoutCommissionSharePercent, $self'deadlineDurationSeconds, $self'amount, $self'status, $self'deadlineAt), ());
+}
+
+((slice, slice, slice, slice, int, int, int, int, int, int), int) $FavorScoutEscrow$_fun_status((slice, slice, slice, slice, int, int, int, int, int, int) $self) impure inline_ref {
+    var (($self'platform, $self'customer, $self'freelancer, $self'scout, $self'dealId, $self'scoutCommissionSharePercent, $self'deadlineDurationSeconds, $self'amount, $self'status, $self'deadlineAt)) = $self;
+    var $fresh$ret_3 = $self'status;
+    return (($self'platform, $self'customer, $self'freelancer, $self'scout, $self'dealId, $self'scoutCommissionSharePercent, $self'deadlineDurationSeconds, $self'amount, $self'status, $self'deadlineAt), $fresh$ret_3);
+}
+
+((slice, slice, slice, slice, int, int, int, int, int, int), int) $FavorScoutEscrow$_fun_deadlineAt((slice, slice, slice, slice, int, int, int, int, int, int) $self) impure inline_ref {
+    var (($self'platform, $self'customer, $self'freelancer, $self'scout, $self'dealId, $self'scoutCommissionSharePercent, $self'deadlineDurationSeconds, $self'amount, $self'status, $self'deadlineAt)) = $self;
+    var $fresh$ret_4 = $self'deadlineAt;
+    return (($self'platform, $self'customer, $self'freelancer, $self'scout, $self'dealId, $self'scoutCommissionSharePercent, $self'deadlineDurationSeconds, $self'amount, $self'status, $self'deadlineAt), $fresh$ret_4);
+}
+
+((slice, slice, slice, slice, int, int, int, int, int, int), slice) $FavorScoutEscrow$_fun_details((slice, slice, slice, slice, int, int, int, int, int, int) $self) impure inline_ref {
+    var (($self'platform, $self'customer, $self'freelancer, $self'scout, $self'dealId, $self'scoutCommissionSharePercent, $self'deadlineDurationSeconds, $self'amount, $self'status, $self'deadlineAt)) = $self;
+    var $fresh$ret_5 = $global_myAddress();
+    return (($self'platform, $self'customer, $self'freelancer, $self'scout, $self'dealId, $self'scoutCommissionSharePercent, $self'deadlineDurationSeconds, $self'amount, $self'status, $self'deadlineAt), $fresh$ret_5);
+}
+
+((slice, slice, slice, slice, int, int, int, int, int, int), slice) $FavorScoutEscrow$_fun_scoutAddress((slice, slice, slice, slice, int, int, int, int, int, int) $self) impure inline_ref {
+    var (($self'platform, $self'customer, $self'freelancer, $self'scout, $self'dealId, $self'scoutCommissionSharePercent, $self'deadlineDurationSeconds, $self'amount, $self'status, $self'deadlineAt)) = $self;
+    var $fresh$ret_6 = $self'scout;
+    return (($self'platform, $self'customer, $self'freelancer, $self'scout, $self'dealId, $self'scoutCommissionSharePercent, $self'deadlineDurationSeconds, $self'amount, $self'status, $self'deadlineAt), $fresh$ret_6);
+}
+
+((slice, slice, slice, slice, int, int, int, int, int, int), int) $FavorScoutEscrow$_fun_scoutSharePercent((slice, slice, slice, slice, int, int, int, int, int, int) $self) impure inline_ref {
+    var (($self'platform, $self'customer, $self'freelancer, $self'scout, $self'dealId, $self'scoutCommissionSharePercent, $self'deadlineDurationSeconds, $self'amount, $self'status, $self'deadlineAt)) = $self;
+    var $fresh$ret_7 = $self'scoutCommissionSharePercent;
+    return (($self'platform, $self'customer, $self'freelancer, $self'scout, $self'dealId, $self'scoutCommissionSharePercent, $self'deadlineDurationSeconds, $self'amount, $self'status, $self'deadlineAt), $fresh$ret_7);
+}
+
+;;
+;; Get methods of a Contract FavorScoutEscrow
+;;
+
+_ %status() method_id(101642) {
+    var self = $FavorScoutEscrow$_contract_load();
+    var res = self~$FavorScoutEscrow$_fun_status();
+    return res;
+}
+
+_ %deadlineAt() method_id(114650) {
+    var self = $FavorScoutEscrow$_contract_load();
+    var res = self~$FavorScoutEscrow$_fun_deadlineAt();
+    return res;
+}
+
+_ %details() method_id(118890) {
+    var self = $FavorScoutEscrow$_contract_load();
+    var res = self~$FavorScoutEscrow$_fun_details();
+    return res;
+}
+
+_ %scoutAddress() method_id(67900) {
+    var self = $FavorScoutEscrow$_contract_load();
+    var res = self~$FavorScoutEscrow$_fun_scoutAddress();
+    return res;
+}
+
+_ %scoutSharePercent() method_id(71443) {
+    var self = $FavorScoutEscrow$_contract_load();
+    var res = self~$FavorScoutEscrow$_fun_scoutSharePercent();
+    return res;
+}
+
+;;
+;; Routing of a Contract FavorScoutEscrow
+;;
+
+;; message opcode reader utility: only binary receivers
+;; Returns 32 bit message opcode, otherwise throws the "Invalid incoming message" exit code
+(slice, int) ~load_opcode_internal(slice s) asm( -> 1 0) "32 LDUQ 130 THROWIFNOT";
+
+() recv_internal(int msg_value, cell in_msg_cell, slice in_msg) impure {
+    
+    ;; Context
+    var cs = in_msg_cell.begin_parse();
+    cs~skip_bits(2);
+    var msg_bounceable = cs~load_int(1);
+    var msg_bounced = cs~load_int(1);
+    slice msg_sender_addr = cs~load_msg_addr();
+    __tact_context = (msg_bounceable, msg_sender_addr, msg_value, cs);
+    __tact_context_sender = msg_sender_addr;
+    
+    ;; Load contract data
+    var ($self'platform, $self'customer, $self'freelancer, $self'scout, $self'dealId, $self'scoutCommissionSharePercent, $self'deadlineDurationSeconds, $self'amount, $self'status, $self'deadlineAt) = $FavorScoutEscrow$_contract_load();
+    
+    ;; Handle bounced messages
+    if (msg_bounced) { return (); }
+    int op = 0;
+    int in_msg_length = slice_bits(in_msg);
+    if (in_msg_length >= 32) {
+        op = in_msg~load_uint(32);
+        ;; Receive ResolveScoutDispute message
+        if (op == 450855303) {
+            var $msg'freelancerPercent = in_msg~load_uint(8);
+            var ($ctx'bounceable, $ctx'sender, $ctx'value, $ctx'raw) = __tact_context_get();
+            throw_unless(57229, ( equal_slices_bits($ctx'sender, $self'platform) ));
+            throw_unless(45284, ($self'status == 3));
+            throw_unless(6722, ($msg'freelancerPercent <= 100));
+            $self'status = 2;
+            int $freelancerAmt = (($self'amount * $msg'freelancerPercent) / 100);
+            int $customerAmt = ($self'amount - $freelancerAmt);
+            if (($customerAmt > 0)) {
+                $global_send($SendParameters$_constructor_to_value_bounce_mode_body($self'customer, $customerAmt, false, 1, __gen_cell_cell_6266094e69e34f2382363f50a91a0978866f4859f002f3a04ac234e22cc27b2d()));
+            }
+            if (($freelancerAmt > 0)) {
+                ($self'platform, $self'customer, $self'freelancer, $self'scout, $self'dealId, $self'scoutCommissionSharePercent, $self'deadlineDurationSeconds, $self'amount, $self'status, $self'deadlineAt)~$FavorScoutEscrow$_fun_distributeFreelancerShare($freelancerAmt, __gen_slice_string_aba0d25370bc8bacc5db22a1aafb3ce1d0c05e3f9652839ef5d70d73dfcd5d2a());
+            } else {
+                ($self'platform, $self'customer, $self'freelancer, $self'scout, $self'dealId, $self'scoutCommissionSharePercent, $self'deadlineDurationSeconds, $self'amount, $self'status, $self'deadlineAt)~$FavorScoutEscrow$_fun_refundRemainingGas();
+            }
+            $FavorScoutEscrow$_contract_store(($self'platform, $self'customer, $self'freelancer, $self'scout, $self'dealId, $self'scoutCommissionSharePercent, $self'deadlineDurationSeconds, $self'amount, $self'status, $self'deadlineAt));
+            return ();
+        }
+        
+        ;; Receive Deploy message
+        if (op == 0x946a98b6) {
+            var $deploy'queryId = in_msg~load_uint(64);
+            ($self'platform, $self'customer, $self'freelancer, $self'scout, $self'dealId, $self'scoutCommissionSharePercent, $self'deadlineDurationSeconds, $self'amount, $self'status, $self'deadlineAt)~$FavorScoutEscrow$_fun_notify($DeployOk$_store_cell($DeployOk$_constructor_queryId($deploy'queryId), begin_cell()));
+            $FavorScoutEscrow$_contract_store(($self'platform, $self'customer, $self'freelancer, $self'scout, $self'dealId, $self'scoutCommissionSharePercent, $self'deadlineDurationSeconds, $self'amount, $self'status, $self'deadlineAt));
+            return ();
+        }
+        
+    }
+    ;; Receive empty message
+    if ((op == 0) & (in_msg_length <= 32)) {
+        var ($ctx'bounceable, $ctx'sender, $ctx'value, $ctx'raw) = __tact_context_get();
+        throw_unless(35739, ($self'status == 0));
+        throw_unless(21835, ( equal_slices_bits($ctx'sender, $self'customer) ));
+        throw_unless(36057, ($ctx'value >= ($self'amount + 50000000)));
+        $self'status = 1;
+        $self'deadlineAt = ($global_now() + $self'deadlineDurationSeconds);
+        $FavorScoutEscrow$_contract_store(($self'platform, $self'customer, $self'freelancer, $self'scout, $self'dealId, $self'scoutCommissionSharePercent, $self'deadlineDurationSeconds, $self'amount, $self'status, $self'deadlineAt));
+        return ();
+    }
+    ;; Empty Receiver and Text Receivers
+    var text_op = slice_hash(in_msg);
+    ;; Receive "complete" message
+    if (text_op == 0xf29fa7e2b166aa5aa95ed61d3477f8d1ef25469d0a1be9360a76bf7b423bc151) {
+        var ($ctx'bounceable, $ctx'sender, $ctx'value, $ctx'raw) = __tact_context_get();
+        throw_unless(42435, ( (( equal_slices_bits($ctx'sender, $self'customer) )) ? (true) : (( equal_slices_bits($ctx'sender, $self'platform) )) ));
+        throw_unless(33459, ( (($self'status == 1)) ? (true) : (($self'status == 3)) ));
+        $self'status = 2;
+        ($self'platform, $self'customer, $self'freelancer, $self'scout, $self'dealId, $self'scoutCommissionSharePercent, $self'deadlineDurationSeconds, $self'amount, $self'status, $self'deadlineAt)~$FavorScoutEscrow$_fun_distributeFreelancerShare($self'amount, __gen_slice_string_f71e50bb8dc269fe465e915ca2cb926782b644ae425931cedeaa64f0d50887aa());
+        $FavorScoutEscrow$_contract_store(($self'platform, $self'customer, $self'freelancer, $self'scout, $self'dealId, $self'scoutCommissionSharePercent, $self'deadlineDurationSeconds, $self'amount, $self'status, $self'deadlineAt));
+        return ();
+    }
+    ;; Receive "refund" message
+    if (text_op == 0x2282abf8277dc4ff9183255e3d0fb487fa3963bcea406ca8943205a96e5346cd) {
+        var ($ctx'bounceable, $ctx'sender, $ctx'value, $ctx'raw) = __tact_context_get();
+        throw_unless(33459, ( (($self'status == 1)) ? (true) : (($self'status == 3)) ));
+        if (( equal_slices_bits($ctx'sender, $self'customer) )) {
+            throw_unless(45995, ($self'status == 1));
+            throw_unless(48201, ( (($self'deadlineAt > 0)) ? (($global_now() >= $self'deadlineAt)) : (false) ));
+        } else {
+            throw_unless(42435, ( (( equal_slices_bits($ctx'sender, $self'freelancer) )) ? (true) : (( equal_slices_bits($ctx'sender, $self'platform) )) ));
+        }
+        $self'status = 4;
+        $global_send($SendParameters$_constructor_to_value_bounce_mode_body($self'customer, 0, false, 160, __gen_cell_cell_a6a45924c629ab86f1a8b4bc2abd62948ce5792d125f10be5b80aac0e3f43b66()));
+        $FavorScoutEscrow$_contract_store(($self'platform, $self'customer, $self'freelancer, $self'scout, $self'dealId, $self'scoutCommissionSharePercent, $self'deadlineDurationSeconds, $self'amount, $self'status, $self'deadlineAt));
+        return ();
+    }
+    ;; Receive "dispute" message
+    if (text_op == 0x054e0a8595d08326d56c73cd5dca85c1e629fe1e418a935a3b82b7e558803707) {
+        var ($ctx'bounceable, $ctx'sender, $ctx'value, $ctx'raw) = __tact_context_get();
+        throw_unless(57669, ( (( equal_slices_bits($ctx'sender, $self'customer) )) ? (true) : (( equal_slices_bits($ctx'sender, $self'freelancer) )) ));
+        throw_unless(32780, ($self'status == 1));
+        throw_unless(14598, ( (($self'deadlineAt > 0)) ? (($global_now() < $self'deadlineAt)) : (false) ));
+        $self'status = 3;
+        ($self'platform, $self'customer, $self'freelancer, $self'scout, $self'dealId, $self'scoutCommissionSharePercent, $self'deadlineDurationSeconds, $self'amount, $self'status, $self'deadlineAt)~$FavorScoutEscrow$_fun_reply(__gen_cell_cell_b4926ebcabf0cd1510251b1a77089cecb1848d699b7e971235dca34176591738());
+        $FavorScoutEscrow$_contract_store(($self'platform, $self'customer, $self'freelancer, $self'scout, $self'dealId, $self'scoutCommissionSharePercent, $self'deadlineDurationSeconds, $self'amount, $self'status, $self'deadlineAt));
+        return ();
+    }
+    ;; Throw if not handled
+    throw(130);
+}
+
+
+() __tact_selector_hack_asm() impure asm """
+@atend @ 1 {
+        execute current@ context@ current!
+        {
+            // The core idea of this function is to save gas by avoiding unnecessary dict jump, when recv_internal/recv_external is called
+            // We want to extract recv_internal/recv_external from the dict and select needed function
+            // not by jumping to the needed function by it's index, but by using usual IF statements.
+
+            }END> b> // Close previous builder, now we have a cell of previous code on top of the stack
+
+            <{ // Start of the new code builder
+                SETCP0
+                // Swap the new code builder with the previous code, now we have previous code on top of the stack
+                swap
+                // Transform cell to slice and load first ref from the previous code, now we have the dict on top of the stack
+                <s ref@
+
+                // Extract the recv_internal from the dict
+                dup 0 swap @procdictkeylen idict@ { "internal shortcut error" abort } ifnot
+                swap
+
+                // Delete the recv_internal from the dict
+                0 swap @procdictkeylen idict- drop
+                // Delete the recv_external from the dict (it's okay if it's not there)
+                -1 swap @procdictkeylen idict- drop
+                // Delete the __tact_selector_hack from the dict
+                65535 swap @procdictkeylen idict- drop
+
+                // Bring the code builder from the bottom of the stack
+                // because if recv_external extraction is optional, and the number of elements on the stack is not fixed
+                depth 1- roll
+                // Swap with the dict from which we extracted recv_internal and (maybe) recv_external
+                swap
+
+                // Check if the dict is empty
+                dup null?
+                // Store a copy of this flag in the bottom of the stack
+                dup depth 1- -roll
+                {
+                    // If the dict is empty, just drop it (it will be null if it's empty)
+                    drop
+                }
+                {
+                    // If the dict is not empty, prepare continuation to be stored in c3
+                    <{
+                        // Save this dict as first ref in this continuation, it will be pushed in runtime by DICTPUSHCONST
+                        swap @procdictkeylen DICTPUSHCONST
+                        // Jump to the needed function by it's index
+                        DICTIGETJMPZ
+                        // If such key is not found, throw 11 along with the key as an argument
+                        11 THROWARG
+                    }> PUSHCONT
+                    // Store the continuation in c3
+                    c3 POP
+                } cond
+
+                // Function id is on top of the (runtime) stack
+                DUP IFNOTJMP:<{
+                    // place recv_internal here
+                    DROP swap @addop
+                }>
+
+                // Bring back the flag, indicating if the dict is empty or not from the bottom of the stack
+                depth 1- roll
+                {
+                    // If the dict is empty, throw 11
+                    11 THROWARG
+                }
+                {
+                    // If the dict is not empty, jump to continuation from c3
+                    c3 PUSH JMPX
+                } cond
+            }> b>
+        } : }END>c
+        current@ context! current!
+    } does @atend !
+""";
+
+() __tact_selector_hack() method_id(65535) {
+    return __tact_selector_hack_asm();
+}

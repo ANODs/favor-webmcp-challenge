@@ -1,0 +1,14 @@
+{
+  "openFavor": "Open Favor",
+  "auctionStartedFree": "A category auction started with a free Favor Plus bid. Bids are open for 10 minutes.",
+  "auctionStarted": "A category auction started. Bids are open for 10 minutes.",
+  "newLeadingBid": "New leading bid: {amount} FAVOR.",
+  "secondPaymentAttempt": "The leader is using the second and final payment attempt. The overall 5-minute window is not extended.",
+  "auctionAwaitingPayment": "The auction ended. The leader has 5 minutes and 2 attempts to pay the final bid.",
+  "freeBidWon": "The free Favor Plus bid won. Promotion is active for 7 days.",
+  "auctionCancelled": "The auction ended without a winner.",
+  "paymentConfirmed": "Payment confirmed. The winner received the top category position for 7 days.",
+  "nextCandidate": "The previous leader did not pay. The next participant has 5 minutes to complete payment.",
+  "freeBidWonAfterFailures": "Paid bids were not completed. The free Favor Plus bid won 7 days of promotion.",
+  "allPaymentsFailed": "No bid was paid. The auction ended without a winner."
+}

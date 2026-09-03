@@ -1,0 +1,15 @@
+{
+  "globalError": {
+    "title": "Internal Server Error",
+    "description": "A server error occurred. Refresh the page or try again later.",
+    "retry": "Try again",
+    "home": "Go home",
+    "support": "Report a problem",
+    "openingSupport": "Opening support..."
+  },
+  "notFound": {
+    "title": "Page not found",
+    "description": "The link may be incorrect, or the page may have been removed.",
+    "home": "Go home"
+  }
+}
